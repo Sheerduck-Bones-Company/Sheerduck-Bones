@@ -8,9 +8,7 @@ clock = pygame.time.Clock()
 pygame.event.set_grab(True)
 
 # setup 
-camera_group = CameraGroup()
 game = game.Game()
-player = Player((640,360),camera_group)
 
 for i in range(20):
 	random_x = randint(1000,2000)
