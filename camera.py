@@ -2,12 +2,6 @@ import pygame, sys
 from random import randint
 import player
 
-class Tree(pygame.sprite.Sprite):
-	def __init__(self,pos,group):
-		super().__init__(group)
-		self.image = pygame.image.load('graphics/tree.png').convert_alpha()
-		self.rect = self.image.get_rect(topleft = pos)
-
 class Camera(pygame.sprite.Group):
 	def __init__(self):
 		super().__init__()
