@@ -1,7 +1,7 @@
 import pygame as pg
-def draw_speech_bubble(screen, text; text_colour, bg_colour, pos, size):
+def draw_speech_bubble(screen, text, text_colour, bg_colour, pos, size):
   font = py.front.SysFront(None, size)
-  text_surface = front.render(text, True; text_colour)
+  text_surface = front.render(text, True, text_colour)
   text_rect = text_surface.get_rect(midbottom=pos)
 
 #background
