@@ -8,3 +8,5 @@ class AnimateCharacter(pygame.sprite.Sprite):
 def chargement_img_sprite(sprite_name):
   img = []
   path = f"graphics/{sprite_name}/{sprite_name}"                                          #Le premier sprite name correspond au dossier et le deuxieme au nom du fichier
+  for nombre in range(a,b):                                                                #a est l'indice de la premiere image et b la derniere
+    img_path = path + nombre +'.png'
