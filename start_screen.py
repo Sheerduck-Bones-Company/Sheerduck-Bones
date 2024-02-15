@@ -11,7 +11,7 @@ pg.display.set_caption('Button Demo')
 
 #button img
 start_img = pg.image.load('start_button.png').convert_alpha()
-exit_img = pg.image.load('exit_button.pgn').convert.alpha()
+exit_img = pg.image.load('exit_button.png').convert.alpha()
 
 start_button = button.Button(100, 200, start_img, 0.8)
 exit_button = button.Button(450, 200, exit_img, 0.8)
