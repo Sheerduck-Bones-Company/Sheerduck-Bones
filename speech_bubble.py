@@ -18,10 +18,8 @@ class SpeechBubble():
 
     def update(self):
         if self.index_box == len(self.splited_text[self.index_sentence]):
-            print('yes')
             if self.index_sentence == len(self.splited_text) - 1:
                 self.game.is_speeking = False
-                print('stop')
                 return False
             else:
                 self.index_box = 0
