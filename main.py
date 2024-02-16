@@ -1,55 +1,67 @@
-import pygame, obstacles, random, sys, start_screen
+#On importe les modules nécessaires
+import pygame, obstacles, random, sys, button
 from game import Game
 
+#On initialise la fenêtre
 pygame.init()
 pygame.display.set_caption('Sheerduck-Bones')
 pygame.display.set_icon(pygame.image.load('assets/graphics/Sheerduck_Bones-down-left.png'))
+
+#On crée notre écran
 screen_width, screen_height = 1080, 720
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.SCALED)
+
+#On crée notre clock
 clock = pygame.time.Clock()
 FPS = 60
+
+#On active l'accès aux events
 pygame.event.set_grab(True)
 
-#button img
-'''start_img = pygame.transform.scale(start_img, (500,200))
-exit_img = pygame.transform.scale(exit_img, (450,200))
-help_img = pygame.transform.scale(help_img, (200,150))
-'''
+#On crée les boutons de démarage
+start_button = button.Button(screen, 'start', 30, -20, 10)
+exit_button = button.Button(screen, 'exit', -30, -20, 10)
+help_button = button.Button(screen, 'help', -10, 20, 10)
 
-#button position
-start_button = start_screen.Button(screen, 30, -20, 'start', 10)
-exit_button = start_screen.Button(screen, -30, -20, 'exit', 10)
-help_button = start_screen.Button(screen, -10, 20, 'help', 10)
-
-# setup
+#On crée notre partie
 game = Game(screen)
 
+#On crée des arbres
 for i in range(20):
     x, y = random.randint(1000,2000), random.randint(1000,2000)
     obstacles.Tree(((x//4)*4+2, (y//4)*4+2),game.camera_group)
 
 running = True
 
+#On lance la boucle principale
 while running:
     if game.is_playing:
+        #On actualise la partie
         game.update()
     else:
+        #On affiche l'écran d'accueil
         screen.fill((88, 41, 0)) 
         start_button.draw()
         exit_button.draw()
         help_button.draw()
-        
-    pygame.display.update()
-        
+    
+    #On actualise l'écran    
+    pygame.display.flip()
+    
+    #On vérifie des events
     for event in pygame.event.get():
+        
+        #Quitter le jeu
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
             sys.exit()
         
         if event.type == pygame.KEYDOWN:
+            #On ajoute la touche appuyée à une liste et on précise son état
             game.pressed[event.key] = True
             
+            #Quitter le jeu ou retourner sur l'écran d'acceuil
             if event.key == pygame.K_ESCAPE:
                 if game.is_playing:
                     game.stop()
@@ -57,7 +69,8 @@ while running:
                     running = False
                     pygame.quit()
                     sys.exit()
-                
+            
+            #Activer la boîte de dialogue    
             if event.key == pygame.K_e:
                 if game.is_speeking:
                     game.speech_bubble.update()
@@ -68,24 +81,32 @@ while running:
                               'Suis',
                               'Antoine'])
             
+            #Mettre en plein écran
             if event.key == pygame.K_F11:
                 pygame.display.toggle_fullscreen()
         
+        #On précise qu'une touche n'est plus pressée
         if event.type == pygame.KEYUP:
             game.pressed[event.key] = False
         
+        #Vérifier si on appuie sur un bouton
         if event.type == pygame.MOUSEBUTTONDOWN:
             if not game.is_playing:
+                #Lancer la partie
                 if start_button.rect.collidepoint(event.pos):
                     game.start()
+                #Quitter la partie
                 elif exit_button.rect.collidepoint(event.pos):
                     pygame.quit()
                     sys.exit()
+                #Demander de l'aide
                 elif help_button.rect.collidepoint(event.pos):
                     print('OSCOUR')
         
+        #Changer le zoom de la caméra
         if event.type == pygame.MOUSEWHEEL:
             if (2.5 > game.camera_group.zoom_scale + event.y > 0) and not game.is_speeking:
                 game.camera_group.zoom_scale += event.y * 0.08
     
+    #On actualise la clock
     clock.tick(FPS)
