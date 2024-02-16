@@ -1,91 +1,34 @@
-#Start screen
-import pygame as pg
-import sys
+import pygame
 
-pg.init()
-
-#button class
 class Button():
-    def __init__(self, x, y, image, scale):
-        width = image.get_width()
-        height = image.get_height()
-        self.image = pg.transform.scale(image, (int(width * scale), int(height*scale)))
-        self.rect = self.image.get_rect()
-        self.rect.topleft = (x, y)
+    def __init__(self, screen : pygame.Surface, perc_border_x:int, perc_border_y:int, name:str, perc_width:int):
+        self.screen = screen
+        self.perc_border_x = perc_border_x/100
+        self.perc_border_y = perc_border_y/100
+        self.perc_width = perc_width/100
+        self.image = pygame.image.load(f'assets/graphics/{name}_button.png').convert_alpha()
+        self.size_vector = pygame.Vector2(self.image.get_size()) / self.image.get_width()
+        self.rect = pygame.Rect((0,0,0,0))
         self.clicked = False
     
     def draw(self):
-        action = False
-        #mouse position
-        pos = pg.mouse.get_pos()
-
+        screen_width = self.screen.get_width()
+        screen_height = self.screen.get_height()
+        self.image = pygame.transform.scale(self.image, self.size_vector*screen_width*self.perc_width)
+        self.rect = self.image.get_rect()
         
-        #mouseover and clicked conditions
-        if self.rect.collidepoint(pos):
-            if pg.mouse.get_pressed()[0] == 1 and self.clicked == False:
-                self.clicked = True
-                action = True
-                
-        if pg.mouse.get_pressed()[0] == 0:
-                self.clicked = False
+        if self.perc_border_x >= 0:
+            self.rect.left = screen_width*self.perc_border_x
+        else:
+            self.rect.right = screen_width*(1+self.perc_border_x)
+            
+        if self.perc_border_y >= 0:
+            self.rect.top = screen_height*self.perc_border_y
+        else:
+            self.rect.bottom = screen_height*(1+self.perc_border_y)
         
         #draw button on screen
-        screen.blit(self.image, (self.rect.x, self.rect.y))
-        
-        return action
-
-#window
-desktop_size = pg.display.get_desktop_sizes()[0]
-screen = pg.display.set_mode(desktop_size)
-pg.display.set_caption('Welcome to Coin Coin Ville')
-
-#button img
-start_img_original = pg.image.load('start_button.png').convert_alpha()
-exit_img_original = pg.image.load('exit_button.png').convert_alpha()
-help_img_original = pg.image.load('help_button.png').convert_alpha()
-
-
-start_img = pg.transform.scale(start_img_original, (500,200))
-exit_img = pg.transform.scale(exit_img_original, (450,200))
-help_img = pg.transform.scale(help_img_original, (200,150))
-
-
-#button position
-desktop_size_list = list(desktop_size)
-start_button = Button(100, int(desktop_size_list[1]) - 300, start_img, 0.8)
-exit_button = Button(int(desktop_size_list[0]) - 800, int(desktop_size_list[1]) - 300, exit_img, 0.8)
-help_button = Button(int(desktop_size_list[0]) - 200, int(desktop_size_list[1]) - 290, help_img, 0.8)
-
-#Background
-#bg_img = pg.image.load('background.png').convert_alpha()
-
-
-#game loop
-run = True
-while run:
-    
-    screen.fill((88, 41, 0))
-    #screen.blit(bg_img, (0,0))
-
-    if start_button.draw():
-        print('START')
-    if help_button.draw():
-        print('HELP')
-    if exit_button.draw():
-        run = False
-        print('EXIT')
-    #exit_button.draw()
-    
-    pg.display.update()
-    
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            run = False
-            pg.quit()
-            sys.exit()
-
-pg.quit()
-sys.exit()
+        self.screen.blit(self.image, self.rect)
 
 
         
