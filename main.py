@@ -15,9 +15,6 @@ screen = pygame.display.set_mode((screen_width, screen_height), pygame.SCALED)
 clock = pygame.time.Clock()
 FPS = 60
 
-#On active l'accès aux events
-pygame.event.set_grab(True)
-
 #On crée les boutons de démarage
 start_button = button.Button(screen, 'start', 30, -20, 10)
 exit_button = button.Button(screen, 'exit', -30, -20, 10)
