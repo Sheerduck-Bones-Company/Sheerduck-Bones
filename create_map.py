@@ -92,6 +92,7 @@ is_saving = False
 is_leaving = False
 is_writting = False
 is_writting_numb = False
+is_writting_changes = False
 is_confirming = False
 is_searching_for_info = False
 map_saved = False
@@ -103,6 +104,7 @@ mouse_pressed = {}
 mape = []
 map_backup = []
 bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir('assets/graphics/blocs'))]
+change_name_bloc = [[]]
 
 #On défini les caractéristiques de la caméra
 offset = pygame.Vector2(screen_width*(3/4), screen_height*(3/4))
@@ -120,6 +122,7 @@ saveas_button = button.Button(screen, "saveas", 20, 30, perc_height=15)
 cancel_button = button.Button(screen, "cancel", 20, 50, perc_height=15)
 dontsave_button = button.Button(screen, "dontsave", 20, 70, perc_height=15)
 confirm_button = button.Button(screen, "confirm", 20, 30, perc_height=15)
+addchanges_button = button.Button(screen, "addchanges", 25, 10, 50)
 
 #On crée des variables utilisées dans l'affichage de texte
 font = pygame.font.SysFont(None, 50)
@@ -127,9 +130,9 @@ written_text = ""
 file_name = ""
 file_name_text = font.render("", True, (0,0,0))
 file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
-error_text = font.render("", True, (255,0,0))
-error_rect = error_text.get_rect()
-error_counter = 0
+message_text = font.render("", True, (255,0,0))
+message_rect = message_text.get_rect()
+message_counter = 0
 confirm_text = font.render(f"Attention : \"{written_text}\" existe déjà, voulez-vous le remplacer ?", True, (255,0,0))
 confirm_rect = confirm_text.get_rect()
 info_text = [font.render(text, True, (0,0,0)) for text in ["Contôles utiles :", "", "q/z/d/s = Se déplacer", "LCTRL + Flèche = Ajouter des lignes/colonnes", "LSHIFT + Flèche = Retirer des lignes", "LCTRL + PLUS ou MOINS = Zoom/Dézoom", "LCTRL + z = Annulation de la dernière action", "LCTRL + s = Sauvegarder", "c = Afficher les collisions", "e = Afficher la bibliothèque", "i = Afficher le menu info", "Flèche HAUT ou BAS = Changer de couche"]]
@@ -165,12 +168,15 @@ def loadBackup():
         del(map_backup[-1])
 
 #Ecrire une erreur
-def writeError(text_error, counter):
-    global error_text, error_rect, error_counter
-    error_text = font.render("/!\ : " + text_error, True, (255,0,0))
-    error_rect = error_text.get_rect()
-    error_rect.center = (screen_width/2, 55)
-    error_counter = counter
+def writeMessage(text_message, counter, is_error=False):
+    global message_text, message_rect, message_counter
+    if is_error:
+        message_text = font.render("/!\ : " + text_message, True, (255,0,0))
+    else:
+        message_text = font.render(text_message, True, (0,255,0))
+    message_rect = message_text.get_rect()
+    message_rect.center = (screen_width/2, 55)
+    message_counter = counter
 
 #Récupérer le contenu d'un fichier
 def readFile(file_name):
@@ -188,6 +194,11 @@ def readFile(file_name):
                         crt_attributes = bloc.split(',')
                         #On récupère les caractéristiques du bloc
                         crt_type = crt_attributes[0]
+                        
+                        for change in change_name_bloc[:-1]:
+                            if crt_attributes[0] == change[0]:
+                                crt_type = change[1]
+                            
                         crt_bool=[]
                         for boolean in crt_attributes[1:]:
                             if int(boolean)==1:
@@ -197,14 +208,9 @@ def readFile(file_name):
                         #On ajoute les caractéristiques du bloc
                         mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_bool[0], crt_bool[1], crt_bool[2], crt_bool[3], crt_bool[4], crt_bool[5], crt_bool[6]))
     return mape
-    
-#Sauvegarder la map dans un fichier texte
-def save(given_file_name=""):
-    global file_name, mape, is_saving, is_leaving, is_writting, is_creating, map_saved
-    
-    if given_file_name != "":
-        file_name = given_file_name
 
+#Ecrire les éléments de la map dans un fichier texte
+def writeMapInFile(mape, file_name):
     #On ouvre ou on crée le fichier texte
     with open(f"assets/map/{file_name}.txt", "w") as fichier:
         map_len = len(mape)
@@ -234,7 +240,21 @@ def save(given_file_name=""):
                     fichier.write('|')
             if layer_index+1 != map_len:
                 fichier.write('$')
+    
+
+#Sauvegarder la map dans un fichier texte
+def save(given_file_name=""):
+    global file_name, mape, is_saving, is_leaving, is_writting, is_creating, map_saved, change_name_bloc, bloc_types_map
+    
+    if given_file_name != "":
+        file_name = given_file_name
+
+    writeMapInFile(mape, file_name)
                 
+    if file_name != "bloc_types_map" and len(change_name_bloc) > 1:
+        writeMapInFile(bloc_types_map, "bloc_types_map")
+        change_name_bloc = [[]]
+            
     map_saved = True
     
     if is_leaving:
@@ -244,6 +264,7 @@ def save(given_file_name=""):
         is_writting = False
         is_saving = False
         is_creating = True
+        writeMessage("Map sauvegardée", 120)
     
 #Quitter le programme
 def quit_program():
@@ -267,6 +288,8 @@ while running:
         #Si on est en train d'écrire du texte
         screen.blit(file_name_text, file_name_rect)
         exit_button.draw()
+        if not(is_creating or is_writting_numb or is_writting_changes):
+            addchanges_button.draw()
     
     elif is_searching_for_info:
         #Si on est dans le menu info
@@ -356,7 +379,7 @@ while running:
                         mape[layer_number][ligne][column] = 0
             except IndexError:
                 #Si on clique en dehors de l'espace d'édition
-                writeError("Veuillez rajouter des lignes ou des colonnes", 60)
+                writeMessage("Veuillez rajouter des lignes ou des colonnes", 60, True)
                 
         exit_button.draw()
         info_button.draw()
@@ -455,10 +478,10 @@ while running:
         exit_button.draw()
         info_button.draw()
     
-    if error_counter > 0:
+    if message_counter > 0:
         #S'il faut montrer un message d'erreur
-        screen.blit(error_text, error_rect)
-        error_counter -= 1
+        screen.blit(message_text, message_rect)
+        message_counter -= 1
     
     #On actualise l'écran    
     pygame.display.flip()
@@ -541,7 +564,20 @@ while running:
                             is_writting_numb = False
                             is_creating = True
                         except:
-                            writeError("Taille incorrecte", 60)
+                            writeMessage("Taille incorrecte", 120, True)
+                            
+                    elif is_writting_changes:
+                        if len(change_name_bloc[-1]) == 0:
+                            change_name_bloc[-1].append(written_text)
+                        else:
+                            if written_text + ".png" in os.listdir("assets/graphics/blocs"):
+                                change_name_bloc[-1].append(written_text)
+                                change_name_bloc.append([])
+                                is_writting_changes = False
+                                writeMessage("Modifications ajoutées", 120)
+                            else:
+                                writeMessage("Ce nom d'image n'existe pas", 120, True)
+                            
                     
                     elif is_leaving or is_saving:
                         #On vérifie si le fichier n'existe pas déjà et on sauvgarde
@@ -579,22 +615,35 @@ while running:
                             is_creating = True
                             
                         except FileNotFoundError:
-                            writeError("Fichier introuvable", 120)
+                            writeMessage("Fichier introuvable", 120, True)
                     
                     written_text = ""
                     
                 #Quitter la saisi de texte        
                 elif event.key == pygame.K_ESCAPE:
-                    is_writting = False
+                    if is_writting_changes:
+                        is_writting_changes = False
+                        if len(change_name_bloc[-1]) != 0:
+                            del change_name_bloc[-1]
+                        file_name_text = font.render("Nom du fichier : .txt", True, (0,0,0))
+                        file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
+                    else:
+                        is_writting = False
+                        is_writting_numb = False
                     written_text = ""
                         
                 #Ecrire une erreur de saisie
                 else:
-                    writeError("Charactère inconnu", 60)
+                    writeMessage("Charactère inconnu", 60, True)
                 
                 #On crée le bon affichage
                 if is_writting_numb:
                     file_name_text = font.render("Taille de la map : " + written_text + " blocs", True, (0,0,0))
+                elif is_writting_changes:
+                    if len(change_name_bloc[-1]) == 0:
+                        file_name_text = font.render("Ancien nom de l'image : " + written_text + ".png", True, (0,0,0))
+                    else:
+                        file_name_text = font.render("Nouveau nom de l'image : " + written_text + ".png", True, (0,0,0))
                 else:
                     file_name_text = font.render("Nom du fichier : " + written_text + ".txt", True, (0,0,0))
                 file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
@@ -803,7 +852,7 @@ while running:
                     try:
                         used_type = mape[layer_number][ligne][column].type
                     except:
-                        writeError("Veuillez cliquer sur un bloc", 60)
+                        writeMessage("Veuillez cliquer sur un bloc", 60, True)
             
             #Si le bouton est le clique gauche
             elif event.button == 1:  
@@ -822,8 +871,20 @@ while running:
                 elif is_writting:
                     #On sort de la saisie de texte
                     if exit_button.rect.collidepoint(event.pos):
-                        is_writting = False
-                        written_text = ""
+                        if is_writting_changes:
+                            is_writting_changes = False
+                            if len(change_name_bloc[-1]) != 0:
+                                del change_name_bloc[-1]
+                            file_name_text = font.render("Nom du fichier : .txt", True, (0,0,0))
+                            file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
+                        else:
+                            is_writting = False
+                            written_text = ""
+                        
+                    if addchanges_button.rect.collidepoint(event.pos) and not(is_creating or is_writting_numb or is_writting_changes):
+                        is_writting_changes = True
+                        file_name_text = font.render("Ancien nom de l'image : .png", True, (0,0,0))
+                        file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
                 
                 elif is_searching_for_info:
                     #On sort du menu info
@@ -868,7 +929,7 @@ while running:
                                 
                         except:
                             #On écrit un message d'erreur car aucun bloc n'a été cliqué
-                            writeError("Veuillez cliquer sur un bloc", 60)
+                            writeMessage("Veuillez cliquer sur un bloc", 60, True)
                         
                 elif is_choosing:
                     #Quitter la bibliothèque
@@ -905,7 +966,7 @@ while running:
                                 
                         except:
                             #On écrit un message d'erreur car aucun bloc n'a été cliqué
-                            writeError("Veuillez cliquer sur un bloc", 60)
+                            writeMessage("Veuillez cliquer sur un bloc", 60, True)
                 
                 elif is_leaving:
                     #On sauvegarde
