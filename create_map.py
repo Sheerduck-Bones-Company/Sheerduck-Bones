@@ -97,6 +97,7 @@ is_confirming = False
 is_searching_for_info = False
 map_saved = False
 show_collisions = False
+show_transparent_layer = True
 
 #On défini des listes
 pressed = {}
@@ -337,10 +338,10 @@ while running:
                     if bloc != 0:
                         bloc.rect.topleft = (c*16, l*16)
                         
+                        bloc.image.set_alpha(255)
+                        
                         #Si le bloc n'est pas sur la couche actuellement éditée, on le met en transparence
-                        if lay == layer_number:
-                            bloc.image.set_alpha(255)
-                        else:
+                        if lay != layer_number and show_transparent_layer:
                             bloc.image.set_alpha(70)
                         
                         #On affiche les collisions du bloc
@@ -374,7 +375,10 @@ while running:
                         if file_name == "bloc_types_map":
                             mape[layer_number][ligne][column] = Bloc(used_type)
                         else:
-                            mape[layer_number][ligne][column] = Bloc(used_type[0], left_collision=used_type[1], right_collision=used_type[2], top_collision=used_type[3], bottom_collision=used_type[4], mid_horizontal_collision=used_type[5], mid_vertical_collision=used_type[6])
+                            try:
+                                mape[layer_number][ligne][column] = Bloc(used_type[0], left_collision=used_type[1], right_collision=used_type[2], top_collision=used_type[3], bottom_collision=used_type[4], mid_horizontal_collision=used_type[5], mid_vertical_collision=used_type[6])
+                            except:
+                                writeMessage("Une erreur est survenue", 30, True)
                     elif mouse_pressed.get(3):
                         mape[layer_number][ligne][column] = 0
             except IndexError:
@@ -681,6 +685,10 @@ while running:
                 #Afficher disparaître le menu d'infos
                 if event.key == pygame.K_i:
                     is_searching_for_info = True
+                
+                #Actver / Désactiver la transparence des couches
+                if event.key == pygame.K_l:
+                    show_transparent_layer = not show_transparent_layer
                     
                     
                 #Passer à la couche suppérieur et en créer une s'il le faut
@@ -850,10 +858,15 @@ while running:
             if event.button == 2:
                 if is_creating:
                     try:
-                        used_type = mape[layer_number][ligne][column].type
+                        if file_name == "bloc_types_map":
+                            used_type = mape[layer_number][ligne][column].type
+                        else:
+                            bloc = mape[layer_number][ligne][column]
+                            used_type = [bloc.type, bloc.left_collision, bloc.right_collision, bloc.top_collision ,bloc.bottom_collision, bloc.mid_horizontal_collision, bloc.mid_vertical_collision]               
                     except:
+                        #On écrit un message d'erreur car aucun bloc n'a été cliqué
                         writeMessage("Veuillez cliquer sur un bloc", 60, True)
-            
+                        
             #Si le bouton est le clique gauche
             elif event.button == 1:  
                 if is_confirming:
