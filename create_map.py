@@ -21,69 +21,62 @@ FPS = 60
 
 #On crée une classe permettant de gérer les blocs
 class Bloc(pygame.sprite.Sprite):
-    def __init__(self, bloc_type, top_left:tuple = (0,0), big = False, left_collision = False, right_collision = False, top_collision = False, bottom_collision = False, mid_horizontal_collision = False, mid_vertical_collision = False, is_above_player = False):
+    def __init__(self,
+                    bloc_type,
+                    top_left:tuple = (0,0),
+                    big = False,
+                    is_above_player = False,
+                    is_in_group = False,
+                    collisions = [False, False, False, False, False, False, False, False, False, False, False, False],
+                    libraryx = 0,
+                    libraryy = 0):
         super().__init__()
         self.type = bloc_type
         self.big = big
         self.set_image()
         self.rect = self.image.get_rect()
         self.rect.topleft = top_left
-        self.left_collision = left_collision
-        self.right_collision = right_collision
-        self.top_collision = top_collision
-        self.bottom_collision = bottom_collision
-        self.mid_horizontal_collision = mid_horizontal_collision
-        self.mid_vertical_collision = mid_vertical_collision
         self.is_above_player = is_above_player
+        self.is_in_group = is_in_group
+        self.collisions = [elem for elem in collisions]
+        self.collisions_coord = [[(2,4), (2,7)], [(2,8), (2,11)], [(13,4), (13,7)], [(13,8), (13,11)], [(4,2), (7,2)], [(8,2), (11,2)], [(4,13), (7,13)], [(8,13), (11,13)], [(4,8), (7,8)], [(8,7), (11,7)], [(7,4), (7,7)], [(8,8), (8,11)]]
+        self.libraryx = libraryx
+        self.libraryy = libraryy
     
     #Définir l'image du bloc
     def set_image(self):
         self.image = pygame.image.load(f"assets/graphics/blocs/{self.type}.png").convert_alpha()
+        self.info_surface = pygame.Surface((16,16))
         if self.big:
             self.image = pygame.transform.scale(self.image, (64,64))
+            self.info_surface = pygame.Surface((64,64))
+        self.info_surface.set_alpha(60)
     
     #Récupérer les collisions
     def get_booleans(self):
-        return self.left_collision, self.right_collision, self.top_collision, self.bottom_collision, self.mid_horizontal_collision, self.mid_vertical_collision, self.is_above_player
+        return self.is_above_player, self.collisions
     
     #Dessiner les collisions
     def draw_collisions(self):
-        if self.left_collision:
-            color = (255,0,0)
+        for i, collision in enumerate(self.collisions):
+            if collision:
+                color = (255,0,0)
+            else:
+                color = (255,255,255)
+            pygame.draw.line(self.image, color, self.collisions_coord[i][0], self.collisions_coord[i][1])
+    
+    def draw_group(self):
+        if self.is_in_group:
+            pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (2,4), (2,11))
-        
-        if self.right_collision:
-            color = (255,0,0)
+            pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
+            
+    def draw_is_above(self):
+        if self.is_above_player:
+            pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (13,4), (13,11))
-        
-        if self.top_collision:
-            color = (255,0,0)
-        else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (4,2), (11,2))
-        
-        if self.bottom_collision:
-            color = (255,0,0)
-        else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (4,13), (11,13))
-        
-        if self.mid_horizontal_collision:
-            color = (255,0,0)
-        else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (4,8), (11,7))
-        
-        if self.mid_vertical_collision:
-            color = (255,0,0)
-        else:
-            color = (255,255,255)
-        pygame.draw.line(self.image, color, (7,4), (8,11))
-        
+            pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
+    
 #On défini des états
 running = True
 is_creating = False
@@ -97,11 +90,14 @@ is_confirming = False
 is_searching_for_info = False
 map_saved = False
 show_collisions = False
+show_group = False
+show_is_above = False
 show_transparent_layer = True
 
 #On défini des listes
 pressed = {}
 mouse_pressed = {}
+img_library = {}
 mape = []
 map_backup = []
 bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir('assets/graphics/blocs'))]
@@ -148,6 +144,12 @@ last_used_type = "void"
 used_type =  "void"
 mouse_button = 0
 last_mouse_button = 0
+img_x_offset = 0
+img_y_offset = 0
+image_width = 0
+image_height = 0
+imagex = 0
+imagey = 0
 
 #Faire une backup de la map
 def addBackup(offsetx=0, offsety=0, delete_layer=False):
@@ -182,6 +184,7 @@ def writeMessage(text_message, counter, is_error=False):
 #Récupérer le contenu d'un fichier
 def readFile(file_name):
     mape = []
+    global img_library
     with open(f'assets/map/{file_name}.txt', 'r') as fichier:
         map_text = fichier.read()
         for lay_index, layer in enumerate(map_text.split('$')):
@@ -199,15 +202,29 @@ def readFile(file_name):
                         for change in change_name_bloc[:-1]:
                             if crt_attributes[0] == change[0]:
                                 crt_type = change[1]
+                        
+                        if int(crt_attributes[1]) == 1:
+                            crt_is_above_player = True
+                        else:
+                            crt_is_above_player = False
                             
-                        crt_bool=[]
-                        for boolean in crt_attributes[1:]:
-                            if int(boolean)==1:
-                                crt_bool.append(True)
+                        if int(crt_attributes[2]) == 1:
+                            crt_is_in_group = True
+                        else:
+                            crt_is_in_group = False
+                        
+                        crt_collisions = []
+                        for collision in crt_attributes[3]:
+                            if int(collision)==1:
+                                crt_collisions.append(True)
                             else:
-                                crt_bool.append(False)
+                                crt_collisions.append(False)
                         #On ajoute les caractéristiques du bloc
-                        mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_bool[0], crt_bool[1], crt_bool[2], crt_bool[3], crt_bool[4], crt_bool[5], crt_bool[6]))
+                        if file_name == "bloc_types_map":
+                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, bloc_index, lin_index))
+                            img_library[crt_type] = (bloc_index, lin_index)
+                        else:
+                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, img_library.get(crt_type)[0], img_library.get(crt_type)[1]))
     return mape
 
 #Ecrire les éléments de la map dans un fichier texte
@@ -225,16 +242,23 @@ def writeMapInFile(mape, file_name):
                         fichier.write("0")
                     else:
                         fichier.write(bloc.type + ',')
-                        bool_len = len(bloc.get_booleans())
-                        for bool_index, boolean in enumerate(bloc.get_booleans()):
-                            if boolean:
+                        if bloc.is_above_player:
+                            fichier.write('1,')
+                        else:
+                            fichier.write('0,')
+                        
+                        if bloc.is_in_group:
+                            fichier.write('1,')
+                        else:
+                            fichier.write('0,')
+                        
+                        for collision in bloc.collisions:
+                            if collision:
                                 fichier.write('1')
                             else:
                                 fichier.write('0')
                                 
             #On segmente le fichier avec des caractères spécifiques
-                            if bool_index+1 != bool_len:
-                                fichier.write(',')
                     if bloc_index+1 != ligne_len:
                         fichier.write('/')
                 if ligne_index+1 != layer_len:
@@ -347,9 +371,18 @@ while running:
                         #On affiche les collisions du bloc
                         if show_collisions:
                             bloc.draw_collisions()
+                        
+                        if show_group:
+                            bloc.draw_group()
+                            
+                        if show_is_above:
+                            bloc.draw_is_above()
                             
                         #On affiche le bloc
                         map_surface.blit(bloc.image, bloc.rect.topleft+offset)
+                        
+                        if show_group or show_is_above:
+                            map_surface.blit(bloc.info_surface, bloc.rect.topleft+offset)
                         
         #On effectue le zoom et on affiche l'écran
         scaled_surf = pygame.transform.scale(map_surface, new_scale, dest)
@@ -368,22 +401,65 @@ while running:
         
         #Lorsque l'on clique, qu'il y a un changer de position/de type utilisé/de bouton cliqué et qu'on ne montre par les collisions, on ajoute un bloc
         if (mouse_pressed.get(1) or mouse_pressed.get(3)) and (ligne != last_ligne or column != last_column or used_type != last_used_type or layer_number != last_layer_number or mouse_button != last_mouse_button) and not show_collisions:
+            if show_group:
+                if file_name == "bloc_types_map":
+                    try:
+                        mape[layer_number][ligne][column].is_in_group = not mape[layer_number][ligne][column].is_in_group
+                    except:
+                        writeMessage("Veuillez cliquer un bloc", 30, True)
+                    
+            elif show_is_above:
+                try:
+                    mape[layer_number][ligne][column].is_above_player = not mape[layer_number][ligne][column].is_above_player
+                except:
+                    writeMessage("Veuillez cliquer un bloc", 30, True)
+            
+            else:
+                try:
+                    if ligne >= 0 and column >= 0:
+                        if mouse_pressed.get(1):
+                            if file_name == "bloc_types_map":
+                                mape[layer_number][ligne][column] = Bloc(used_type)
+                            else:
+                                try:
+                                    if len(used_type[0].split('_')) > 1:
+                                        img_x_offset += column-last_column
+                                        img_y_offset += ligne-last_ligne
+                                        
+                                        if used_type[2]:
+                                            try:
+                                                for ligne_num in range(used_type[5]-(image_height-imagey), used_type[5]+imagey+1, 1):
+                                                    for column_num in range(used_type[4]-imagex, used_type[4]-imagex+image_width+1, 1):
+                                                        if bloc_types_map[0][ligne_num][column_num] != 0:
+                                                            mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = bloc_types_map[0][ligne_num][column_num]
+                                            except:
+                                                writeMessage("Veuillez rajouter des lignes ou des collones", 60, True)
+                                                loadBackup()
+                                        else:                
+                                            if imagex+img_x_offset == image_width+1:
+                                                img_x_offset -= image_width+1
+                                            elif int(used_type[0].split('_')[1].split('-')[0])+img_x_offset == -1:
+                                                img_x_offset += image_width+1
+                                            
+                                            if imagey-img_y_offset == image_height+1:
+                                                img_y_offset += image_height+1
+                                            elif imagey-img_y_offset == -1:
+                                                img_y_offset -= image_height+1
+                                                
+                                            mape[layer_number][ligne][column] = bloc_types_map[0][ligne2+img_y_offset][column2+img_x_offset]
+                                    
+                                    else:
+                                        mape[layer_number][ligne][column] = Bloc(used_type[0], is_above_player=used_type[1], is_in_group=used_type[2], collisions=used_type[3], libraryx=used_type[4], libraryy=used_type[5])
+                                        
+                                except:
+                                    writeMessage("Une erreur est survenue", 30, True)
+                        elif mouse_pressed.get(3):
+                            mape[layer_number][ligne][column] = 0
+                except IndexError:
+                    #Si on clique en dehors de l'espace d'édition
+                    writeMessage("Veuillez rajouter des lignes ou des colonnes", 60, True)
+            
             last_ligne, last_column, last_used_type, last_layer_number, last_mouse_button = ligne, column, used_type, layer_number, mouse_button
-            try:
-                if ligne >= 0 and column >= 0:
-                    if mouse_pressed.get(1):
-                        if file_name == "bloc_types_map":
-                            mape[layer_number][ligne][column] = Bloc(used_type)
-                        else:
-                            try:
-                                mape[layer_number][ligne][column] = Bloc(used_type[0], left_collision=used_type[1], right_collision=used_type[2], top_collision=used_type[3], bottom_collision=used_type[4], mid_horizontal_collision=used_type[5], mid_vertical_collision=used_type[6])
-                            except:
-                                writeMessage("Une erreur est survenue", 30, True)
-                    elif mouse_pressed.get(3):
-                        mape[layer_number][ligne][column] = 0
-            except IndexError:
-                #Si on clique en dehors de l'espace d'édition
-                writeMessage("Veuillez rajouter des lignes ou des colonnes", 60, True)
                 
         exit_button.draw()
         info_button.draw()
@@ -440,9 +516,18 @@ while running:
                             #On affiche les collisions du bloc
                             if show_collisions2:
                                 bloc.draw_collisions()
+                                
+                            if show_group2:
+                                bloc.draw_group()
+                            
+                            if show_is_above2:
+                                bloc.draw_is_above()
                             
                             #On affiche le bloc
                             bloc_types_surface.blit(bloc.image, bloc.rect.topleft+offset2)
+                            
+                            if show_group2 or show_is_above2:
+                                bloc_types_surface.blit(bloc.info_surface, bloc.rect.topleft+offset2)
             
             #On effectue le zoom et on affiche l'écran
             scaled_bloc_types_surf = pygame.transform.scale(bloc_types_surface, new_scale2, dest2)
@@ -596,8 +681,6 @@ while running:
                     else:
                         #On ouvre le fichier donné et on interprète le fichier texte
                         try:
-                            mape = readFile(written_text)
-                            
                             if written_text != "bloc_types_map":
                                 bloc_types_map = readFile("bloc_types_map")
                                 
@@ -612,7 +695,10 @@ while running:
                                 zoom_scale2 = 1
                                 last_zoom_scale2 = 10
                                 show_collisions2 = False
-                                
+                                show_is_above2 = False
+                                show_group2 = False
+                            
+                            mape = readFile(written_text)
                             
                             file_name = written_text
                             is_writting = False
@@ -673,7 +759,7 @@ while running:
                     camera_direction = pygame.Vector2()
                 
                 #Afficher/faire disparaître les collisions
-                if event.key == pygame.K_c:
+                if event.key == pygame.K_c and not (show_group or show_is_above):
                     if show_collisions:
                         for layer in mape:
                             for ligne in layer:
@@ -681,6 +767,24 @@ while running:
                                     if bloc != 0:
                                         bloc.set_image()
                     show_collisions = not show_collisions
+                    
+                if event.key == pygame.K_g and not (show_collisions or show_is_above):
+                    if show_group:
+                        for layer in mape:
+                            for ligne in layer:
+                                for bloc in ligne:
+                                    if bloc != 0:
+                                        bloc.set_image()
+                    show_group = not show_group
+                    
+                if event.key == pygame.K_r and not (show_collisions or show_group):
+                    if show_is_above:
+                        for layer in mape:
+                            for ligne in layer:
+                                for bloc in ligne:
+                                    if bloc != 0:
+                                        bloc.set_image()
+                    show_is_above = not show_is_above
                     
                 #Afficher disparaître le menu d'infos
                 if event.key == pygame.K_i:
@@ -807,7 +911,7 @@ while running:
                 #Si on est en train de créer / éditer une autre map que la bobliothèque
                 else:
                     #Afficher/faire disparaître les collisions
-                    if event.key == pygame.K_c:
+                    if event.key == pygame.K_c and not (show_group2 or show_is_above2):
                         if show_collisions2:
                             for layer in bloc_types_map:
                                 for ligne in layer:
@@ -815,6 +919,24 @@ while running:
                                         if bloc != 0:
                                             bloc.set_image()
                         show_collisions2 = not show_collisions2
+                        
+                    if event.key == pygame.K_g and not (show_collisions2 or show_is_above2):
+                        if show_group2:
+                            for layer in bloc_types_map:
+                                for ligne in layer:
+                                    for bloc in ligne:
+                                        if bloc != 0:
+                                            bloc.set_image()
+                        show_group2 = not show_group2
+                        
+                    if event.key == pygame.K_r and not (show_collisions2 or show_group2):
+                        if show_is_above2:
+                            for layer in bloc_types_map:
+                                for ligne in layer:
+                                    for bloc in ligne:
+                                        if bloc != 0:
+                                            bloc.set_image()
+                        show_is_above2 = not show_is_above2
                     
                     #Zoomer
                     if pressed.get(pygame.K_LCTRL) and pressed.get(pygame.K_KP_PLUS) and zoom_scale <= 4.5:
@@ -862,7 +984,8 @@ while running:
                             used_type = mape[layer_number][ligne][column].type
                         else:
                             bloc = mape[layer_number][ligne][column]
-                            used_type = [bloc.type, bloc.left_collision, bloc.right_collision, bloc.top_collision ,bloc.bottom_collision, bloc.mid_horizontal_collision, bloc.mid_vertical_collision]               
+                            used_type = [bloc.type, bloc.is_above_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
+                            print(used_type)
                     except:
                         #On écrit un message d'erreur car aucun bloc n'a été cliqué
                         writeMessage("Veuillez cliquer sur un bloc", 60, True)
@@ -921,24 +1044,44 @@ while running:
                     #On ajoute une backup de la map    
                     else:
                         addBackup()
+                        if file_name != "bloc_types_mam":
+                            if len(used_type[0].split("_")) > 1:
+                                image_width = int(used_type[0].split("_")[2].split("-")[0])
+                                image_height = int(used_type[0].split("_")[2].split("-")[1])
+                                imagex = int(used_type[0].split("_")[1].split("-")[0])
+                                imagey = int(used_type[0].split("_")[1].split("-")[1])
+                                img_x_offset = last_column-column
+                                img_y_offset = last_ligne-ligne
                         
                     #On vérifie si les collisions sont activées et qu'on en change une
                     if show_collisions:
                         try:
                             bloc = mape[layer_number][ligne][column]
 
-                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (4, 16)).collidepoint(real_mouse_pos):
-                                bloc.left_collision = not bloc.left_collision
-                            if pygame.Rect((bloc.rect.right-4, bloc.rect.top), (4, 16)).collidepoint(real_mouse_pos):
-                                bloc.right_collision = not bloc.right_collision
-                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (16, 4)).collidepoint(real_mouse_pos):
-                                bloc.top_collision = not bloc.top_collision
-                            if pygame.Rect((bloc.rect.left, bloc.rect.bottom-4), (16, 4)).collidepoint(real_mouse_pos):
-                                bloc.bottom_collision = not bloc.bottom_collision
-                            if pygame.Rect((bloc.rect.left+3, bloc.rect.top+6), (10, 3)).collidepoint(real_mouse_pos):
-                                bloc.mid_horizontal_collision = not bloc.mid_horizontal_collision
-                            if pygame.Rect((bloc.rect.left+6, bloc.rect.top+3), (3, 10)).collidepoint(real_mouse_pos):
-                                bloc.mid_vertical_collision = not bloc.mid_vertical_collision
+                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (4, 9)).collidepoint(real_mouse_pos):
+                                bloc.collisions[0] = not bloc.collisions[0]
+                            if pygame.Rect((bloc.rect.left, bloc.rect.top+7), (4, 9)).collidepoint(real_mouse_pos):
+                                bloc.collisions[1] = not bloc.collisions[1]
+                            if pygame.Rect((bloc.rect.right-4, bloc.rect.top), (4, 9)).collidepoint(real_mouse_pos):
+                                bloc.collisions[2] = not bloc.collisions[2]
+                            if pygame.Rect((bloc.rect.right-4, bloc.rect.top+7), (4, 9)).collidepoint(real_mouse_pos):
+                                bloc.collisions[3] = not bloc.collisions[3]
+                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (9, 4)).collidepoint(real_mouse_pos):
+                                bloc.collisions[4] = not bloc.collisions[4]
+                            if pygame.Rect((bloc.rect.left+7, bloc.rect.top), (9, 4)).collidepoint(real_mouse_pos):
+                                bloc.collisions[5] = not bloc.collisions[5]
+                            if pygame.Rect((bloc.rect.left, bloc.rect.bottom-4), (9, 4)).collidepoint(real_mouse_pos):
+                                bloc.collisions[6] = not bloc.collisions[6]
+                            if pygame.Rect((bloc.rect.left+7, bloc.rect.bottom-4), (9, 4)).collidepoint(real_mouse_pos):
+                                bloc.collisions[7] = not bloc.collisions[7]
+                            if pygame.Rect((bloc.rect.left+3, bloc.rect.top+6), (6, 3)).collidepoint(real_mouse_pos):
+                                bloc.collisions[8] = not bloc.collisions[8]
+                            if pygame.Rect((bloc.rect.left+7, bloc.rect.top+6), (6, 3)).collidepoint(real_mouse_pos):
+                                bloc.collisions[9] = not bloc.collisions[9]
+                            if pygame.Rect((bloc.rect.left+6, bloc.rect.top+3), (3, 6)).collidepoint(real_mouse_pos):
+                                bloc.collisions[10] = not bloc.collisions[10]
+                            if pygame.Rect((bloc.rect.left+6, bloc.rect.top+7), (3, 6)).collidepoint(real_mouse_pos):
+                                bloc.collisions[11] = not bloc.collisions[11]
                                 
                         except:
                             #On écrit un message d'erreur car aucun bloc n'a été cliqué
@@ -965,13 +1108,13 @@ while running:
                                 is_choosing = False
                                 mouse_pressed[event.button] = False
                                 break
-                    
+                            
                     #Si on crée / édite une autre map que la bobliothèque
                     else:
                         #On récupère le type et les collisions du bloc cliqué
                         try:
                             bloc = bloc_types_map[0][ligne2][column2]
-                            used_type = [bloc.type, bloc.left_collision, bloc.right_collision, bloc.top_collision ,bloc.bottom_collision, bloc.mid_horizontal_collision, bloc.mid_vertical_collision]
+                            used_type = [bloc.type, bloc.is_above_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
                             is_choosing = False
                             is_creating = True
                             show_collisions2 = False
@@ -1045,12 +1188,13 @@ while running:
             
         #Changer le zoom de la caméra
         if event.type == pygame.MOUSEWHEEL:
-            if (5 > zoom_scale + event.y > 0.5) and is_creating:
-                zoom_scale += event.y * 0.08
+            if is_creating or is_choosing:
+                if (5 > zoom_scale + event.y > 0.5) and is_creating:
+                    zoom_scale += event.y * 0.08
 
-            if file_name != "bloc_types_map":
-                if (5 > zoom_scale2 + event.y > 0.5) and is_choosing:
-                    zoom_scale2 += event.y * 0.08
+                if file_name != "bloc_types_map":
+                    if (5 > zoom_scale2 + event.y > 0.5) and is_choosing:
+                        zoom_scale2 += event.y * 0.08
     
     #On actualise la clock
     clock.tick(FPS)
