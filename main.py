@@ -5,7 +5,7 @@ from game import Game
 #On initialise la fenêtre
 pygame.init()
 pygame.display.set_caption('Sheerduck-Bones')
-pygame.display.set_icon(pygame.image.load('assets/graphics/Sheerduck_Bones-down-left.png'))
+pygame.display.set_icon(pygame.image.load('assets/graphics/game.ico'))
 
 #On crée notre écran
 screen_width, screen_height = 1080, 720

@@ -22,7 +22,7 @@ FPS = 60
 #On crée une classe permettant de gérer les blocs
 class Bloc(pygame.sprite.Sprite):
     def __init__(self,
-                    bloc_type,
+                    bloc_type:str,
                     top_left:tuple = (0,0),
                     big = False,
                     is_above_player = False,
@@ -65,7 +65,7 @@ class Bloc(pygame.sprite.Sprite):
                 color = (255,255,255)
             pygame.draw.line(self.image, color, self.collisions_coord[i][0], self.collisions_coord[i][1])
     
-    def draw_group(self):
+    def draw_group(self):   
         if self.is_in_group:
             pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
