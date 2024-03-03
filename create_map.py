@@ -27,7 +27,7 @@ class Bloc(pygame.sprite.Sprite):
                     big = False,
                     is_above_player = False,
                     is_in_group = False,
-                    collisions = [False, False, False, False, False, False, False, False, False, False, False, False],
+                    collisions = [False, False, False, False],
                     libraryx = 0,
                     libraryy = 0):
         super().__init__()
@@ -63,7 +63,7 @@ class Bloc(pygame.sprite.Sprite):
                 color = (255,0,0)
             else:
                 color = (255,255,255)
-            pygame.draw.line(self.image, color, self.collisions_coord[i][0], self.collisions_coord[i][1])
+            pygame.draw.rect(self.info_surface, color, pygame.Rect((i*8)%16, (i//2)*8, 8, 8))
     
     def draw_group(self):   
         if self.is_in_group:
@@ -381,7 +381,7 @@ while running:
                         #On affiche le bloc
                         map_surface.blit(bloc.image, bloc.rect.topleft+offset)
                         
-                        if show_group or show_is_above:
+                        if show_group or show_is_above or show_collisions:
                             map_surface.blit(bloc.info_surface, bloc.rect.topleft+offset)
                         
         #On effectue le zoom et on affiche l'écran
@@ -1058,30 +1058,18 @@ while running:
                         try:
                             bloc = mape[layer_number][ligne][column]
 
-                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (4, 9)).collidepoint(real_mouse_pos):
+                            if pygame.Rect(bloc.rect.topleft, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[0] = not bloc.collisions[0]
-                            if pygame.Rect((bloc.rect.left, bloc.rect.top+7), (4, 9)).collidepoint(real_mouse_pos):
+                                print("changed col1")
+                            if pygame.Rect(bloc.rect.midtop, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[1] = not bloc.collisions[1]
-                            if pygame.Rect((bloc.rect.right-4, bloc.rect.top), (4, 9)).collidepoint(real_mouse_pos):
+                                print("changed col2")
+                            if pygame.Rect(bloc.rect.midleft, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[2] = not bloc.collisions[2]
-                            if pygame.Rect((bloc.rect.right-4, bloc.rect.top+7), (4, 9)).collidepoint(real_mouse_pos):
+                                print("changed col3")
+                            if pygame.Rect(bloc.rect.center, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[3] = not bloc.collisions[3]
-                            if pygame.Rect((bloc.rect.left, bloc.rect.top), (9, 4)).collidepoint(real_mouse_pos):
-                                bloc.collisions[4] = not bloc.collisions[4]
-                            if pygame.Rect((bloc.rect.left+7, bloc.rect.top), (9, 4)).collidepoint(real_mouse_pos):
-                                bloc.collisions[5] = not bloc.collisions[5]
-                            if pygame.Rect((bloc.rect.left, bloc.rect.bottom-4), (9, 4)).collidepoint(real_mouse_pos):
-                                bloc.collisions[6] = not bloc.collisions[6]
-                            if pygame.Rect((bloc.rect.left+7, bloc.rect.bottom-4), (9, 4)).collidepoint(real_mouse_pos):
-                                bloc.collisions[7] = not bloc.collisions[7]
-                            if pygame.Rect((bloc.rect.left+3, bloc.rect.top+6), (6, 3)).collidepoint(real_mouse_pos):
-                                bloc.collisions[8] = not bloc.collisions[8]
-                            if pygame.Rect((bloc.rect.left+7, bloc.rect.top+6), (6, 3)).collidepoint(real_mouse_pos):
-                                bloc.collisions[9] = not bloc.collisions[9]
-                            if pygame.Rect((bloc.rect.left+6, bloc.rect.top+3), (3, 6)).collidepoint(real_mouse_pos):
-                                bloc.collisions[10] = not bloc.collisions[10]
-                            if pygame.Rect((bloc.rect.left+6, bloc.rect.top+7), (3, 6)).collidepoint(real_mouse_pos):
-                                bloc.collisions[11] = not bloc.collisions[11]
+                                print("changed col4")
                                 
                         except:
                             #On écrit un message d'erreur car aucun bloc n'a été cliqué
