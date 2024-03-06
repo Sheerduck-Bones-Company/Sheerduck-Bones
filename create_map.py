@@ -3,7 +3,7 @@ import pygame, sys, button, os
 #On initialise la fenêtre
 pygame.init()
 pygame.display.set_caption('Création de map custom')
-pygame.display.set_icon(pygame.image.load('assets/graphics/edit_icon.png'))
+pygame.display.set_icon(pygame.image.load('assets/graphics/icons/edit_icon.ico'))
 
 #On crée notre écran
 screen_width, screen_height = 1080, 720
@@ -526,7 +526,7 @@ while running:
                             #On affiche le bloc
                             bloc_types_surface.blit(bloc.image, bloc.rect.topleft+offset2)
                             
-                            if show_group2 or show_is_above2:
+                            if show_group2 or show_is_above2 or show_collisions2:
                                 bloc_types_surface.blit(bloc.info_surface, bloc.rect.topleft+offset2)
             
             #On effectue le zoom et on affiche l'écran
