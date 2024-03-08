@@ -9,6 +9,7 @@ def get_file():
         openFile_button.pack_forget()
         
         file_path = filedialog.askopenfilename(initialdir="assets/graphics")
+        img = Image.open(file_path)
         surface = pygame.image.load(file_path)
         
         max_size = 600
@@ -21,10 +22,10 @@ def get_file():
             
         surface = pygame.transform.scale(surface, (new_width, new_height))
         raw_str = pygame.image.tostring(surface, 'RGBA', False)
-        img = Image.frombytes('RGBA', surface.get_size(), raw_str)
-        tkimg = ImageTk.PhotoImage(img)
+        shown_img = Image.frombytes('RGBA', surface.get_size(), raw_str)
+        tkimg = ImageTk.PhotoImage(shown_img)
 
-        canvas.config(width=img.size[0], height=img.size[1])
+        canvas.config(width=shown_img.size[0], height=shown_img.size[1])
         canvas.create_image(0,0, anchor=tkinter.NW, image = tkimg)
         
         confirm_button.pack()

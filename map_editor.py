@@ -1,4 +1,5 @@
 import pygame, sys, button, os
+from bloc import Bloc
 
 #On initialise la fenêtre
 pygame.init()
@@ -18,64 +19,6 @@ dest = map_surface
 #On crée notre clock
 clock = pygame.time.Clock()
 FPS = 60
-
-#On crée une classe permettant de gérer les blocs
-class Bloc(pygame.sprite.Sprite):
-    def __init__(self,
-                    bloc_type:str,
-                    top_left:tuple = (0,0),
-                    big = False,
-                    is_above_player = False,
-                    is_in_group = False,
-                    collisions = [False, False, False, False],
-                    libraryx = 0,
-                    libraryy = 0):
-        super().__init__()
-        self.type = bloc_type
-        self.big = big
-        self.set_image()
-        self.rect = self.image.get_rect()
-        self.rect.topleft = top_left
-        self.is_above_player = is_above_player
-        self.is_in_group = is_in_group
-        self.collisions = [elem for elem in collisions]
-        self.collisions_coord = [[(2,4), (2,7)], [(2,8), (2,11)], [(13,4), (13,7)], [(13,8), (13,11)], [(4,2), (7,2)], [(8,2), (11,2)], [(4,13), (7,13)], [(8,13), (11,13)], [(4,8), (7,8)], [(8,7), (11,7)], [(7,4), (7,7)], [(8,8), (8,11)]]
-        self.libraryx = libraryx
-        self.libraryy = libraryy
-    
-    #Définir l'image du bloc
-    def set_image(self):
-        self.image = pygame.image.load(f"assets/graphics/blocs/{self.type}.png").convert_alpha()
-        self.info_surface = pygame.Surface((16,16))
-        if self.big:
-            self.image = pygame.transform.scale(self.image, (64,64))
-            self.info_surface = pygame.Surface((64,64))
-        self.info_surface.set_alpha(60)
-    
-    #Récupérer les collisions
-    def get_booleans(self):
-        return self.is_above_player, self.collisions
-    
-    #Dessiner les collisions
-    def draw_collisions(self):
-        for i, collision in enumerate(self.collisions):
-            if collision:
-                color = (255,0,0)
-            else:
-                color = (255,255,255)
-            pygame.draw.rect(self.info_surface, color, pygame.Rect((i*8)%16, (i//2)*8, 8, 8))
-    
-    def draw_group(self):   
-        if self.is_in_group:
-            pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
-        else:
-            pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
-            
-    def draw_is_above(self):
-        if self.is_above_player:
-            pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
-        else:
-            pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
     
 #On défini des états
 running = True
@@ -431,7 +374,13 @@ while running:
                                                 for ligne_num in range(used_type[5]-(image_height-imagey), used_type[5]+imagey+1, 1):
                                                     for column_num in range(used_type[4]-imagex, used_type[4]-imagex+image_width+1, 1):
                                                         if bloc_types_map[0][ligne_num][column_num] != 0:
-                                                            mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = bloc_types_map[0][ligne_num][column_num]
+                                                            model = bloc_types_map[0][ligne_num][column_num]
+                                                            mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = Bloc(bloc_type = model.type,
+                                                                                                                                                        is_above_player = model.is_above_player,
+                                                                                                                                                        is_in_group = model.is_in_group,
+                                                                                                                                                        collisions = model.collisions,
+                                                                                                                                                        libraryx = model.libraryx,
+                                                                                                                                                        libraryy = model.libraryy)
                                             except:
                                                 writeMessage("Veuillez rajouter des lignes ou des collones", 60, True)
                                                 loadBackup()
@@ -445,9 +394,14 @@ while running:
                                                 img_y_offset += image_height+1
                                             elif imagey-img_y_offset == -1:
                                                 img_y_offset -= image_height+1
-                                                
-                                            mape[layer_number][ligne][column] = bloc_types_map[0][ligne2+img_y_offset][column2+img_x_offset]
-                                    
+                                            
+                                            model = bloc_types_map[0][ligne2+img_y_offset][column2+img_x_offset]    
+                                            mape[layer_number][ligne][column] = Bloc(bloc_type = model.type,
+                                                                                    is_above_player = model.is_above_player,
+                                                                                    is_in_group = model.is_in_group,
+                                                                                    collisions = model.collisions,
+                                                                                    libraryx = model.libraryx,
+                                                                                    libraryy = model.libraryy)
                                     else:
                                         mape[layer_number][ligne][column] = Bloc(used_type[0], is_above_player=used_type[1], is_in_group=used_type[2], collisions=used_type[3], libraryx=used_type[4], libraryy=used_type[5])
                                         

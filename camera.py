@@ -1,11 +1,15 @@
 import pygame
 
 class Camera(pygame.sprite.Group):
-	def __init__(self):
+	def __init__(self, game):
 		super().__init__()
 
+		self.game = game
+  
 		#On récupère la surface de l'écran
 		self.display_surface = pygame.display.get_surface()
+
+		obstacles_group = pygame.sprite.Group()
 
 		#On crée les décalages qu'il faudra appliquer aux images affichées
 		self.offset = pygame.math.Vector2()
@@ -42,13 +46,24 @@ class Camera(pygame.sprite.Group):
 		self.internal_surf.fill('#71ddee')
   
 		#On affiche le ground
-		ground_offset = self.ground_rect.topleft - self.offset + self.internal_offset
-		self.internal_surf.blit(self.ground_surf,ground_offset)
+		for ligne in self.game.maps.get('test.txt')[0][0]:
+			for bloc in ligne:
+				if bloc != 0:
+					offset_pos = bloc.get('rect').topleft - self.offset + self.internal_offset
+					self.internal_surf.blit(bloc.get('image'), offset_pos)
 
 		#On affiche les éléments par ordonnée croissante
 		for sprite in sorted(self.sprites(),key = lambda sprite: sprite.rect.centery):
 			offset_pos = sprite.rect.topleft - self.offset + self.internal_offset
 			self.internal_surf.blit(sprite.image,offset_pos)
+
+		for layer in self.game.maps.get('test.txt')[0][1:]:
+			for ligne in layer:
+				for bloc in ligne:
+					if bloc != 0:
+						offset_pos = bloc.get('rect').topleft - self.offset + self.internal_offset
+						self.internal_surf.blit(bloc.get('image'), offset_pos)
+
 
 		#Si le zoom de la caméra a changé, on change l'affichage de l'écran
 		if self.last_zoom_scale != self.zoom_scale:

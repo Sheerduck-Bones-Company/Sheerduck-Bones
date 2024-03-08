@@ -1,4 +1,5 @@
-import player, mape, camera, speech_bubble
+import player, camera, speech_bubble, pygame
+from settings import loadMap
 
 class Game():
     def __init__(self, screen):
@@ -6,8 +7,8 @@ class Game():
         self.is_speeking = False
         self.screen = screen
         self.pressed = {}
-        self.map = mape.Map(self)
-        self.camera_group = camera.Camera()
+        self.camera_group = camera.Camera(self)
+        self.maps = loadMap()
         self.player = player.Player(self, (640,360), self.camera_group)
     
     #Lancer la partie    
@@ -29,3 +30,6 @@ class Game():
         self.camera_group.custom_draw(self.player)
         if self.is_speeking:
             self.speech_bubble.draw()
+            
+    def check_collisions(self, sprite, group):
+        return pygame.sprite.spritecollide(sprite, group, False)

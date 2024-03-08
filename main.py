@@ -23,11 +23,6 @@ help_button = button.Button(screen, 'help', -10, 20, 10)
 #On crée notre partie
 game = Game(screen)
 
-#On crée des arbres
-for i in range(20):
-    x, y = random.randint(1000,2000), random.randint(1000,2000)
-    obstacles.Tree(((x//4)*4+2, (y//4)*4+2),game.camera_group)
-
 running = True
 
 #On lance la boucle principale
@@ -37,7 +32,7 @@ while running:
         game.update()
     else:
         #On affiche l'écran d'accueil
-        screen.fill((88, 41, 0)) 
+        screen.fill((88, 41, 0))
         start_button.draw()
         exit_button.draw()
         help_button.draw()
