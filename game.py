@@ -7,9 +7,9 @@ class Game():
         self.is_speeking = False
         self.screen = screen
         self.pressed = {}
-        self.camera_group = camera.Camera(self)
         self.maps = loadMap()
-        self.player = player.Player(self, (640,360), self.camera_group)
+        self.camera_group = camera.Camera(self)
+        self.player = player.Player(self, (640,360), self.camera_group.visible_group)
     
     #Lancer la partie    
     def start(self):
@@ -26,7 +26,7 @@ class Game():
 
     #Actualiser la partie
     def update(self):
-        self.camera_group.update()
+        self.camera_group.visible_group.update()
         self.camera_group.custom_draw(self.player)
         if self.is_speeking:
             self.speech_bubble.draw()

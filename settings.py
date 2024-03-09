@@ -13,8 +13,8 @@ def loadMap():
     maps = {}
     for map_name in os.listdir("assets/map"):
         mape = []
-        obstacles = []
         obstacles_group = pygame.sprite.Group()
+        visible_group = pygame.sprite.Group()
         with open(f'assets/map/{map_name}', 'r') as fichier:
             map_text = fichier.read()
             for lay_index, layer in enumerate(map_text.split('$')):
@@ -22,25 +22,29 @@ def loadMap():
                 
                 for lin_index, ligne in enumerate(layer.split('|')):
                     mape[lay_index].append([])
-                    if lay_index == 0:
-                        obstacles.append([])
-                        obstacles.append([])
                     
                     for bloc_index, bloc in enumerate(ligne.split('/')):
                         if bloc == '0':
                             mape[lay_index][lin_index].append(0)
-                            if lay_index == 0:
-                                obstacles[lin_index*2].append(0)
-                                obstacles[lin_index*2].append(0)
-                                obstacles[lin_index*2+1].append(0)
-                                obstacles[lin_index*2+1].append(0)
                         else:
                             crt_attributes = bloc.split(',')
                             #On récupère les caractéristiques du bloc
-                            crt_img = pygame.image.load(f"assets/graphics/blocs/{crt_attributes[0]}.png").convert_alpha()
-                            crt_img = pygame.transform.scale(crt_img, (64,64))
                             
-                            crt_rect = pygame.Rect(bloc_index*64, lin_index*64, 64, 64)
+                            crt_type = crt_attributes[0]
+                            if "_" in crt_type:
+                                if crt_type.split('_')[1] == "0-0":
+                                    crt_img = pygame.image.load(f"assets/graphics/group_blocs/{crt_type.split('_')[0]}.png").convert_alpha()
+                                    crt_img = pygame.transform.scale(crt_img, (crt_img.get_size()[0]*4,crt_img.get_size()[1]*4))
+                                    crt_rect = crt_img.get_rect(bottomleft=(bloc_index*64, (lin_index+1)*64))
+                                else:
+                                    crt_img = pygame.image.load(f"assets/graphics/blocs/invisible-barrier.png").convert_alpha()
+                            else:
+                                crt_img = pygame.image.load(f"assets/graphics/blocs/{crt_type}.png").convert_alpha()
+                                crt_img = pygame.transform.scale(crt_img, (64,64))
+                                crt_rect = pygame.Rect(bloc_index*64, lin_index*64, 64, 64)
+                            
+                            if lay_index != 0:
+                                visible_group.add(Tile(crt_img, crt_rect))
                             
                             if int(crt_attributes[1]) == 1:
                                 crt_is_above_player = True
@@ -51,22 +55,20 @@ def loadMap():
                             mape[lay_index][lin_index].append({"image": crt_img, "rect": crt_rect, "is_above": crt_is_above_player})
                             
                             for col_index, collision in enumerate(crt_attributes[3]):
-                                if lay_index == 0:
-                                    if int(collision)==1:
-                                        obstacles[lin_index*2+col_index//2].append(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32))
-                                        obstacles_group.add(Tile(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)))
-                                    else:
-                                        obstacles[lin_index*2+col_index//2].append(0)
-                                else:
-                                    if int(collision)==1:
-                                        obstacles[lin_index*2+col_index//2][bloc_index*2+col_index%2] = pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)
-                                        obstacles_group.add(Tile(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)))
+                                if int(collision)==1:
+                                        obstacles_group.add(Obstacle(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)))
 
-        maps[map_name] = (mape, obstacles, obstacles_group)
+        maps[map_name] = (mape, visible_group, obstacles_group)
                            
     return maps
 
-class Tile(pygame.sprite.Sprite):
+class Obstacle(pygame.sprite.Sprite):
     def __init__(self, rect):
         super().__init__()
+        self.rect = rect
+        
+class Tile(pygame.sprite.Sprite):
+    def __init__(self, img, rect):
+        super().__init__()
+        self.image = img
         self.rect = rect

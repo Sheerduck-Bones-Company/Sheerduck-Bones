@@ -9,7 +9,7 @@ class Camera(pygame.sprite.Group):
 		#On récupère la surface de l'écran
 		self.display_surface = pygame.display.get_surface()
 
-		obstacles_group = pygame.sprite.Group()
+		self.visible_group = game.maps.get("test.txt")[1]
 
 		#On crée les décalages qu'il faudra appliquer aux images affichées
 		self.offset = pygame.math.Vector2()
@@ -44,25 +44,29 @@ class Camera(pygame.sprite.Group):
 		self.center_target_camera(target)
 		
 		self.internal_surf.fill('#71ddee')
+
+		player_pos = ((self.game.player.rect.centerx)//64, (self.game.player.rect.centery)//64)
+		if player_pos[0] < 9:
+			left_col, right_col = 0, player_pos[0]+10
+		else:
+			left_col, right_col = player_pos[0]-9, player_pos[0]+10
+   
+		if player_pos[1] < 6:
+			top_lin, bot_lin = 0, player_pos[1]+7
+		else:
+			top_lin, bot_lin = player_pos[1]-6, player_pos[1]+7
   
 		#On affiche le ground
-		for ligne in self.game.maps.get('test.txt')[0][0]:
-			for bloc in ligne:
+		for ligne in self.game.maps.get('test.txt')[0][0][top_lin:bot_lin]:
+			for bloc in ligne[left_col:right_col]:
 				if bloc != 0:
 					offset_pos = bloc.get('rect').topleft - self.offset + self.internal_offset
 					self.internal_surf.blit(bloc.get('image'), offset_pos)
 
 		#On affiche les éléments par ordonnée croissante
-		for sprite in sorted(self.sprites(),key = lambda sprite: sprite.rect.centery):
+		for sprite in sorted(self.visible_group,key = lambda sprite: sprite.rect.bottom):
 			offset_pos = sprite.rect.topleft - self.offset + self.internal_offset
-			self.internal_surf.blit(sprite.image,offset_pos)
-
-		for layer in self.game.maps.get('test.txt')[0][1:]:
-			for ligne in layer:
-				for bloc in ligne:
-					if bloc != 0:
-						offset_pos = bloc.get('rect').topleft - self.offset + self.internal_offset
-						self.internal_surf.blit(bloc.get('image'), offset_pos)
+			self.internal_surf.blit(sprite.image, offset_pos)
 
 
 		#Si le zoom de la caméra a changé, on change l'affichage de l'écran
