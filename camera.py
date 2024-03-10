@@ -64,7 +64,7 @@ class Camera(pygame.sprite.Group):
 					self.internal_surf.blit(bloc.get('image'), offset_pos)
 
 		#On affiche les éléments par ordonnée croissante
-		for sprite in sorted(self.visible_group,key = lambda sprite: sprite.rect.bottom):
+		for sprite in sorted(self.visible_group,key = lambda sprite: (sprite.rect.centery+sprite.rect.height/4)):
 			offset_pos = sprite.rect.topleft - self.offset + self.internal_offset
 			self.internal_surf.blit(sprite.image, offset_pos)
 

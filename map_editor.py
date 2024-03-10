@@ -939,7 +939,6 @@ while running:
                         else:
                             bloc = mape[layer_number][ligne][column]
                             used_type = [bloc.type, bloc.is_above_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
-                            print(used_type)
                     except:
                         #On écrit un message d'erreur car aucun bloc n'a été cliqué
                         writeMessage("Veuillez cliquer sur un bloc", 60, True)
@@ -1014,16 +1013,12 @@ while running:
 
                             if pygame.Rect(bloc.rect.topleft, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[0] = not bloc.collisions[0]
-                                print("changed col1")
                             if pygame.Rect(bloc.rect.midtop, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[1] = not bloc.collisions[1]
-                                print("changed col2")
                             if pygame.Rect(bloc.rect.midleft, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[2] = not bloc.collisions[2]
-                                print("changed col3")
                             if pygame.Rect(bloc.rect.center, (8, 8)).collidepoint(real_mouse_pos):
                                 bloc.collisions[3] = not bloc.collisions[3]
-                                print("changed col4")
                                 
                         except:
                             #On écrit un message d'erreur car aucun bloc n'a été cliqué
