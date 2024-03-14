@@ -23,6 +23,9 @@ help_button = button.Button(screen, 'help', -10, 20, 10)
 #On crée notre partie
 game = Game(screen)
 
+#On intialise la musique
+pygame.mixer.music.load("assets/music/not-rickroll.mp3")
+
 running = True
 
 #On lance la boucle principale
@@ -36,6 +39,7 @@ while running:
         start_button.draw()
         exit_button.draw()
         help_button.draw()
+        pygame.mixer.music.play(loops=-1)
     
     #On actualise l'écran    
     pygame.display.flip()
