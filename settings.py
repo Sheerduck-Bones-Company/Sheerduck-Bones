@@ -9,12 +9,14 @@ def ImportFolder(path:str):
         folder[elem[:-4]] = surface
     return folder
 
-def loadMap():
+def loadMap(player):
     maps = {}
     for map_name in os.listdir("assets/map"):
         mape = []
+        last_coord = (0,0)
         obstacles_group = pygame.sprite.Group()
-        visible_group = pygame.sprite.Group()
+        visible_group = pygame.sprite.Group(player)
+        interact_group = pygame.sprite.Group()
         with open(f'assets/map/{map_name}', 'r') as fichier:
             map_text = fichier.read()
             for lay_index, layer in enumerate(map_text.split('$')):
@@ -56,9 +58,13 @@ def loadMap():
                             
                             for col_index, collision in enumerate(crt_attributes[3]):
                                 if int(collision)==1:
-                                        obstacles_group.add(Obstacle(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)))
+                                    obstacles_group.add(Obstacle(pygame.Rect((bloc_index*2+col_index%2)*32, (lin_index*2+col_index//2)*32, 32, 32)))
+                                        
+                            if crt_attributes[4] != '':
+                                last_coord = (bloc_index*64-16, lin_index*64)
+                                interact_group.add(InteractTile(pygame.Rect(bloc_index*64-16, lin_index*64, 96, 96), crt_attributes[4]))
 
-        maps[map_name] = (mape, visible_group, obstacles_group)
+        maps[map_name] = {"ground" : mape, "visible" : visible_group, "obstacles" : obstacles_group, "interact" : interact_group, "last_coord" : last_coord, "group_list" : [visible_group, obstacles_group, interact_group]}
                            
     return maps
 
@@ -72,3 +78,9 @@ class Tile(pygame.sprite.Sprite):
         super().__init__()
         self.image = img
         self.rect = rect
+        
+class InteractTile(pygame.sprite.Sprite):
+    def __init__(self, rect, map_path):
+        super().__init__()
+        self.rect = rect
+        self.map_path = map_path

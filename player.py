@@ -2,12 +2,12 @@ import pygame, os
 from settings import ImportFolder
 
 class Player(pygame.sprite.Sprite):
-	def __init__(self, game, pos, group):
-		super().__init__(group)
+	def __init__(self, game, pos):
+		super().__init__()
 		self.images = ImportFolder("assets/graphics/player")
 		self.image = self.images.get("front_stand")
 		self.game = game
-		self.rect = self.image.get_rect(center = pos)
+		self.rect = self.image.get_rect(center = pos).inflate(-4,-4)
 		self.direction = pygame.math.Vector2()
 		self.speed = 12
 		self.status = "front_stand"
@@ -66,7 +66,7 @@ class Player(pygame.sprite.Sprite):
 			self.image = self.images.get(self.status+str(int(self.animation_counter)))
    
 	def check_collisions(self, direction):
-		sprites = self.game.check_collisions(self, self.game.maps.get('test.txt')[2])
+		sprites = self.game.check_collisions(self, self.game.maps.get(self.game.current_map_name).get("obstacles"))
 		if len(sprites) != 0:    
 			if direction == "horizontal":
 				
@@ -90,3 +90,13 @@ class Player(pygame.sprite.Sprite):
 						self.rect.bottom = sprite.rect.top
 					elif self.direction.y < 0:
 						self.rect.top = sprite.rect.bottom
+
+	def check_interact(self):
+		sprites = self.game.check_collisions(self, self.game.maps.get(self.game.current_map_name).get("interact"))
+		if len(sprites) != 0 and self.game.pressed.get(pygame.K_e):
+			self.game.maps.get(self.game.current_map_name)['last_coord'] = (self.rect.x, self.rect.y)
+			self.game.current_map_name = sprites[0].map_path + ".txt"
+			
+			coord = self.game.maps.get(self.game.current_map_name).get("last_coord")
+			if coord != None:
+				self.rect.x, self.rect.y = coord[0], coord[1]

@@ -8,7 +8,7 @@ def get_file():
     try:
         openFile_button.pack_forget()
         
-        file_path = filedialog.askopenfilename(initialdir="assets/graphics")
+        file_path = filedialog.askopenfilename(initialdir="assets/graphics/group_blocs")
         img = Image.open(file_path)
         surface = pygame.image.load(file_path)
         

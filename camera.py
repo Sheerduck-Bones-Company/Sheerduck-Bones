@@ -9,8 +9,6 @@ class Camera(pygame.sprite.Group):
 		#On récupère la surface de l'écran
 		self.display_surface = pygame.display.get_surface()
 
-		self.visible_group = game.maps.get("test.txt")[1]
-
 		#On crée les décalages qu'il faudra appliquer aux images affichées
 		self.offset = pygame.math.Vector2()
 		self.half_w = self.display_surface.get_size()[0] // 2
@@ -43,7 +41,10 @@ class Camera(pygame.sprite.Group):
 		#On centre la cible
 		self.center_target_camera(target)
 		
-		self.internal_surf.fill('#71ddee')
+		if self.game.current_map_name == "test.txt":
+			self.internal_surf.fill('#71ddee')
+		else:
+			self.internal_surf.fill('#000000')
 
 		player_pos = ((self.game.player.rect.centerx)//64, (self.game.player.rect.centery)//64)
 		if player_pos[0] < 9:
@@ -57,14 +58,14 @@ class Camera(pygame.sprite.Group):
 			top_lin, bot_lin = player_pos[1]-6, player_pos[1]+7
   
 		#On affiche le ground
-		for ligne in self.game.maps.get('test.txt')[0][0][top_lin:bot_lin]:
+		for ligne in self.game.maps.get(self.game.current_map_name).get("ground")[0][top_lin:bot_lin]:
 			for bloc in ligne[left_col:right_col]:
 				if bloc != 0:
 					offset_pos = bloc.get('rect').topleft - self.offset + self.internal_offset
 					self.internal_surf.blit(bloc.get('image'), offset_pos)
 
 		#On affiche les éléments par ordonnée croissante
-		for sprite in sorted(self.visible_group,key = lambda sprite: (sprite.rect.centery+sprite.rect.height/4)):
+		for sprite in sorted(self.game.maps.get(self.game.current_map_name).get("visible") ,key = lambda sprite: (sprite.rect.centery+sprite.rect.height/4)):
 			offset_pos = sprite.rect.topleft - self.offset + self.internal_offset
 			self.internal_surf.blit(sprite.image, offset_pos)
 
