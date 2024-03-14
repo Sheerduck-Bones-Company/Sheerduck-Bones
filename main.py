@@ -1,5 +1,5 @@
 #On importe les modules nécessaires
-import pygame, obstacles, random, sys, button
+import pygame, random, sys, button
 from game import Game
 
 #On initialise la fenêtre
@@ -68,14 +68,7 @@ while running:
             
             #Activer la boîte de dialogue    
             if event.key == pygame.K_e:
-                if game.is_speeking:
-                    game.speech_bubble.update()
-                else:
-                    game.is_speeking = True
-                    game.say(['Bonjour je suis Antoine et je voudrais du chocolat ! Je suis vraiment quelqu\'un de très gourmand qui a du mal a se controler pour manger des choses sucrée',
-                              'Je mappelle Jean pierre et je fais des bêtises tout plein tout plein beaucoup',
-                              'Suis',
-                              'Antoine'])
+                game.player.check_interact()
             
             #Mettre en plein écran
             if event.key == pygame.K_F11:

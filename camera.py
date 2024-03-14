@@ -30,6 +30,9 @@ class Camera(pygame.sprite.Group):
 		self.internal_offset.y = self.internal_surf_size[1] // 2 - self.half_h
 		self.new_scale = 0
 		self.dest = pygame.Surface((0,0))
+		
+		self.interact_img = pygame.image.load("assets/graphics/buttons/E.png")
+		self.interact_img = pygame.transform.scale(self.interact_img, (30, 30))
 
 	#On centre la caméra sur une cible
 	def center_target_camera(self,target):
@@ -68,7 +71,10 @@ class Camera(pygame.sprite.Group):
 		for sprite in sorted(self.game.maps.get(self.game.current_map_name).get("visible") ,key = lambda sprite: (sprite.rect.centery+sprite.rect.height/4)):
 			offset_pos = sprite.rect.topleft - self.offset + self.internal_offset
 			self.internal_surf.blit(sprite.image, offset_pos)
-
+   
+		sprites = self.game.check_collisions(self.game.player, self.game.maps.get(self.game.current_map_name).get("interact"))
+		if len(sprites) != 0:
+			self.internal_surf.blit(self.interact_img, self.game.player.rect.topleft + pygame.Vector2(64, -10) - self.offset + self.internal_offset)
 
 		#Si le zoom de la caméra a changé, on change l'affichage de l'écran
 		if self.last_zoom_scale != self.zoom_scale:
