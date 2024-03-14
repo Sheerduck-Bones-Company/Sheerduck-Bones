@@ -230,6 +230,7 @@ def readFile(file_name):
                         #On ajoute les caractéristiques du bloc
                         if file_name == "bloc_types_map":
                             mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, bloc_index, lin_index))
+                            print(crt_type, ':', bloc_index, lin_index)
                             img_library[crt_type] = (bloc_index, lin_index)
                         else:
                             mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, img_library.get(crt_type)[0], img_library.get(crt_type)[1]))
@@ -439,6 +440,7 @@ while running:
                                                 for ligne_num in range(used_type[5]-(image_height-imagey), used_type[5]+imagey+1, 1):
                                                     for column_num in range(used_type[4]-imagex, used_type[4]-imagex+image_width+1, 1):
                                                         if bloc_types_map[0][ligne_num][column_num] != 0:
+                                                            print(ligne_num, column_num)
                                                             model = bloc_types_map[0][ligne_num][column_num]
                                                             mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = Bloc(bloc_type = model.type,
                                                                                                                                                         is_above_player = model.is_above_player,
