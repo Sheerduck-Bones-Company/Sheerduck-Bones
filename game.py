@@ -11,6 +11,7 @@ class Game():
         self.maps = loadMap(self.player)
         self.current_map_name = "test.txt"
         self.camera_group = camera.Camera(self)
+        self.current_step = 1
     
     #Lancer la partie    
     def start(self):
@@ -21,9 +22,13 @@ class Game():
         self.is_playing = False
     
     #Lancer une boîte de dialogue
-    def say(self, text):
-        self.speech_bubble = speech_bubble.SpeechBubble(self, text)
-        self.speech_bubble.initialize()
+    def say(self, text:list):
+        if self.is_speeking:
+            self.speech_bubble.update()
+        else:
+            self.speech_bubble = speech_bubble.SpeechBubble(self, text)
+            self.speech_bubble.initialize()
+            self.is_speeking = True
 
     #Actualiser la partie
     def update(self):

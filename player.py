@@ -1,5 +1,6 @@
 import pygame, os
 from settings import ImportFolder
+from speech_bubble import Dialogues
 
 class Player(pygame.sprite.Sprite):
 	def __init__(self, game, pos):
@@ -12,6 +13,7 @@ class Player(pygame.sprite.Sprite):
 		self.speed = 12
 		self.status = "front_stand"
 		self.animation_counter = 0
+		self.current_speech = None
 
 	#On déplace le joueur si aucune boîte de dialoque n'est ouverte
 	def input(self):
@@ -93,10 +95,26 @@ class Player(pygame.sprite.Sprite):
 
 	def check_interact(self):
 		sprites = self.game.check_collisions(self, self.game.maps.get(self.game.current_map_name).get("interact"))
+		
 		if len(sprites) != 0 and self.game.pressed.get(pygame.K_e):
-			self.game.maps.get(self.game.current_map_name)['last_coord'] = (self.rect.x, self.rect.y)
-			self.game.current_map_name = sprites[0].map_path + ".txt"
-			
-			coord = self.game.maps.get(self.game.current_map_name).get("last_coord")
-			if coord != None:
-				self.rect.x, self.rect.y = coord[0], coord[1]
+			if sprites[0].map_path != None:
+				self.game.maps.get(self.game.current_map_name)['last_coord'] = (self.rect.x, self.rect.y)
+				self.game.current_map_name = sprites[0].map_path + ".txt"
+				
+				coord = self.game.maps.get(self.game.current_map_name).get("last_coord")
+				if coord != None:
+					self.rect.x, self.rect.y = coord[0], coord[1]
+		
+			if sprites[0].speech != []:
+				if not self.game.is_speeking:
+					for speech in sprites[0].speech:
+						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (speech.step == self.game.current_step)) or ((speech.place+'.txt' == self.game.current_map_name) and (speech.step == None)) or ((speech.place+".txt" == self.game.current_map_name) and (speech.step == self.game.current_step)):
+							self.current_speech = speech
+							self.game.say(speech.text[speech.current_dial_num])
+							speech.update()
+							break
+					if self.current_speech == None:
+						self.current_speech = Dialogues(None, None, [[(None, '...')]])
+						self.game.say(self.current_speech.text[self.current_speech.current_dial_num], True)
+				else:
+					self.game.say(self.current_speech.text[self.current_speech.current_dial_num])

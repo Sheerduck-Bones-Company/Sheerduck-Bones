@@ -1,15 +1,29 @@
 import pygame
 
+class Dialogues():
+    def __init__(self, place, step, text):
+        self.place = place
+        self.step = step
+        self.text = text
+        self.current_dial_num = 0
+        
+    def update(self):
+        self.current_dial_num = (self.current_dial_num+1)%len(self.text)
+
 class SpeechBubble():
     def __init__(self, game, text:list = []):
         self.game = game
-        self.list_text = text
+        self.list_char = [elem[0] for elem in text]
+        self.list_text = [elem[1] for elem in text]
         self.splited_text = []
         
         self.lignes_surface = (pygame.Surface((0,0)), pygame.Surface((0,0)), pygame.Surface((0,0)))
         self.lignes_rect = (pygame.Rect((0,0,0,0)), pygame.Rect((0,0,0,0)), pygame.Rect((0,0,0,0)))
         self.frame_rect = pygame.Rect((0,0,0,0))
         self.bg_rect = pygame.Rect((0,0,0,0))
+        
+        self.character_surf = pygame.Surface((128,128))
+        self.character_rect = self.character_surf.get_rect(left=0, bottom=3*(self.game.screen.get_height())/4)
         
         self.index_sentence = 0
         self.index_box = 0
@@ -55,16 +69,20 @@ class SpeechBubble():
         #On écrit la première ligne
         self.create_text(self.splited_text[0][0])
         self.index_box += 1
+        
+        self.create_face(self.list_char[self.index_sentence])
     
     #On actualise la boîte de dialogue dans l'ordre
     def update(self):
         if self.index_box == len(self.splited_text[self.index_sentence]):
             if self.index_sentence == len(self.splited_text) - 1:
                 self.game.is_speeking = False
+                self.game.player.current_speech = None
                 return False
             else:
                 self.index_box = 0
                 self.index_sentence += 1
+                self.create_face(self.list_char[self.index_sentence])
         
         #On affiche la boîte de dialogue
         self.create_text(self.splited_text[self.index_sentence][self.index_box])
@@ -106,8 +124,16 @@ class SpeechBubble():
             self.last_screen_dimension = screen_dimension
             self.initialize()
         
+        self.game.screen.blit(self.character_surf, self.character_rect)
         pygame.draw.rect(self.game.screen, (0,0,0), self.frame_rect)
         pygame.draw.rect(self.game.screen, (255,255,255), self.bg_rect)
         self.game.screen.blit(self.lignes_surface[0], self.lignes_rect[0])
         self.game.screen.blit(self.lignes_surface[1], self.lignes_rect[1])
         self.game.screen.blit(self.lignes_surface[2], self.lignes_rect[2])
+        
+    def create_face(self, name):
+        if name != None:
+            self.character_surf = pygame.image.load(f"assets/graphics/characters/{name}.png").convert_alpha()
+            self.character_surf = pygame.transform.scale(self.character_surf, (128,128))
+        else:
+            self.character_surf = pygame.Surface((0,0))
