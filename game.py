@@ -1,10 +1,12 @@
 import player, camera, speech_bubble, pygame
 from settings import loadMap
+from math import pi
 
 class Game():
     def __init__(self, screen):
         self.is_playing = False
         self.is_speeking = False
+        self.is_thinking = False
         self.screen = screen
         self.pressed = {}
         self.player = player.Player(self, (640,360))
@@ -35,7 +37,18 @@ class Game():
         for group in self.maps.get(self.current_map_name).get("group_list"):
             group.update()
         
-        self.camera_group.custom_draw(self.player)
+        if not self.is_thinking:
+            self.camera_group.custom_draw(self.player)
+        else:
+            self.screen.fill((88, 41, 0))
+            for hint in self.player.hints:
+                self.screen.blit(hint.image, hint.rect)
+                pygame.draw.rect(self.screen, "red", hint.link_rect)
+                for link in hint.links:
+                    pygame.draw.line(self.screen, "red", hint.link_rect.center, link.link_rect.center)
+                if hint.is_linking:
+                    pygame.draw.line(self.screen, "red", hint.link_rect.center, pygame.mouse.get_pos())
+                
         if self.is_speeking:
             self.speech_bubble.draw()
             

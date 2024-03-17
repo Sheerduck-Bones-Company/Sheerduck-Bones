@@ -8,8 +8,8 @@ pygame.display.set_caption('Sheerduck-Bones')
 pygame.display.set_icon(pygame.image.load('assets/graphics/icons/game.ico'))
 
 #On crée notre écran
-screen_width, screen_height = 1080, 720
-screen = pygame.display.set_mode((screen_width, screen_height), pygame.SCALED)
+WIDTH, HEIGHT = 1080, 720
+screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SCALED)
 
 #On crée notre clock
 clock = pygame.time.Clock()
@@ -19,6 +19,7 @@ FPS = 60
 start_button = button.Button(screen, 'start', 30, -20, 10)
 exit_button = button.Button(screen, 'exit', -30, -20, 10)
 help_button = button.Button(screen, 'help', -10, 20, 10)
+hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
 #On crée notre partie
 game = Game(screen)
@@ -33,6 +34,7 @@ while running:
     if game.is_playing:
         #On actualise la partie
         game.update()
+        hint_button.draw()
     else:
         #On affiche l'écran d'accueil
         screen.fill((88, 41, 0))
@@ -91,6 +93,15 @@ while running:
                 #Demander de l'aide
                 elif help_button.rect.collidepoint(event.pos):
                     print('OSCOUR')
+            elif event.button == 1:
+                if hint_button.rect.collidepoint(event.pos) and not game.is_speeking:
+                    game.is_thinking = not game.is_thinking
+                else:
+                    game.player.check_document_interact(event.pos)
+        
+        if event.type == pygame.MOUSEBUTTONUP:
+            if game.is_playing:
+                game.player.stop_document_interact(event.pos)
         
         #Changer le zoom de la caméra
         if event.type == pygame.MOUSEWHEEL:

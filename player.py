@@ -1,6 +1,7 @@
 import pygame, os
 from settings import ImportFolder
 from speech_bubble import Dialogues
+from hint import Hint
 
 class Player(pygame.sprite.Sprite):
 	def __init__(self, game, pos):
@@ -14,14 +15,25 @@ class Player(pygame.sprite.Sprite):
 		self.status = "front_stand"
 		self.animation_counter = 0
 		self.current_speech = None
-
+		self.hints = [Hint("photo"), Hint("board"), Hint("photo"), Hint("board")]
+		self.current_hint = None
+  
+	#On actualise les coordonnées du joueur
+	def update(self):
+		self.input()
+		self.move()
+		self.animate()
+		if self.current_hint != None:
+			if not self.current_hint.is_linking:
+				self.current_hint.track_mouse()
+   
 	#On déplace le joueur si aucune boîte de dialoque n'est ouverte
 	def input(self):
 		if self.game.is_speeking:
 			self.direction.x, self.direction.y = 0,0
 			if not "_stand" in self.status:
 				self.status += "_stand"
-		elif self.game.is_playing:	
+		elif self.game.is_playing:
 			if self.game.pressed.get(pygame.K_z):
 				self.direction.y = -1
 				self.status = "back"
@@ -50,22 +62,6 @@ class Player(pygame.sprite.Sprite):
 		self.check_collisions("horizontal")
 		self.rect.centery += self.direction.y * self.speed
 		self.check_collisions("vertical")
-
-	#On actualise les coordonnées du joueur
-	def update(self):
-		self.input()
-		self.move()
-		self.animate()
-  
-	def animate(self):
-		self.animation_counter += 0.15
-		if self.animation_counter > 2:
-			self.animation_counter = 0
-		
-		if "_stand" in self.status:
-			self.image = self.images.get(self.status)
-		else:
-			self.image = self.images.get(self.status+str(int(self.animation_counter)))
    
 	def check_collisions(self, direction):
 		sprites = self.game.check_collisions(self, self.game.maps.get(self.game.current_map_name).get("obstacles"))
@@ -93,6 +89,16 @@ class Player(pygame.sprite.Sprite):
 					elif self.direction.y < 0:
 						self.rect.top = sprite.rect.bottom
 
+	def animate(self):
+		self.animation_counter += 0.15
+		if self.animation_counter > 2:
+			self.animation_counter = 0
+		
+		if "_stand" in self.status:
+			self.image = self.images.get(self.status)
+		else:
+			self.image = self.images.get(self.status+str(int(self.animation_counter)))
+
 	def check_interact(self):
 		sprites = self.game.check_collisions(self, self.game.maps.get(self.game.current_map_name).get("interact"))
 		
@@ -118,3 +124,28 @@ class Player(pygame.sprite.Sprite):
 						self.game.say(self.current_speech.text[self.current_speech.current_dial_num], True)
 				else:
 					self.game.say(self.current_speech.text[self.current_speech.current_dial_num])
+
+	def check_document_interact(self, pos):
+		for hint in self.hints[::-1]:
+			if hint.touch_dot_link(pos):
+				hint.is_linking = True
+				self.current_hint = hint
+			elif hint.is_caught(pos):
+				hint.set_offset(pos)
+				self.current_hint = hint
+				self.hints.append(hint)
+				self.hints.remove(hint)
+				break
+			else:
+				hint.clear_touched_link(pos)
+
+	def stop_document_interact(self, pos):
+		for hint in self.hints[::-1]:
+			if hint.is_caught(pos) and self.current_hint.is_linking:
+				if (not self.current_hint in hint.links) and (self.current_hint != hint):
+					hint.links.append(self.current_hint)
+					self.current_hint.links.append(hint)
+
+		if self.current_hint != None:
+			self.current_hint.is_linking = False
+		self.current_hint = None
