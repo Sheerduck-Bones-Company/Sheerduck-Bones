@@ -1,0 +1,11 @@
+place : atelier, step : 1 {
+[Philémonade : Eh bien, détective, avez-vous trouvé le mystère caché dans le code de ma vie ?]
+
+[Philémonade : Vous savez quoi ? J'ai encore reçu une lettre d'une certaine "Madame Moutions" qui me fais des avances...]
+
+}
+
+place : atelier, step : 5 {
+[Philémonade : J’ai retrouvé ce code par terre dans l’atelier, ça vous intéresse ?
+Philémonade :]
+}

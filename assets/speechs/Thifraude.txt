@@ -1,0 +1,19 @@
+place : fontaine, step : 1 {
+[Thifraude : Bonjour ! Quelle belle journée aujourd'hui !
+Thifraude : Tu veux une séance gratos d’escalade ?]
+
+[Thifraude : chipichipi- oh nan]
+
+[Thifraude : Je suis vitesse !]
+
+[Thifraude : Tu n'aurais pas vu Matcha ? Il est toujours en train de travailler celui là ! Je m'ennuie à la maison...
+Thifraude : Ah tu ne savais pas ? Je suis sa femme. Enfin tout ça est très récent !]
+}
+
+place : auberge, step : 4 {
+[Thifraude : Il est beau quand il travaille Fluchs.
+Thifraude : Ah non je dis ça comme ça ! C'est par habitude.
+Thifraude : Euhhhh nonnnn j'ai rien dit. Oublie. ]
+
+[Thifraude : Si Matcha demande, je suis pas là.]
+}

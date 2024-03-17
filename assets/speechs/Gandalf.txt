@@ -1,0 +1,37 @@
+place : école, step : 1 {
+[Gandalf : Youyou !!!
+Gandalf : hahahaHAHAHAHAHA]
+
+[Gandalf : UuRrgghhHHhh-
+Gandalf : Oh ! Coucou :)]
+
+[Gandalf : We're no strangers to death
+You know the graves and so do I
+A full commitment, I'm thinking of death
+You wouldn't get this from any other guy
+I just wanna tell you what I know-ow
+Gotta make you understand yo
+
+Gandalf : Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna want to die
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+
+Gandalf : We've known each other for so long
+Your heart's been silent, for a while
+Inside, we both know what's been going on
+We know the game and we're gonna play it
+And if you ask me how I'm feeling
+Don't tell me you're too dead to see !]
+
+[Gandalf : Ne ratez pas mon cours en salle 2 ! Ceux qui sont en retard n’auront pas de poulet à la cantine !]
+}
+
+place : école, step : 7 {
+[Gandalf : Chrome vous a parler de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
+Gandalf : Ah c'est pas ça qu'il vous a dit ?
+Gandalf : Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
+Gandalf : Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des conseils ! D'ailleurs Rémixeur a disparu à la même période ça m'avait bien embêté...]
+}

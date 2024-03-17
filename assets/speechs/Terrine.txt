@@ -1,0 +1,19 @@
+place : auberge, step : 1 {
+[Terrine : ohh un nouveau ?
+Terrine : T’as des secrets intéressants ?]
+
+[Terrine : J’ai entendu des choses...
+Terrine : Mais je suis pas censée te le dire]
+
+[Terrine : Tu devineras jamais ce que j'ai entendu l'autre jour !
+Terrine : Mince je dois rien dire]
+}
+
+place : auberge, step 4 {
+[Terrine : Tu me donnes quoi en échange ??
+Terrine : Ah ouais t'es célibataire ?! Je peux te trouver quelqu'un si tu veux ! Tu sais il y a pleins de poussins en manque d'amour ici !
+Terrine : Ah oui c'est vrai que je t'avais dit que je te dirais quelque chose...
+Terrine : Alors tu sais pas ce que j'ai entendu ! En passant devant chez Peaudevigne et Dandy, quelqu'un aurait entendu des cris à glacer le sang... Puis en regardant par la fenêtre, il aurait vu une batte pleine de sang !!
+Terrine : Quoi, qui me l'a dit ? Ah ça c'est un secret !
+Terrine : Si t'as d'autres choses à me dire hésite pas !]
+}

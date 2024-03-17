@@ -1,0 +1,11 @@
+place : école, step : 1 {
+[Joshwaflle : Hein ?
+Joshwaffle : Flemme.]
+
+[Joshwaffle : C’est moi qui ait mangé le dernier cookie.]
+}
+
+place: école, step : 7 {
+[Joshwaffle : Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
+Joshwaffle : C'est pas parce que je suis proviseur adjoint que je suis ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent ne pas venir...]
+}

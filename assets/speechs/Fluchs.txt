@@ -1,0 +1,19 @@
+place : auberge, step : 1 {
+
+[Fluchs : Je peux t’aider ?]
+
+[Fluchs : Si t’es pas là pour acheter, la porte est juste derrière toi.]
+
+[Fluchs : ...]
+}
+
+place : auberge, step : 4 {
+
+[Fluchs : Humm ? Pourquoi tu veux me parler de Terrine ?
+Fluchs : Elle arrête pas de toucher mes joues... Je sais que nous les hamster ont en a des grosses mais quand même !
+Fluchs : Elle fouille toujours dans les affaires des gens aussi, je pense qu'avec Helolo, elles en savent plus que tout le monde
+Fluchs : Si elle t'embête hésite pas à me le dire, t'es pas obligé de répondre à ses questions tu sais ?
+Fluchs : ...
+Fluchs : Ah oui aussi si elle parle de Thifraudre et de moi, l'écoute pas !]
+
+}

@@ -1,0 +1,12 @@
+place : bibliotheque, step : 1 {
+[Chrome : ...]
+
+[Chrome : ...
+Chrome : Si je ne te réponds pas ce n'est pas parce que je n'ai pas entendu tu sais ?]
+
+[Chrome : ...
+Chrome : Je m'attelle à une tâche plus importante que de converser avec un être tel que vous. Revenez quand Obi vaincra Yoda]
+}
+
+place : bibliotheque, step : 7 {
+}

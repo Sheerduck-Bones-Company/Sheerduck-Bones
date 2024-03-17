@@ -1,0 +1,10 @@
+place : auberge, step : 1 {
+[Sarat : Je te sers quelque chose ?]
+
+[Sarat : C’est un poussin qui rentre dans un bar.]
+
+[Sarat : Vous connaissez la spécialité du moment ?
+Sarat : C’est le QUASOOOOOOO]
+
+[Sarat : Terrine a toujours quelque chose à raconter ! Si tu cherches des infos c'est elle que faut aller voir, après avoir bu un coup évidemment !]
+}
