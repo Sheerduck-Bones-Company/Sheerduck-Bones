@@ -12,7 +12,7 @@ def ImportFolder(path:str):
 
 def ImportSpeech(name_character):
     try:
-        with open(f"assets/speechs/{name_character}.txt", 'r') as fichier:
+        with open(f"assets/speechs/{name_character}.txt", 'r', encoding="utf-8") as fichier:
             txt = fichier.read()
             speechs = re.findall("[^{}\n]+{[^{}]+}", txt)
             speech_bubbles = []

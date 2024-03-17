@@ -1,15 +1,15 @@
-place : house1, step : 1 {
+step : 1 {
 
 [Chludding : Bonjour ?
 Player : Ca peut aller
 Chludding: Que penses-tu de cette belle journee ?
 Player : Pas grand chose]
 
-[Chludding : Tu veux me dire quelque chose ?
-Player : Non
-Chludding: Ok]
+[Chludding : Ich BiN eIN ZZZZupEr stAr
+Chludding : ZOUPER STAREEEEEE
+Chludding : Oh coucou ! Tu veux venir à mon concert tout à l'heure ?
+Chludding : Non ? C'est dommage ! Sarat joue avec moi en plus]
 
-[Player : Bon ...
-Player : Je sais plus quoi dire ...]
+[Chludding : lalalaaaaaa]
 
 }

@@ -1,0 +1,4 @@
+place : house1, step : 1{
+[Zolala : Je me présente, je m'appelle...
+Zolala : Ah, je vous avais pas vu]
+}
