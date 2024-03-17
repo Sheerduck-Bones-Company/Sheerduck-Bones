@@ -1,0 +1,12 @@
+step : 0 {
+[Salsa : Bienvenue à Coincoinville, grand détective si renommé ! (en fait vous étiez le moins cher)
+Salsa : Si vous êtes là aujourd’hui, c’est pour résoudre le mystère de Coincoin qui nous hante depuis si longtemps. (en fait pas tant que ça)
+Salsa: Tenez, voilà le maire ! Je vous laisse lui parler.
+Salsa : À bientôt !]
+}
+
+place : bibliothèque, step : 1 {
+[Salsa : Je serai le roi des pirates !]
+
+[Salsa : Arise]
+}

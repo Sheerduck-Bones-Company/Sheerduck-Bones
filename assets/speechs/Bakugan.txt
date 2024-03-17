@@ -1,0 +1,11 @@
+place : antiquaire, step : 1 {
+[Bakugan : Bonjour, mon enfant
+Bakugan : Toi aussi tu t’intéresses aux artefacts ?
+Bakugan : Par exemple, cette plum de chagrin peut réaliser tes désirs]
+
+[Bakugan : Veux-tu m’écouter jouer du didgeridoo ?
+Bakugan : J’ai un talent incomparable.
+Bakugan : Savoure en silence]
+
+[Bakugan : Ne rentre surtout pas dans ma cave !]
+}
