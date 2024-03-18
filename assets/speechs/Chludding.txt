@@ -2,7 +2,7 @@ step : 1 {
 
 [Chludding : Bonjour !!!!!!!!!!
 Chludding: Que penses-tu de cette belle journée ?
-Chludding : Moi je suis heureuse...]
+Chludding : Moi je suis heureuse !]
 
 [Chludding : Ich BiN eIN ZZZZupEr stAr
 Chludding : ZOUPER STAREEEEEE
@@ -11,4 +11,11 @@ Chludding : Non ? C'est dommage ! Sarat joue avec moi en plus !]
 
 [Chludding : lalalaaaaaa]
 
+[Chludding : Grenouilleeee
+Chludding : Au pays de Chludding on rigole biennn
+Chludding : Avec l'Ananas, Sarat et les copains !
+Chludding : Attention (attention)
+Chludding : Ca commence (ça commence)
+Chludding : Ce matin, il fait beauuuuu
+Chludding : VENEZ CHANTERRRR CE REFRAINNNN]
 }

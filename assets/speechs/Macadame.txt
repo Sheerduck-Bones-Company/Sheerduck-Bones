@@ -1,31 +1,10 @@
-place : house1, step : 1 {
+step : 1 {
 
-[Macadame : Salut mec, ca va ?
-Player : Ca peut aller
-Macadame : Que penses-tu de cette belle journee ?
-Player : Pas grand chose]
+[Macadame : Salut mec, ca va ?]
 
-[Macadame : Tu veux me dire quelque chose ?
-Player : Non
-Macadame : Ok]
+[Macadame : J’vous jure qu’c’est pas ma faute m’sieur l’agent]
 
-[Player : Bon ...
-Player : Je sais plus quoi dire ...]
-
-}
-
-place : house2, step : 1 {
-
-[Macadame : Les nouveaux dialoooogues
-Player : COOOOl
-Macadame : Dose stp
-Player : Ok pardon]
-
-[Macadame : C'est du harcelement la ...
-Player : Non
-Macadame : Si]
-
-[Player : Bon ...
-Player : Je sais plus quoi dire ...]
+[Macadame : Je suis sur que je vous bats en match de basket.
+Macadame : Un jour, je serais plus fort que Poulet Curry !]
 
 }

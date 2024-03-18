@@ -7,5 +7,9 @@ place : atelier, step : 1 {
 
 place : atelier, step : 5 {
 [Philémonade : J’ai retrouvé ce code par terre dans l’atelier, ça vous intéresse ?
-Philémonade :]
+Philémonade : Boxnoj fyec ke mswodsòbo
+Philémonade : Il y a écrit le chiffre 10 à côté ! C'est vraiment très mystérieux...
+Philémonade : Mais vous réussirez à le décoder j'en suis sûr, car tous les chemins mènent à Rome !
+Tartatin : Veni, vidi, vici !
+Philémonade : Qu'est-ce qu'il raconte encore celui là ?]
 }
