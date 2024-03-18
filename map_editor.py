@@ -71,7 +71,8 @@ pygame.display.set_caption('Création de map custom')
 pygame.display.set_icon(pygame.image.load('assets/graphics/icons/edit_icon.ico'))
 
 #On crée notre écran
-screen_width, screen_height = 1080, 720
+#screen_width, screen_height = 1080, 720
+screen_width, screen_height = 1500, 900
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.SCALED)
 
 #On crée la surface sur laquelle on va faire afficher les éléments
