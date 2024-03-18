@@ -8,9 +8,7 @@ step : 1 {
 [Avoine : Ah la jeunesse, toujours pleine d’énergie !
 Avoine : Quand j’étais jeune je voulais devenir nageur mais un accident est vite arrivé...
 Avoine : N’abandonne jamais tes rêves mon petit]
-}
 
-step : 15 {
 [Avoine : Connais-tu l’histoire de la sirène ?
 Avoine : Il y a très longtemps, une fille a été jetée à l’eau par ses parents qui voulaient s’en débarrasser.
 Avoine : Mais lorsqu’elle a touché l’eau, elle a disparu. Ses parents n’ont jamais retrouvé son corps.
