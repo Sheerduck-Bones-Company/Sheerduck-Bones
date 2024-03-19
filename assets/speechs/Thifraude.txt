@@ -1,4 +1,4 @@
-place : fontaine, step : 1 {
+step : 1 {
 [Thifraude : Bonjour ! Quelle belle journée aujourd'hui !
 Thifraude : Tu veux une séance gratos d’escalade ?]
 
