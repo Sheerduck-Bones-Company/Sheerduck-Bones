@@ -10,9 +10,9 @@ def ImportFolder(path:str):
         folder[elem[:-4]] = surface
     return folder
 
-def ImportSpeech(name_character):
-    try:
-        with open(f"assets/speechs/{name_character}.txt", 'r', encoding="utf-8") as fichier:
+def ImportSpeech(name_character, game):
+    if name_character+'.txt' in os.listdir("assets/speechs") :
+        with open(f"assets/speechs/{name_character}.txt", 'r', encoding='utf-8') as fichier:
             txt = fichier.read()
             speechs = re.findall("[^{}\n]+{[^{}]+}", txt)
             speech_bubbles = []
@@ -30,11 +30,11 @@ def ImportSpeech(name_character):
                     step = step_match.group('step')
                         
                     if "-" in step:
-                        step = [num for num in range(step.split('-')[0], step.split('-')[1]+1, 1)]
+                        step = [num for num in range(int(step.split('-')[0]), int(step.split('-')[1])+1, 1)]
                     elif '/' in step:
                         step = [int(num) for num in step.split('/')]
                     else:
-                        step = int(step)
+                        step = [int(step)]
                 else:
                     step = None
                     
@@ -46,14 +46,26 @@ def ImportSpeech(name_character):
                     for ligne in dialogue.split('\n'):
                         m = re.search(r"(?P<name>[^: ]+)\s*:\s*(?P<text>.+)", ligne)
                         bubble_text[dial_ind].append((m.group('name'), m.group('text')))
+                        
+                add_step_match = re.search(r"add_step\s*:\s*(?P<add_step>[^ ,{}\[\]\n]+)", speech)
+                if add_step_match != None:
+                    add_step = int(add_step_match.group('add_step'))
+                else:
+                    add_step = None
+                    
+                add_hint_match = re.search(r"add_hint\s*:\s*(?P<add_hint>[^ ,{}\[\]\n]+)", speech)
+                if add_hint_match != None:
+                    add_hint = add_hint_match.group('add_hint')
+                else:
+                    add_hint = None
                             
-                speech_bubbles.append(Dialogues(place, step, bubble_text))
+                speech_bubbles.append(Dialogues(place, step, bubble_text, add_step, add_hint, game))
                     
         return speech_bubbles
-    except:
-        return [Dialogues(None, None, [[(None, "...")]])]
+    else:
+        return [Dialogues(None, None, [[(None, "...")]], None, None, game)]
 
-def loadMap(player):
+def loadMap(player, game):
     maps = {}
     for map_name in os.listdir("assets/map"):
         mape = []
@@ -112,7 +124,7 @@ def loadMap(player):
                                 interact_group.add(InteractTile(crt_rect.inflate(28,28), map_path=crt_attributes[4]))
                             
                             if crt_type+'.png' in os.listdir("assets/graphics/characters"):
-                                crt_speech = ImportSpeech(crt_type)
+                                crt_speech = ImportSpeech(crt_type, game)
                                 interact_group.add(InteractTile(crt_rect.inflate(28,28), speech=crt_speech))
 
         maps[map_name] = {"ground" : mape, "visible" : visible_group, "obstacles" : obstacles_group, "interact" : interact_group, "last_coord" : last_coord, "group_list" : [visible_group, obstacles_group, interact_group]}

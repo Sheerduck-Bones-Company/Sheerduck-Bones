@@ -44,3 +44,11 @@ class Hint():
             self.rect.bottom = 720
             
         self.link_rect = self.image.get_rect(left=self.rect.centerx-15, top=self.rect.y+10, width=30, height=30)
+    
+    def draw(self, screen):
+        screen.blit(self.image, self.rect)
+        pygame.draw.circle(screen, "red", self.link_rect.center, self.link_rect.width/2)
+        
+    def draw_links(self, screen):
+        for link in self.links:
+            pygame.draw.line(screen, "red", self.link_rect.center, link.link_rect.center)

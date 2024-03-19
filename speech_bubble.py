@@ -1,15 +1,35 @@
 import pygame
+from hint import Hint
 
 class Dialogues():
-    def __init__(self, place, step, text):
+    def __init__(self, place, step, text, add_step, add_hint, game):
+        self.game = game
         self.place = place
         self.step = step
         self.text = text
+        self.add_step = add_step
+        self.is_step_added = False
+        self.add_hint = add_hint
+        self.is_hint_added = False
         self.current_dial_num = 0
         
     def update(self):
-        self.current_dial_num = (self.current_dial_num+1)%len(self.text)
+        self.current_dial_num += 1
+        if self.current_dial_num == len(self.text):
+            self.current_dial_num = 0
+            self.AddStep()
+            self.AddHint()
+    
+    def AddStep(self):
+        if self.add_step != None and not self.is_step_added:
+            self.game.current_step += self.add_step
+            self.is_step_added = True
 
+    def AddHint(self):
+        if self.add_hint != None and not self.is_hint_added:
+            self.game.player.hints.append(Hint(self.add_hint))
+            self.is_hint_added = True
+            
 class SpeechBubble():
     def __init__(self, game, text:list = []):
         self.game = game

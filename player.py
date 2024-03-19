@@ -114,14 +114,14 @@ class Player(pygame.sprite.Sprite):
 			if sprites[0].speech != []:
 				if not self.game.is_speeking:
 					for speech in sprites[0].speech:
-						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (speech.step == self.game.current_step)) or ((speech.place+'.txt' == self.game.current_map_name) and (speech.step == None)) or ((speech.place+".txt" == self.game.current_map_name) and (speech.step == self.game.current_step)):
+						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (self.game.current_step in speech.step)) or ((self.game.current_map_name[:-4] in speech.place) and (speech.step == None)) or ((self.game.current_map_name[:-4] in speech.place) and (self.game.current_step in speech.step)):
 							self.current_speech = speech
 							self.game.say(speech.text[speech.current_dial_num])
 							speech.update()
 							break
 					if self.current_speech == None:
-						self.current_speech = Dialogues(None, None, [[(None, '...')]])
-						self.game.say(self.current_speech.text[self.current_speech.current_dial_num], True)
+						self.current_speech = Dialogues(None, None, [[(None, "...")]], None, None, self.game)
+						self.game.say(self.current_speech.text[self.current_speech.current_dial_num])
 				else:
 					self.game.say(self.current_speech.text[self.current_speech.current_dial_num])
 
@@ -130,6 +130,7 @@ class Player(pygame.sprite.Sprite):
 			if hint.touch_dot_link(pos):
 				hint.is_linking = True
 				self.current_hint = hint
+				break
 			elif hint.is_caught(pos):
 				hint.set_offset(pos)
 				self.current_hint = hint
@@ -140,12 +141,12 @@ class Player(pygame.sprite.Sprite):
 				hint.clear_touched_link(pos)
 
 	def stop_document_interact(self, pos):
-		for hint in self.hints[::-1]:
-			if hint.is_caught(pos) and self.current_hint.is_linking:
-				if (not self.current_hint in hint.links) and (self.current_hint != hint):
-					hint.links.append(self.current_hint)
-					self.current_hint.links.append(hint)
-
 		if self.current_hint != None:
+			for hint in self.hints[::-1]:
+				if hint.is_caught(pos) and self.current_hint.is_linking:
+					if (not self.current_hint in hint.links) and (self.current_hint != hint):
+						hint.links.append(self.current_hint)
+						self.current_hint.links.append(hint)
 			self.current_hint.is_linking = False
+
 		self.current_hint = None

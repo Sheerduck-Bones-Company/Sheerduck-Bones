@@ -10,7 +10,7 @@ class Game():
         self.screen = screen
         self.pressed = {}
         self.player = player.Player(self, (640,360))
-        self.maps = loadMap(self.player)
+        self.maps = loadMap(self.player, self)
         self.current_map_name = "test.txt"
         self.camera_group = camera.Camera(self)
         self.current_step = 1
@@ -42,10 +42,9 @@ class Game():
         else:
             self.screen.fill((88, 41, 0))
             for hint in self.player.hints:
-                self.screen.blit(hint.image, hint.rect)
-                pygame.draw.rect(self.screen, "red", hint.link_rect)
-                for link in hint.links:
-                    pygame.draw.line(self.screen, "red", hint.link_rect.center, link.link_rect.center)
+                hint.draw(self.screen)
+            for hint in self.player.hints:
+                hint.draw_links(self.screen)
                 if hint.is_linking:
                     pygame.draw.line(self.screen, "red", hint.link_rect.center, pygame.mouse.get_pos())
                 
