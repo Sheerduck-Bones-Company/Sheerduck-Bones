@@ -1,13 +1,13 @@
 step : 1 {
-[Peaudevigne : Oh, une nouvelle tête !
-Peaudevigne : Notre ville est très paisible. J’espère que vous vous y plairez.
-Dandy : Ah vous ne vous installez pas ? C'est dommage !
-Peaudevigne : Bon séjour alors !]
+[Peaudevigne :: Oh, une nouvelle tête !
+Notre ville est très paisible. J’espère que vous vous y plairez.
+Dandy :: Ah vous ne vous installez pas ? C'est dommage !
+Peaudevigne :: Bon séjour alors !]
 
-[Peaudevigne : Excuse-moi, tu n’aurais pas vu Dandy ? Je ne sais pas où il est encore passé celui-là...
-Peaudevigne : Ah il est là !]
+[Peaudevigne :: Excuse-moi, tu n’aurais pas vu Dandy ? Je ne sais pas où il est encore passé celui-là...
+Ah il est là !]
 }
 
-step : {
-[Peaudevigne : Tu veux venir voir chez nous ? C’est très joli :)]
+step : 2 {
+[Peaudevigne :: Tu veux venir voir chez nous ? C’est très joli :)]
 }

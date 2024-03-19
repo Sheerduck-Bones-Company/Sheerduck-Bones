@@ -1,11 +1,11 @@
 step : 1 {
-[Hélolo : Coucou !
-Hélolo : Tout se passe bien ?]
+[Hélolo :: Coucou !
+Tout se passe bien ?]
 }
 
 step : 10 {
-[Hélolo : Babybel ? Ce qu’il aime ?
-Hélolo : Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
-Hélolo : De toute façon, il dépense tout son argent dans l’alcool...
-Hélolo : Peut-être qu'ils en ont en stock à l'auberge...]
+[Hélolo :: Babybel ? Ce qu’il aime ?
+Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
+De toute façon, il dépense tout son argent dans l’alcool...
+Peut-être qu'ils en ont en stock à l'auberge...]
 }

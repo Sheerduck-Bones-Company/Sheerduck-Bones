@@ -1,10 +1,10 @@
 step : 1 {
 
-[Macadame : Salut mec, ca va ?]
+[Macadame :: Salut mec, ca va ?]
 
-[Macadame : J’vous jure qu’c’est pas ma faute m’sieur l’agent]
+[Macadame :: J’vous jure qu’c’est pas ma faute m’sieur l’agent]
 
-[Macadame : Je suis sur que je vous bats en match de basket.
-Macadame : Un jour, je serais plus fort que Poulet Curry !]
+[Macadame :: Je suis sur que je vous bats en match de basket.
+Un jour, je serais plus fort que Poulet Curry !]
 
 }

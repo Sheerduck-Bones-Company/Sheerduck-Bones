@@ -1,7 +1,7 @@
 step : 1 {
-[Zolala : Bonjour !]
-[Zolala : Je me présente, je m'appelle...
-Zolala : Ah, je vous avais pas vu]
-[Zolala : T'as fait tes exos ?]
-[Zolala : J'ai une relation difficile avec mon chat]
+[Zolala :: Bonjour !]
+[Zolala :: Je me présente, je m'appelle...
+Ah, je vous avais pas vu]
+[Zolala :: T'as fait tes exos ?]
+[Zolala :: J'ai une relation difficile avec mon chat]
 }

@@ -1,19 +1,19 @@
 step : 1 {
-[Chrome : ...]
+[Chrome :: ...]
 
-[Chrome : ...
-Chrome : Si je ne te réponds pas ce n'est pas parce que je n'ai pas entendu tu sais ?]
+[Chrome :: ...
+Si je ne te réponds pas ce n'est pas parce que je n'ai pas entendu tu sais ?]
 
-[Chrome : ...
-Chrome : Je m'attelle à une tâche plus importante que de converser avec un être tel que vous. Revenez quand Obi vaincra Yoda]
+[Chrome :: ...
+Je m'attelle à une tâche plus importante que de converser avec un être tel que vous. Revenez quand Obi vaincra Yoda]
 
-[Chrome : Je vous parlerai à l'arrivée des coquecigrues.]
+[Chrome :: Je vous parlerai à l'arrivée des coquecigrues.]
 }
 
 step : 7 {
-[Chrome : Connaissez vous le théorème du sandwich au jambon ?
-Chrome : Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
-Chrome : Ah vous connaissez ?
-Chrome : Mais vous êtes mathématicien et détective !!
-Chrome : Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_sandwich_au_jambon]
+[Chrome :: Connaissez vous le théorème du sandwich au jambon ?
+Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
+Ah vous connaissez ?
+Mais vous êtes mathématicien et détective !!
+Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_sandwich_au_jambon]
 }

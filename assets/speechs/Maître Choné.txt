@@ -1,24 +1,24 @@
 place : école, step : 1 {
-[Maître Choné : Pensez outside the box !]
+[Maître Choné :: Pensez outside the box !]
 
-[Maître Choné : Ce qui nous intéresse c’est de faire bouger les choses.
-Maître Choné : En fait ça va pas vraiment bouger mais ça va bouger conceptuellement
-Maître Choné : Pour ça, on donne des vies aux gens et ça c’est gentil, parce que voilà !
-Maître Choné : C’est ça qui est génial, regarder les choses bouger !}]
+[Maître Choné :: Ce qui nous intéresse c’est de faire bouger les choses.
+En fait ça va pas vraiment bouger mais ça va bouger conceptuellement
+Pour ça, on donne des vies aux gens et ça c’est gentil, parce que voilà !
+C’est ça qui est génial, regarder les choses bouger !}]
 
-[Maître Choné : Les humains sont des plans projectifs.]
+[Maître Choné :: Les humains sont des plans projectifs.]
 
-[Maître Choné : Et c’est ça qui est absolument magnifique !!]
+[Maître Choné :: Et c’est ça qui est absolument magnifique !!]
 
-[Maître Choné : La géométrie est magnifique.
-Maître Choné : La vie est belle.]
+[Maître Choné :: La géométrie est magnifique.
+La vie est belle.]
 }
 
 place : école, step : 7 {
 
-[Maître Choné : Quoi un meurtre ??? Mais c'est affreux !
-Maître Choné : Ça me rappelle un problème de maths sur lequel j'avais travaillé il y a quelque mois...
-Maître Choné : Attendez que je retrouve mes notes !
-Maître Choné : Ça ne vous intéresse pas ? C'est dommage !
-Maître Choné : Si vous changez d'avis n'hésitez pas à venir me voir !]
+[Maître Choné :: Quoi un meurtre ??? Mais c'est affreux !
+Ça me rappelle un problème de maths sur lequel j'avais travaillé il y a quelque mois...
+Attendez que je retrouve mes notes !
+Ça ne vous intéresse pas ? C'est dommage !
+Si vous changez d'avis n'hésitez pas à venir me voir !]
 }

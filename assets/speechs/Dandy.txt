@@ -1,12 +1,12 @@
 step : 1 {
-[Dandy : Excuse-moi tu n’aurais pas vu Peaudevigne ? Je ne sais pas où elle est encore passée celle-là...]
+[Dandy :: Excuse-moi tu n’aurais pas vu Peaudevigne ? Je ne sais pas où elle est encore passée celle-là...]
 }
 
 place : house1, step : 4 {
-[Dandy : Ca te plait ?
-Dandy : Ah oui cette batte ? On étaient champions de baseball à notre époque !
-Peaudevigne : Mais on défonçait pas que les équipes adverses si tu vois ce que je veux dire ihihihih
-Dandy : On était un peu violents à cette époque ! héhéhé
-Peaudevigne : Mais cette époque est révolue, maintenant on passe nos vieux jours autour du lac :)
-Peaudevigne : C'est super paisible là bas ! Tu pourras aller voir !]
+[Dandy :: Ca te plait ?
+Ah oui cette batte ? On étaient champions de baseball à notre époque !
+Peaudevigne :: Mais on défonçait pas que les équipes adverses si tu vois ce que je veux dire ihihihih
+Dandy :: On était un peu violents à cette époque ! héhéhé
+Peaudevigne :: Mais cette époque est révolue, maintenant on passe nos vieux jours autour du lac :)
+C'est super paisible là bas ! Tu pourras aller voir !]
 }

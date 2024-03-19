@@ -1,19 +1,19 @@
 place : atelier, step : 1 {
-[Tartatin : Je suis occupé repassez plus tard.]
-[Tartatin : Je travaille pour réparer Remixeur, tu penses qu’il devrait être bleu ou rouge ? Nous ne sommes pas d’accord avec Philémonade.
-Tartatin : Ah merci ! Je lui dirais que tu es d’accord avec moi]
-[Tartatin : Je voulais faire un programme pour trouver le chemin le plus court entre deux stations de métro mais il n’y pas de métro ici.
-Tartatin : Par contre il y a des égouts pas utilisés depuis longtemps...]
+[Tartatin :: Je suis occupé repassez plus tard.]
+[Tartatin :: Je travaille pour réparer Remixeur, tu penses qu’il devrait être bleu ou rouge ? Nous ne sommes pas d’accord avec Philémonade.
+Ah merci ! Je lui dirais que tu es d’accord avec moi]
+[Tartatin :: Je voulais faire un programme pour trouver le chemin le plus court entre deux stations de métro mais il n’y pas de métro ici.
+Par contre il y a des égouts pas utilisés depuis longtemps...]
 }
 
 place : atelier, step : 3 {
-[Tartatin : Remixeur a disparu il y a quelques temps... Quand il est revenu il était tout cassé !
-Tartatin : Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et c'est amusé avec ! Mais je ne sais pas qui...
-Tartatin : Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça... Je programmerais Remixeur pour qu'il se venge !
-Tartatin : Non je n'irais pas moi même, vous comprenez...]
+[Tartatin :: Remixeur a disparu il y a quelques temps... Quand il est revenu il était tout cassé !
+Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et c'est amusé avec ! Mais je ne sais pas qui...
+Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça... Je programmerais Remixeur pour qu'il se venge !
+Non je n'irais pas moi même, vous comprenez...]
 }
 
 place : atelier, step : 4 {
-[Tartin : Ah c'était Charlie ? Bah alors ! Il est tellement silencieux et il reste toujours au cimetière... Je n'aurais jamais cru ça de lui ! J'espère qu'il s'excusera !
-Tartatin : Merci Mr Bones !]
+[Tartatin :: Ah c'était Charlie ? Bah alors ! Il est tellement silencieux et il reste toujours au cimetière... Je n'aurais jamais cru ça de lui ! J'espère qu'il s'excusera !
+Merci Mr Bones !]
 }

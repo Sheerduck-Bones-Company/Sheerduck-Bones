@@ -1,24 +1,24 @@
 step : 1 {
-[Liananas : heheheha]
+[Liananas :: heheheha]
 
-[Liananas : *side eye*
-Liananas : *bombastic side eye*
-Liananas : *criminal offensive side eye*]
+[Liananas :: *side eye*
+*bombastic side eye*
+*criminal offensive side eye*]
 
-[Liananas : ?]
+[Liananas :: ?]
 
-[Liananas : mais why]
+[Liananas :: mais why]
 
-[Liananas : mais arrête enfait]
+[Liananas :: mais arrête enfait]
 
-[Liananas : sale kk]
+[Liananas :: sale kk]
 }
 
 step 8 {
-[Liananas : Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
-Liananas : ah oui c'est mon tableau. Je peins ce que je vois.
-Liananas : je crois que j'ai vu ça sur la falaise. En fait non je sais plus. C'est pas très intéressant si ?]
+[Liananas :: Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
+ah oui c'est mon tableau. Je peins ce que je vois.
+je crois que j'ai vu ça sur la falaise. En fait non je sais plus. C'est pas très intéressant si ?]
 
-[Liananas : De toute façon la vie ça sert à rien.
-Liananas : Kill me.]
+[Liananas :: De toute façon la vie ça sert à rien.
+Kill me.]
 }

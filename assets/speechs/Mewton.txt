@@ -1,14 +1,14 @@
 place : musée, step : 1 {
-[Mewton : Bienvenue dans le musée de Coincoinville.]
+[Mewton :: Bienvenue dans le musée de Coincoinville.]
 
-[Mewton : Je peux vous aider ?]
+[Mewton :: Je peux vous aider ?]
 
-[Mewton : Vous aussi vous êtes fan de la peinture de Jacques-Louis David ?
-Mewton : Face à ça les peintures de Liananas est d’un niveau inférieur *d’un ton plein de dédain*
-Mewton : Si vous voulez en prendre une d'ailleurs j'en ait tout un tas. Elle est tellement déprimée qu'elle essaye de déprimer les autres en montrant ses tableaux affreux !]
+[Mewton :: Vous aussi vous êtes fan de la peinture de Jacques-Louis David ?
+Face à ça les peintures de Liananas est d’un niveau inférieur *d’un ton plein de dédain*
+Si vous voulez en prendre une d'ailleurs j'en ait tout un tas. Elle est tellement déprimée qu'elle essaye de déprimer les autres en montrant ses tableaux affreux !]
 }
 
 place : musée, step : 5 {
-[Mewton : Malheur, j'ai vu Liananas peindre encore un autre tableau...
-Mewton : Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !]
+[Mewton :: Malheur, j'ai vu Liananas peindre encore un autre tableau...
+Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !]
 }

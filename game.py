@@ -11,7 +11,7 @@ class Game():
         self.pressed = {}
         self.player = player.Player(self, (640,360))
         self.maps = loadMap(self.player, self)
-        self.current_map_name = "test.txt"
+        self.current_map_name = "ville.txt"
         self.camera_group = camera.Camera(self)
         self.current_step = 1
     

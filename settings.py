@@ -42,10 +42,16 @@ def ImportSpeech(name_character, game):
                     
                 dialogues = re.findall(r"\[([^\[\]]+)\]", speech)
                 for dial_ind, dialogue in enumerate(dialogues):
+                    current_name = None
                     bubble_text.append([])
                     for ligne in dialogue.split('\n'):
-                        m = re.search(r"(?P<name>[^: ]+)\s*:\s*(?P<text>.+)", ligne)
-                        bubble_text[dial_ind].append((m.group('name'), m.group('text')))
+                        name_match = re.search(r"(?P<name>[^: ]+)\s*::", ligne)
+                        if name_match != None:
+                            current_name = name_match.group("name")
+                            text_match = re.search(r"[^: ]+\s*::\s*(?P<text>.+)", ligne)
+                            bubble_text[dial_ind].append((current_name, text_match.group('text')))
+                        else:
+                            bubble_text[dial_ind].append((current_name, ligne))
                         
                 add_step_match = re.search(r"add_step\s*:\s*(?P<add_step>[^ ,{}\[\]\n]+)", speech)
                 if add_step_match != None:

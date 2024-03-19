@@ -1,16 +1,16 @@
 place : auberge, step : 1 {
-[Babybel : Tu veux voir un tour de magie ?
-Babybel : vioummmmm-
-Babybel : Oh mince
-Babybel : T’as rien vu.]
+[Babybel :: Tu veux voir un tour de magie ?
+vioummmmm-
+Oh mince
+T’as rien vu.]
 }
 
 place : auberge, step : 5 {
-[Babybel : Je sais pas pourquoi mais le maire a l'air de ne pas trop m'apprécier...
-Babybel : Peut-être parce que je suis plus beau que lui ahahahahah]
+[Babybel :: Je sais pas pourquoi mais le maire a l'air de ne pas trop m'apprécier...
+Peut-être parce que je suis plus beau que lui ahahahahah]
 }
 
 place : auberge, step : 100 {
-[Babybel : Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
-Babybel : Suis-moi !]
+[Babybel :: Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
+Suis-moi !]
 }

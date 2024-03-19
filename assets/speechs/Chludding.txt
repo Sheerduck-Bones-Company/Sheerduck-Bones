@@ -1,21 +1,21 @@
 step : 1 {
 
-[Chludding : Bonjour !!!!!!!!!!
-Chludding: Que penses-tu de cette belle journée ?
-Chludding : Moi je suis heureuse !]
+[Chludding :: Bonjour !!!!!!!!!!
+Que penses-tu de cette belle journée ?
+Moi je suis heureuse !]
 
-[Chludding : Ich BiN eIN ZZZZupEr stAr
-Chludding : ZOUPER STAREEEEEE
-Chludding : Oh coucou ! Tu veux venir à mon concert tout à l'heure ?
-Chludding : Non ? C'est dommage ! Sarat joue avec moi en plus !]
+[Chludding :: Ich BiN eIN ZZZZupEr stAr
+ZOUPER STAREEEEEE
+Oh coucou ! Tu veux venir à mon concert tout à l'heure ?
+Non ? C'est dommage ! Sarat joue avec moi en plus !]
 
-[Chludding : lalalaaaaaa]
+[Chludding :: lalalaaaaaa]
 
-[Chludding : Grenouilleeee
-Chludding : Au pays de Chludding on rigole biennn
-Chludding : Avec l'Ananas, Sarat et les copains !
-Chludding : Attention (attention)
-Chludding : Ca commence (ça commence)
-Chludding : Ce matin, il fait beauuuuu
-Chludding : VENEZ CHANTERRRR CE REFRAINNNN]
+[Chludding :: Grenouilleeee
+Au pays de Chludding on rigole biennn
+Avec l'Ananas, Sarat et les copains !
+Attention (attention)
+Ca commence (ça commence)
+Ce matin, il fait beauuuuu
+VENEZ CHANTERRRR CE REFRAINNNN]
 }
