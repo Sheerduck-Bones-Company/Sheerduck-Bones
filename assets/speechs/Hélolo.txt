@@ -1,6 +1,10 @@
 step : 1 {
-[Hélolo :: Coucou !
-Tout se passe bien ?]
+[Hélolo :: Vous devriez aller voir la boulangerie...]
+}
+
+step : 3 {
+[Hélolo :: Ah c'est encore vous ?
+Hélolo :: J'ai entendu des bruits bizarres chez l'antiquaire, vous devriez peut-être aller voir ça ?]
 }
 
 step : 10 {
@@ -8,4 +12,11 @@ step : 10 {
 Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
 De toute façon, il dépense tout son argent dans l’alcool...
 Peut-être qu'ils en ont en stock à l'auberge...]
+}
+
+step : 1-100 {
+[Hélolo :: Coucou !
+Tout se passe bien ?]
+
+[Hélolo :: Oui ?]
 }

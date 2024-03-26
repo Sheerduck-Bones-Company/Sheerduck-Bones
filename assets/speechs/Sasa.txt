@@ -1,17 +1,14 @@
 place : boulangerie, step : 1 {
-[Sasa :: ? a-
-TCHOUM]
-
-[Sasa :: Salut salut !]
-}
-
-place : boulangerie, step : 2 {
 [Sasa :: C'est vous le fameux détective dont tout le monde parle ?
 Vava :: Arrête de mentir, personne ne parle de lui...
 Sasa :: Chut !
 Vava :: Toi chut, t'es trop méchante avec moi
-Sasa :: Est-ce que vous pourriez nous aider ? En fait une baguette nous a été volée...]
+Sasa :: Est-ce que vous pourriez nous aider ? En fait une baguette nous a été volée...
+Vava :: Vous devriez aller voir Pom ! C'est notre livreur.]
+add_step : 1
+}
 
+place : boulangerie, step : 2 {
 [Sasa :: Si vous retrouvez qui c'était nous vous en serions très reconnaissantes !
 Vava :: Ahahah
 Sasa :: Tu te moques de moi ?
@@ -22,4 +19,14 @@ place : boulangerie, step : 3 {
 [Sasa :: J'en étais sûre que c'était Pom, il ne perd rien pour attendre...
 Merci beaucoup !
 Ah oui il paraît qu'il se passe des choses étranges chez l'antiquaire... Si j'étais vous j'irais voir ça !]
+}
+
+place : boulangerie, step : 1-100 {
+[Sasa :: Moshi moshi !
+Sasa :: Vous voulez autre chose ?]
+
+[Sasa :: ? a-
+TCHOUM]
+
+[Sasa :: Salut salut !]
 }
