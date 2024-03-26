@@ -8,6 +8,15 @@ Peaudevigne :: Bon séjour alors !]
 Ah il est là !]
 }
 
-step : 2 {
-[Peaudevigne :: Tu veux venir voir chez nous ? C’est très joli :)]
+step : 4 {
+[Peaudevigne :: Tu veux venir voir chez nous ? C’est très joli :)
+Passe quand tu veux ! On habite dans la petite maison au nord-est de la ville :)]
+add_step : 1
+}
+
+place : house1, step : 5 {
+[Peaudevigne :: Bienvenue chez nous ! C'est très paisible ici !
+Si tu as besoin de quoi que ce soit n'hésites pas :3]
+
+[Peaudevigne :: Quoi ? La batte ? Ah oui on était
 }

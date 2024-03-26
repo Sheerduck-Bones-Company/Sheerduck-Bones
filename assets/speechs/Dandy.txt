@@ -1,12 +1,25 @@
-step : 1 {
-[Dandy :: Excuse-moi tu n’aurais pas vu Peaudevigne ? Je ne sais pas où elle est encore passée celle-là...]
+step : 4 {
+[Dandy :: Bonjour détective ! Avec Peaudevigne on s'est dit qu'on se devait de vous inviter chez nous !
+Venez quand vous voulez, on habite dans la maison au nord-ouest de la ville :)]
+add_step : 1
 }
 
-place : house1, step : 4 {
-[Dandy :: Ca te plait ?
+place : maison, step : 5 {
+[Dandy :: Ça te plait ?
 Ah oui cette batte ? On étaient champions de baseball à notre époque !
 Peaudevigne :: Mais on défonçait pas que les équipes adverses si tu vois ce que je veux dire ihihihih
 Dandy :: On était un peu violents à cette époque ! héhéhé
 Peaudevigne :: Mais cette époque est révolue, maintenant on passe nos vieux jours autour du lac :)
 C'est super paisible là bas ! Tu pourras aller voir !]
+add_step : 1
+}
+
+step : 1-100 {
+[Dandy :: Excuse-moi tu n’aurais pas vu Peaudevigne ? Je ne sais pas où elle est encore passée celle-là...
+Ah mais elle est là !]
+
+[Dandy :: Bonjour !]
+
+[Dandy :: Ah, je suis fatigué...
+La vieillesse c'est compliqué...]
 }
