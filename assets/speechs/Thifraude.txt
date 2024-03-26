@@ -1,4 +1,12 @@
-step : 1 {
+place : auberge, step : 4-100 {
+[Thifraude :: Il est beau quand il travaille Fluchs.
+Ah non je dis ça comme ça ! C'est par habitude.
+Euhhhh nonnnn j'ai rien dit. Oublie. ]
+
+[Thifraude :: Si Matcha demande, je suis pas là.]
+}
+
+step : 1-100 {
 [Thifraude :: Bonjour ! Quelle belle journée aujourd'hui !
 Tu veux une séance gratos d’escalade ?]
 
@@ -8,12 +16,4 @@ Tu veux une séance gratos d’escalade ?]
 
 [Thifraude :: Tu n'aurais pas vu Matcha ? Il est toujours en train de travailler celui là ! Je m'ennuie à la maison...
 Ah tu ne savais pas ? Je suis sa femme. Enfin tout ça est très récent !]
-}
-
-place : auberge, step : 4 {
-[Thifraude :: Il est beau quand il travaille Fluchs.
-Ah non je dis ça comme ça ! C'est par habitude.
-Euhhhh nonnnn j'ai rien dit. Oublie. ]
-
-[Thifraude :: Si Matcha demande, je suis pas là.]
 }

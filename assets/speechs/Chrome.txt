@@ -1,4 +1,16 @@
-step : 1 {
+step : 7 {
+[Chrome :: Connaissez vous le théorème du sandwich au jambon ?
+Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
+Ah vous connaissez ?
+Mais vous êtes mathématicien et détective !!
+Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_sandwich_au_jambon]
+
+[Chrome :: En ce moment, je trouve que Joshwaffle et Maître Choné sont suspicieux. Même Professeur Gandalf a changé.
+Bon, après Léninodie a toujours été bizarre, et je ne parle même pas de Solal ! Mais à priori, Romarin et Safran sont clean.
+Vous devriez essayer de leur parler]
+add_step : 1}
+
+step : 1-100 {
 [Chrome :: ...]
 
 [Chrome :: ...
@@ -8,12 +20,4 @@ Si je ne te réponds pas ce n'est pas parce que je n'ai pas entendu tu sais ?]
 Je m'attelle à une tâche plus importante que de converser avec un être tel que vous. Revenez quand Obi vaincra Yoda]
 
 [Chrome :: Je vous parlerai à l'arrivée des coquecigrues.]
-}
-
-step : 7 {
-[Chrome :: Connaissez vous le théorème du sandwich au jambon ?
-Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
-Ah vous connaissez ?
-Mais vous êtes mathématicien et détective !!
-Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_sandwich_au_jambon]
 }

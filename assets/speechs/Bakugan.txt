@@ -1,4 +1,14 @@
-place : antiquaire, step : 1 {
+place : antiquaire, step : 3 {
+[Bakugan :: Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
+Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]
+[Bakugan :: Laissez moi méditer en paix, me connecter avec les morts]
+add_step : 1}
+
+place : antiquaire, step : 4 {
+[Bakugan :: Laissez moi méditer en paix, me connecter avec les morts]
+}
+
+place : antiquaire, step : 1-100 {
 [Bakugan :: Bonjour, mon enfant
 Toi aussi tu t’intéresses aux artefacts ?
 Par exemple, cette plum de chagrin peut réaliser tes désirs]

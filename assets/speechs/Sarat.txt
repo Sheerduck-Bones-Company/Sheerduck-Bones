@@ -1,4 +1,4 @@
-place : auberge, step : 1 {
+place : auberge, step : 1-100 {
 [Sarat :: Je te sers quelque chose ?]
 
 [Sarat :: C’est un poussin qui rentre dans un bar.]
