@@ -1,4 +1,4 @@
-step : 7 {
+place : bibliotheque, step : 7 {
 [Chrome :: Connaissez vous le théorème du sandwich au jambon ?
 Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
 Ah vous connaissez ?

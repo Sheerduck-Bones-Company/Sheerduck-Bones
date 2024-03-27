@@ -1,4 +1,4 @@
-place : auberge, step 4 {
+place : auberge, step : 4 {
 [Terrine :: Tu me donnes quoi en échange ??
 Ah ouais t'es célibataire ?! Je peux te trouver quelqu'un si tu veux ! Tu sais il y a pleins de poussins en manque d'amour ici !
 Ah oui c'est vrai que je t'avais dit que je te dirais quelque chose...
@@ -7,7 +7,7 @@ Quoi, qui me l'a dit ? Ah ça c'est un secret !
 Si t'as d'autres choses à me dire hésite pas !]
 }
 
-place : auberge, step 6-10 {
+place : auberge, step : 6-10 {
 [Terrine :: Qu'est ce que tu veux que je te dise ?
 ...
 Non désolé, je ne dois pas craquer.
