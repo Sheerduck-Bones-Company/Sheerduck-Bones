@@ -1,4 +1,4 @@
-step : 1 {
+step : 1-100 {
 [Avoine :: Tu viens pêcher avec moi un de ces jours ?]
 
 [Avoine :: Il y a très longtemps les poussins savaient nager]

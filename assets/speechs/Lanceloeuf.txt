@@ -1,4 +1,4 @@
-place : musée, step : 1 {
+place : musée, step : 1-100 {
 [Lanceloeuf :: Il y a plein de belles œuvres dans notre musée ! N’hésitez pas à le visiter...]
 
 [Lanceloeuf :: Que dit le poussin à l’ours ?

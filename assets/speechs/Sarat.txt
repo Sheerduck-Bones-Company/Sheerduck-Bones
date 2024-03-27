@@ -1,3 +1,8 @@
+place : auberge, step : 23 {
+[Sarat :: Salut, tu veux quoi ? Un sandwich au cheddar ? Ça tombe bien, les stocks ne s’épuisent pas depuis des jours. Tiens, n'hésite pas à repasser à l'occasion !]
+add_step : 1
+}
+
 place : auberge, step : 1-100 {
 [Sarat :: Je te sers quelque chose ?]
 
@@ -8,9 +13,4 @@ C’est le QUASOOOOOOO]
 
 [Sarat :: Terrine a toujours quelque chose à raconter ! Si tu cherches des infos c'est elle que faut aller voir.
 Après avoir bu un coup, évidemment !]
-}
-
-place : auberge, step : 23 {
-[Sarat :: Salut, tu veux quoi ? Un sandwich au cheddar ? Ça tombe bien, les stocks ne s’épuisent pas depuis des jours. Tiens, n'hésite pas à repasser à l'occasion !]
-add_step : 1
 }

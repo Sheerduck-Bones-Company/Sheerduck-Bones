@@ -19,4 +19,5 @@ step : 1-100 {
 Ah, je vous avais pas vu]
 [Zolala :: T'as fait tes exos ?]
 [Zolala :: J'ai une relation difficile avec mon chat... C'est une relation d'équivalence !]
+[Zolala :: Si tu continues à m'espionner, je vais te goummer]
 }
