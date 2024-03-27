@@ -9,17 +9,10 @@ class Player(pygame.sprite.Sprite):
 		self.images = ImportFolder("assets/graphics/player")						#Les images du joueur
 		self.image = self.images.get("front_stand")									#On définie l'image actuelle du joueur
 		self.game = game
-<<<<<<< HEAD
 		self.rect = self.image.get_rect(topleft = pos).inflate(-4,-4)				#Le rect du joueur
 		self.direction = pygame.math.Vector2()										#Un vecteur pour gérer les mouvements du joueur
 		self.speed = 12																#La vitesse du joueur
 		self.status = "front_stand"													#Le statut actuel du joueur
-=======
-		self.rect = self.image.get_rect(topleft = pos).inflate(-4,-4)
-		self.direction = pygame.math.Vector2()
-		self.speed = 12
-		self.status = "front_stand"
->>>>>>> edf370d83504322eff55ad810ee3c6530e1513ab
 		self.animation_counter = 0
 		self.current_speech = None													#Le dialogue actuel
 		self.hints = [Hint("photo"), Hint("board"), Hint("photo"), Hint("board")]	#La liste des indices du joueur
@@ -141,10 +134,11 @@ class Player(pygame.sprite.Sprite):
 
 			#Si le bloc est un personnage et possède des lignes de dialogues, on lance le dialogue correspondant à l'étape et au lieu actuels
 			if sprites[0].speech != []:
-				#Si on n'est pas déjà en train de parler on crée la boîte de dialogueg
+				#Si on n'est pas déjà en train de parler on crée la boîte de dialogues
 				if not self.game.is_speeking:
 					for speech in sprites[0].speech:
-						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (self.game.current_step in speech.step)) or ((self.game.current_map_name[:-4] in speech.place) and (speech.step == None)) or ((self.game.current_map_name[:-4] in speech.place) and (self.game.current_step in speech.step)):
+						print(speech.place, speech.step)
+						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (self.game.current_step in speech.step)) or ((self.game.current_map_name[:-4] == speech.place) and (speech.step == None)) or ((self.game.current_map_name[:-4] == speech.place) and (self.game.current_step in speech.step)):
 							self.current_speech = speech
 							self.game.say(speech.text[speech.current_dial_num])
 							speech.update()

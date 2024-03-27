@@ -14,7 +14,7 @@ def ImportFolder(path:str):
 #On importe tous les dialogues avec des Regex
 def ImportSpeech(name_character, game):
     #Si le personnage possède des boîtes de dialogues, on les apporte à partir de son fichier texte
-    if name_character+'.txt' in os.listdir("assets/speechs") :
+    if name_character+'.txt' in os.listdir("assets/speechs"):
         with open(f"assets/speechs/{name_character}.txt", 'r', encoding='utf-8') as fichier:
             #On lie le fichier texte
             txt = fichier.read()
@@ -99,11 +99,8 @@ def loadMap(player, game):
         obstacles_group = pygame.sprite.Group()
         visible_group = pygame.sprite.Group(player)
         interact_group = pygame.sprite.Group()
-<<<<<<< HEAD
         
         #On ouvre le fichier texte de la carte
-=======
->>>>>>> edf370d83504322eff55ad810ee3c6530e1513ab
         with open(f'assets/map/{map_name}', 'r', encoding='utf-8') as fichier:
             map_text = fichier.read()
             #Pour chaque couche, chaque ligne, chaque bloc, on récupère les information du bloc

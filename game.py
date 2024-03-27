@@ -7,15 +7,13 @@ class Game():
         self.is_playing = False
         self.is_speeking = False
         self.is_thinking = False
-<<<<<<< HEAD
         self.screen = screen                            #On récupère l'écran
         self.pressed = {}                               #On crée une liste pour les touches pressées
-        self.player = player.Player(self, (2338,1136))    #On crée un joueur
+        self.player = player.Player(self, (2338,1136))  #On crée un joueur
         self.maps = loadMap(self.player, self)          #On récupère les cartes du jeu
         self.current_map_name = "ville.txt"             #On définie la carte actuelle comme étant celle de la ville
         self.camera_group = camera.Camera(self)         #On crée une caméra
         self.current_step = 0                           #On définie l'étape actuelle comme étant la première
-=======
         self.screen = screen
         self.pressed = {}
         self.player = player.Player(self, (2338,1136))
@@ -23,7 +21,6 @@ class Game():
         self.current_map_name = "ville.txt"
         self.camera_group = camera.Camera(self)
         self.current_step = 0
->>>>>>> edf370d83504322eff55ad810ee3c6530e1513ab
     
     #Lancer la partie    
     def start(self):

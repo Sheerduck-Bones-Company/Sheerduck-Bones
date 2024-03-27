@@ -1,4 +1,4 @@
-step : 1 {
+step : 1-100 {
 [Turbo :: Il parait que le plat préféré des “Coincoinvillets” c’est la pizza, et après on dit que le Grand Remplacement n’existe pas...]
 
 [Turbo :: Mais moi je suis pouliste ! Je pense que toutes les poules devraient pouvoir s'exprimer librement !
