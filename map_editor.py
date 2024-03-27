@@ -195,7 +195,7 @@ def writeMessage(text_message, counter, is_error=False):
 def readFile(file_name):
     mape = []
     global img_library
-    with open(f'assets/map/{file_name}.txt', 'r') as fichier:
+    with open(f'assets/map/{file_name}.txt', 'r', encoding='utf-8') as fichier:
         map_text = fichier.read()
         for lay_index, layer in enumerate(map_text.split('$')):
             mape.append([])
@@ -243,7 +243,7 @@ def readFile(file_name):
 #Ecrire les éléments de la map dans un fichier texte
 def writeMapInFile(mape, file_name):
     #On ouvre ou on crée le fichier texte
-    with open(f"assets/map/{file_name}.txt", "w") as fichier:
+    with open(f"assets/map/{file_name}.txt", "w", encoding='utf-8') as fichier:
         map_len = len(mape)
         for layer_index, layer in enumerate(mape):
             layer_len = len(layer)
