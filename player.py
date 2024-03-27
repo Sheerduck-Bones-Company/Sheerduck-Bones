@@ -137,7 +137,6 @@ class Player(pygame.sprite.Sprite):
 				#Si on n'est pas déjà en train de parler on crée la boîte de dialogues
 				if not self.game.is_speeking:
 					for speech in sprites[0].speech:
-						print(speech.place, speech.step)
 						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (self.game.current_step in speech.step)) or ((self.game.current_map_name[:-4] == speech.place) and (speech.step == None)) or ((self.game.current_map_name[:-4] == speech.place) and (self.game.current_step in speech.step)):
 							self.current_speech = speech
 							self.game.say(speech.text[speech.current_dial_num])
