@@ -9,6 +9,6 @@ place : musée, step : 1-100 {
 [Mewton :: Je peux vous aider ?]
 
 [Mewton :: Vous aussi vous êtes fan de la peinture de Jacques-Louis David ?
-Face à ça les peintures de Liananas est d’un niveau inférieur *d’un ton plein de dédain*
+Face à ça, les peintures de Liananas sont d’un niveau inférieur *d’un ton plein de dédain*
 Si vous voulez en prendre une d'ailleurs j'en ait tout un tas. Elle est tellement déprimée qu'elle essaye de déprimer les autres en montrant ses tableaux affreux !]
 }

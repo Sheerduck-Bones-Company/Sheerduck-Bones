@@ -13,6 +13,6 @@ A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la biblioth
 
 step : 1-100 {
 [Romarin :: Oui ?]
-
-[Romarin :: Si je sais qui est le meurtrier ? Euhh je sais pas désolé.]
+[Romarin :: J'adore les cours de mathématiques en chinois. Et vous ?]
+[Romarin :: Vous aussi vous trouvez que Zolala est incroyable ?]
 }

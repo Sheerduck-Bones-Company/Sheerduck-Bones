@@ -19,5 +19,7 @@ add_step : 1
 step : 1-100 {
 [Safran :: Droit au but !!]
 [Safran :: T'aurais pas vu Chrome ? Il est parti à la bibliothèque mais il a disparu !]
-[Safran :: Je l'ai cherché partout]
+[Safran :: Je l'ai cherché partout !]
+[Safran :: Le répétez surtout pas à Macadame mais je déteste Poulet Curry. James Lebrun est bien meilleur !]
+
 }
