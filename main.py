@@ -25,23 +25,25 @@ hint_button = button.Button(screen, 'hint', -2, -2, 5)
 game = Game(screen)
 
 #On intialise la musique
-#pygame.mixer.music.load("assets/music/not-rickroll.mp3")
+pygame.mixer.music.load("assets/music/not-rickroll.mp3")
 
 running = True
 
 #On lance la boucle principale
 while running:
+    #Si on est en train de jouer
     if game.is_playing:
         #On actualise la partie
         game.update()
         hint_button.draw()
+        
+    #Sinon on affiche l'écran d'accueil    
     else:
-        #On affiche l'écran d'accueil
         screen.fill((88, 41, 0))
         start_button.draw()
         exit_button.draw()
         help_button.draw()
-        #pygame.mixer.music.play(loops=-1)
+        pygame.mixer.music.play(loops=-1)
     
     #On actualise l'écran    
     pygame.display.flip()
@@ -68,7 +70,7 @@ while running:
                     pygame.quit()
                     sys.exit()
             
-            #Activer la boîte de dialogue    
+            #Intéragir avec l'environnement
             if event.key == pygame.K_e:
                 game.player.check_interact()
             
@@ -93,19 +95,23 @@ while running:
                 #Demander de l'aide
                 elif help_button.rect.collidepoint(event.pos):
                     print('OSCOUR')
+            #Si c'est le clic gauche
             elif event.button == 1:
+                #Si on clique sur le bouton pour accéder au tableau d'indices
                 if hint_button.rect.collidepoint(event.pos) and not game.is_speeking:
                     game.is_thinking = not game.is_thinking
+                #Sinon on vérifie si on intéragie avce un indice
                 else:
                     game.player.check_document_interact(event.pos)
         
+        #Si on arrête d'appuyer sur la souris, on arrête l'intéraction avec l'indice
         if event.type == pygame.MOUSEBUTTONUP:
             if game.is_playing:
                 game.player.stop_document_interact(event.pos)
         
         #Changer le zoom de la caméra
         if event.type == pygame.MOUSEWHEEL:
-            if (2.5 > game.camera_group.zoom_scale + event.y > 0) and not game.is_speeking:
+            if (2.5 > game.camera_group.zoom_scale + event.y*0.08 > 1) and not (game.is_speeking or game.is_thinking):
                 game.camera_group.zoom_scale += event.y * 0.08
     
     #On actualise la clock

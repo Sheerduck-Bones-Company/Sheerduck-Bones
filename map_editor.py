@@ -3,14 +3,14 @@ import pygame, sys, button, os
 #On crée une classe permettant de gérer les blocs
 class Bloc(pygame.sprite.Sprite):
     def __init__(self,
-                    bloc_type:str,
-                    top_left:tuple = (0,0),
-                    big = False,
-                    is_above_player = False,
-                    is_in_group = False,
-                    collisions = [False, False, False, False],
-                    map_path = '',
-                    libraryx = 0,
+                    bloc_type:str,                              #Le nom du bloc
+                    top_left:tuple = (0,0),                     #Les coordonées du bloc
+                    big = False,                                #Si on l'affiche en grand ou non
+                    is_above_player = False,                    #S'il doit être devant le joueur ou non
+                    is_in_group = False,                        #S'il appartient à une image composée de plusieurs blocs
+                    collisions = [False, False, False, False],  #Les collisions du bloc
+                    map_path = '',                              #La carte à laquelle il mème si on intéragie avec lui
+                    libraryx = 0,                               #Les coordonnées de son image sur la carte bibliothèque
                     libraryy = 0):
         super().__init__()
         self.type = bloc_type
@@ -47,18 +47,21 @@ class Bloc(pygame.sprite.Sprite):
                 color = (255,255,255)
             pygame.draw.rect(self.info_surface, color, pygame.Rect((i*8)%16, (i//2)*8, 8, 8))
     
-    def draw_group(self):   
+    #Afficher si le bloc appartient à une image formée de plusieurs blocs
+    def draw_group(self):
         if self.is_in_group:
             pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
             pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
-            
+    
+    #Affiche si le bloc doit être afficher devant le joueur
     def draw_is_above(self):
         if self.is_above_player:
             pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
             pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
-            
+    
+    #Affiche si le bloc mène à une carte quand on intéragie avec lui
     def draw_map_path(self):
         if self.map_path != '':
             pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
@@ -71,7 +74,6 @@ pygame.display.set_caption('Création de map custom')
 pygame.display.set_icon(pygame.image.load('assets/graphics/icons/edit_icon.ico'))
 
 #On crée notre écran
-#screen_width, screen_height = 1080, 720
 screen_width, screen_height = 1500, 900
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.SCALED)
 
@@ -110,7 +112,7 @@ mouse_pressed = {}
 img_library = {}
 mape = []
 map_backup = []
-bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir('assets/graphics/blocs'))]
+bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir('assets/graphics/blocs'))]   #La liste de toutes les images de blocs dans le dossier des graphiques
 change_name_bloc = [[]]
 
 #On défini les caractéristiques de la caméra
@@ -180,7 +182,7 @@ def loadBackup():
             layer_number -= 1
         del map_backup[-1]
 
-#Ecrire une erreur
+#Ecrire un message
 def writeMessage(text_message, counter, is_error=False):
     global message_text, message_rect, message_counter
     if is_error:
@@ -195,8 +197,13 @@ def writeMessage(text_message, counter, is_error=False):
 def readFile(file_name):
     mape = []
     global img_library
+<<<<<<< HEAD
+    #On ouvre le fichier texte
+=======
+>>>>>>> edf370d83504322eff55ad810ee3c6530e1513ab
     with open(f'assets/map/{file_name}.txt', 'r', encoding='utf-8') as fichier:
         map_text = fichier.read()
+        #Pour chaque couche, chaque ligne, on récupère les caractéristiques des blocs
         for lay_index, layer in enumerate(map_text.split('$')):
             mape.append([])
             for lin_index, ligne in enumerate(layer.split('|')):
@@ -207,32 +214,39 @@ def readFile(file_name):
                     else:
                         crt_attributes = bloc.split(',')
                         #On récupère les caractéristiques du bloc
+                        
+                        #Le nom
                         crt_type = crt_attributes[0]
                         
+                        #Si son nom a été rajouté dans les changements de nom d'image, on modifie le nom
                         for change in change_name_bloc[:-1]:
                             if crt_attributes[0] == change[0]:
                                 crt_type = change[1]
                         
+                        #Si le bloc est devant le joueur
                         if int(crt_attributes[1]) == 1:
                             crt_is_above_player = True
                         else:
                             crt_is_above_player = False
                             
+                        #Si le bloc appartient à ue image composée de plusieurs blocs
                         if int(crt_attributes[2]) == 1:
                             crt_is_in_group = True
                         else:
                             crt_is_in_group = False
                         
+                        #Les collisions
                         crt_collisions = []
                         for collision in crt_attributes[3]:
                             if int(collision)==1:
                                 crt_collisions.append(True)
                             else:
                                 crt_collisions.append(False)
-                                
+                        
+                        #Le potentiel lien deu blox à une carte
                         crt_map_path = crt_attributes[4]
                                 
-                        #On ajoute les caractéristiques du bloc
+                        #On ajoute les caractéristiques du bloc à la liste de la carte
                         if file_name == "bloc_types_map":
                             mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, crt_map_path, bloc_index, lin_index))
                             img_library[crt_type] = (bloc_index, lin_index)
@@ -286,20 +300,24 @@ def writeMapInFile(mape, file_name):
 def save(given_file_name=""):
     global file_name, mape, is_saving, is_leaving, is_writting, is_creating, map_saved, change_name_bloc, bloc_types_map
     
+    #Si un nom est donné à l'enregistrement, on change le nom du fichier
     if given_file_name != "":
         file_name = given_file_name
 
+    #On écrit le fichier
     writeMapInFile(mape, file_name)
-                
+    
+    #Si des changement de noms ont été ajoutés, on modifie également la carte bibliotèque
     if file_name != "bloc_types_map" and len(change_name_bloc) > 1:
         writeMapInFile(bloc_types_map, "bloc_types_map")
         change_name_bloc = [[]]
-            
+    
+    #On enregistre que la carte est sauvegardée
     map_saved = True
     
+    #On quite la fenêtre si on était en train de quitter la fenêtre, ou on reset le nom entrée lors de l'enregistrement
     if is_leaving:
         quit_program()
-        
     elif is_saving:
         is_writting = False
         is_saving = False
@@ -319,20 +337,20 @@ while running:
     screen.fill((255,255,255))
     
     if is_confirming:
-        #Si on est en train de confirmer pour remplacer un fichier
+        #Si on est en train de confirmer le remplacement un fichier, on affiche les boutons nécessaires
         confirm_button.draw()
         cancel_button.draw()
         screen.blit(confirm_text, confirm_rect)
         
     elif is_writting:
-        #Si on est en train d'écrire du texte
+        #Si on est en train d'écrire du texte, on affiche les boutons nécessaires et le texte écrit
         screen.blit(file_name_text, file_name_rect)
         exit_button.draw()
         if not(is_creating or is_writting_numb or is_writting_changes or is_writting_path or is_saving):
             addchanges_button.draw()
     
     elif is_searching_for_info:
-        #Si on est dans le menu info
+        #Si on est dans le menu info, on affiche les lignes d'infos
         exit_button.draw()
         for i, text_ligne in enumerate(info_text):
             screen.blit(text_ligne, text_ligne.get_rect(topleft=(30, 30+i*50)))
@@ -357,7 +375,7 @@ while running:
             
         offset += camera_direction*10/zoom_scale
         
-        #Créer une nouvelle surface de destination pour effectuer le bon zoom
+        #Créer une nouvelle surface de destination pour effectuer le bon zoom de manière optimisée
         if last_zoom_scale != zoom_scale:
             last_zoom_scale = zoom_scale
             new_scale = size_vector * zoom_scale
@@ -387,12 +405,15 @@ while running:
                         if show_collisions:
                             bloc.draw_collisions()
                         
+                        #On affiche si le bloc appartient à une image composée de plusieurs blocs
                         if show_group:
                             bloc.draw_group()
-                            
+                        
+                        #On affiche si le bloc est affiché devant le joueur
                         if show_is_above:
                             bloc.draw_is_above()
                         
+                        #On affiche si le bloc mène à une carte
                         if show_map_path:
                             bloc.draw_map_path()
                             
@@ -407,7 +428,7 @@ while running:
         scaled_rect = scaled_surf.get_rect(center = (screen_width/2,screen_height/2))
         screen.blit(scaled_surf, scaled_rect)
         
-        #On affiche sur quelle ligne on se trouve
+        #On affiche sur quelle couche on se trouve
         layer_text = font.render(f"Layer : {layer_number}", True, (0,0,0))
         screen.blit(layer_text, pygame.Rect((10,10,0,0)))
         
@@ -417,21 +438,22 @@ while running:
         #On en déduit la ligne et la colonne du bloc cliqué
         ligne, column = int(real_mouse_pos[1]//16), int(real_mouse_pos[0]//16)
         
-        #Lorsque l'on clique, qu'il y a un changer de position/de type utilisé/de bouton cliqué et qu'on ne montre par les collisions, on ajoute un bloc
+        #Lorsque l'on clique, qu'il y a un changer de position/de type utilisé/de bouton cliqué et qu'on ne montre par les collisions
         if (mouse_pressed.get(1) or mouse_pressed.get(3)) and (ligne != last_ligne or column != last_column or used_type != last_used_type or layer_number != last_layer_number or mouse_button != last_mouse_button) and not show_collisions:
+            #Changer ajoute ou retire le bloc à une image composées de plusieurs blocs
             if show_group:
                 if file_name == "bloc_types_map":
                     try:
                         mape[layer_number][ligne][column].is_in_group = not mape[layer_number][ligne][column].is_in_group
                     except:
                         writeMessage("Veuillez cliquer un bloc", 30, True)
-                    
+            #Afficher ou non le bloc devant le joueur
             elif show_is_above:
                 try:
                     mape[layer_number][ligne][column].is_above_player = not mape[layer_number][ligne][column].is_above_player
                 except:
                     writeMessage("Veuillez cliquer un bloc", 30, True)
-                    
+            #Ajouter un lien à un bloc
             elif show_map_path:
                 if mape[layer_number][ligne][column] != 0:
                     is_writting = True
@@ -439,24 +461,30 @@ while running:
                     written_text = mape[layer_number][ligne][column].map_path
                     file_name_text = font.render("Nom de la map liée : " + written_text + ".txt", True, (0,0,0))
                     file_name_rect = file_name_text.get_rect(center=(screen_width/2, screen_height/2))
-            
             else:
                 try:
                     if ligne >= 0 and column >= 0:
+                        #On place un bloc
                         if mouse_pressed.get(1):
+                            #Si c'est la carte bibliothèque, on ajoute juste le bloc
                             if file_name == "bloc_types_map":
                                 mape[layer_number][ligne][column] = Bloc(used_type)
                             else:
+                            #Si on est sur une carte autre que la carte bibliothèque
                                 try:
+                                    #Si le bloc appartient à une image composée de plusieurs blocs, on les affiche toutes ou on les affiche selon un paterne répétitif
                                     if len(used_type[0].split('_')) > 1:
+                                        #On ajoute le décalage entre le dernier bloc cliqué et le bloc actuellement cliqué
                                         img_x_offset += column-last_column
                                         img_y_offset += ligne-last_ligne
                                         
+                                        #Si le bloc actuel fait partie d'un groupe d'image fixe, on affiche tous les blocs de l'image
                                         if used_type[2]:
                                             try:
                                                 for ligne_num in range(used_type[5]-(image_height-imagey), used_type[5]+imagey+1, 1):
                                                     for column_num in range(used_type[4]-imagex, used_type[4]-imagex+image_width+1, 1):
                                                         if bloc_types_map[0][ligne_num][column_num] != 0:
+                                                            #On réupère le type de bloc qu'il faut poser
                                                             model = bloc_types_map[0][ligne_num][column_num]
                                                             mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = Bloc(bloc_type = model.type,
                                                                                                                                                         is_above_player = model.is_above_player,
@@ -467,7 +495,9 @@ while running:
                                             except:
                                                 writeMessage("Veuillez rajouter des lignes ou des collones", 60, True)
                                                 loadBackup()
-                                        else:                
+                                        #Si le bloc fait partie d'une image qui se répète automatique, on place le bloc adéquat
+                                        else:
+                                            #On récupère les coordonnées du bloc qu'il faut poser
                                             if imagex+img_x_offset == image_width+1:
                                                 img_x_offset -= image_width+1
                                             elif int(used_type[0].split('_')[1].split('-')[0])+img_x_offset == -1:
@@ -478,6 +508,7 @@ while running:
                                             elif imagey-img_y_offset == -1:
                                                 img_y_offset -= image_height+1
                                             
+                                            #On récupère le type de bloc qu'il faut poser
                                             model = bloc_types_map[0][ligne2+img_y_offset][column2+img_x_offset]    
                                             mape[layer_number][ligne][column] = Bloc(bloc_type = model.type,
                                                                                     is_above_player = model.is_above_player,
@@ -490,6 +521,7 @@ while running:
                                         
                                 except:
                                     writeMessage("Une erreur est survenue", 30, True)
+                        #On efface un bloc
                         elif mouse_pressed.get(3):
                             mape[layer_number][ligne][column] = 0
                 except IndexError:
@@ -553,13 +585,16 @@ while running:
                             #On affiche les collisions du bloc
                             if show_collisions2:
                                 bloc.draw_collisions()
-                                
+                            
+                            #On affiche si le bloc appartient à une image composée de plusieurs blocs
                             if show_group2:
                                 bloc.draw_group()
-                            
+                                
+                            #Si le bloc est affiché devant le joueur
                             if show_is_above2:
                                 bloc.draw_is_above()
                             
+                            #Si le bloc mène à un bloc
                             if show_map_path2:
                                 bloc.draw_map_path()
                             
@@ -687,9 +722,11 @@ while running:
                     if is_writting_numb:
                         #On crée une nouvelle map avec les dimensions données
                         try:
+                            #On crée la carte avec la bonne taille
                             width, height = int(written_text.split('x')[0]), int(written_text.split('x')[1])
                             mape = [[[0]*width for i in range(height)]]
                             
+                            #On récupère la carte bibliothèque
                             bloc_types_map = readFile("bloc_types_map")
                                 
                             #On crée la surface sur laquelle on va faire afficher la bibliothèque
@@ -698,7 +735,7 @@ while running:
                             new_scale2 = size_vector
                             dest2 = bloc_types_surface
                                 
-                            #On crée les caractéristiques de la caméra de la bibliothèque
+                            #On crée les caractéristiques de la caméra de la carte bibliothèque
                             offset2 = pygame.Vector2(screen_width*(3/4), screen_height*(3/4))
                             zoom_scale2 = 1
                             last_zoom_scale2 = 10
@@ -712,13 +749,16 @@ while running:
                             is_creating = True
                         except:
                             writeMessage("Taille incorrecte", 120, True)
-                            
+                    
+                    #Si on est en train de lier une carte à un bloc
                     elif is_writting_path:
+                        #Si la carte existe bien, on rajoute le lien
                         if written_text + '.txt' in os.listdir("assets/map"):
                             mape[layer_number][ligne][column].map_path = written_text
                             writeMessage("Lien ajouté", 60)
                             is_writting = False
                             is_writting_path = False
+                        #Si rien n'est écrit, on enlève le lien déjà existant
                         elif written_text == "":
                             mape[layer_number][ligne][column].map_path = written_text
                             writeMessage("Lien retiré", 60)
@@ -726,10 +766,13 @@ while running:
                             is_writting_path = False
                         else:
                             writeMessage("Carte introuvable", 120, True)
-                            
+
+                    #Si on ajoute des changements de nom pour des images
                     elif is_writting_changes:
+                        #On entre l'ancien nom
                         if len(change_name_bloc[-1]) == 0:
                             change_name_bloc[-1].append(written_text)
+                        #On entre le nouveau nom
                         else:
                             if written_text + ".png" in os.listdir("assets/graphics/blocs"):
                                 change_name_bloc[-1].append(written_text)
@@ -739,7 +782,7 @@ while running:
                             else:
                                 writeMessage("Ce nom d'image n'existe pas", 120, True)
                             
-                    
+                    #Si on est en train de sauvegarder
                     elif is_leaving or is_saving:
                         #On vérifie si le fichier n'existe pas déjà et on sauvgarde
                         if written_text+'.txt' in os.listdir('assets/map') and written_text != file_name:
@@ -749,7 +792,8 @@ while running:
                             confirm_rect.center=(screen_width/2, 70)
                         else:
                             save(written_text)
-                            
+                    
+                    #Si on est en train d'ouvrir une carte
                     else:
                         #On ouvre le fichier donné et on interprète le fichier texte
                         try:
@@ -782,7 +826,7 @@ while running:
                     
                     written_text = ""
                     
-                #Quitter la saisi de texte        
+                #Quitter la saisi de texte
                 elif event.key == pygame.K_ESCAPE:
                     if is_writting_changes:
                         is_writting_changes = False
@@ -800,7 +844,7 @@ while running:
                 else:
                     writeMessage("Charactère inconnu", 60, True)
                 
-                #On crée le bon affichage
+                #On crée le bon affichage en fonction de ce qu'on est en train d'écrire
                 if is_writting_numb:
                     file_name_text = font.render("Taille de la map : " + written_text + " blocs", True, (0,0,0))
                 elif is_writting_changes:
@@ -834,7 +878,7 @@ while running:
                     is_choosing = True
                     camera_direction = pygame.Vector2()
                 
-                #Afficher/faire disparaître les caractéristiques des blocs
+                #Afficher/faire disparaitre les colisions des blocs
                 if event.key == pygame.K_c and not (show_group or show_is_above or show_map_path):
                     if show_collisions:
                         for layer in mape:
@@ -843,7 +887,8 @@ while running:
                                     if bloc != 0:
                                         bloc.set_image()
                     show_collisions = not show_collisions
-                    
+                
+                #Afficher/faire disparaitre les groupes de bloc
                 if event.key == pygame.K_g and not (show_collisions or show_is_above or show_map_path):
                     if show_group:
                         for layer in mape:
@@ -852,7 +897,8 @@ while running:
                                     if bloc != 0:
                                         bloc.set_image()
                     show_group = not show_group
-                    
+                
+                #Afficher/faire disparaitre les blocs affichés devant le joueur
                 if event.key == pygame.K_r and not (show_collisions or show_group or show_map_path):
                     if show_is_above:
                         for layer in mape:
@@ -862,6 +908,7 @@ while running:
                                         bloc.set_image()
                     show_is_above = not show_is_above
                 
+                #Afficher/faire disparaitre les liens des blocs
                 if event.key == pygame.K_p and not (show_collisions or show_group or show_is_above):
                     if show_map_path:
                         for layer in mape:
@@ -995,7 +1042,7 @@ while running:
                 
                 #Si on est en train de créer / éditer une autre map que la bobliothèque
                 else:
-                    #Afficher/faire disparaître les caractéristiques des blocs
+                    #Afficher/faire disparaître les colisisons des blocs
                     if event.key == pygame.K_c and not (show_group or show_is_above or show_map_path):
                         if show_collisions:
                             for layer in bloc_types_map:
@@ -1004,7 +1051,8 @@ while running:
                                         if bloc != 0:
                                             bloc.set_image()
                         show_collisions2 = not show_collisions2
-                        
+                    
+                    #Afficher/faire disparaître les groupes de bloc
                     if event.key == pygame.K_g and not (show_collisions or show_is_above or show_map_path):
                         if show_group:
                             for layer in bloc_types_map:
@@ -1013,7 +1061,8 @@ while running:
                                         if bloc != 0:
                                             bloc.set_image()
                         show_group2 = not show_group2
-                        
+                    
+                    #Afficher/faire disparaître les blocs devant le joueur
                     if event.key == pygame.K_r and not (show_collisions or show_group or show_map_path):
                         if show_is_above:
                             for layer in bloc_types_map:
@@ -1023,6 +1072,7 @@ while running:
                                             bloc.set_image()
                         show_is_above2 = not show_is_above2
                     
+                    #Afficher/faire disparaître les liens des blocs
                     if event.key == pygame.K_p and not (show_collisions or show_group or show_is_above):
                         if show_map_path:
                             for layer in bloc_types_map:
@@ -1109,7 +1159,8 @@ while running:
                         else:
                             is_writting = False
                             written_text = ""
-                        
+                    
+                    #On retire le dernier changement incomplet
                     if addchanges_button.rect.collidepoint(event.pos) and not(is_creating or is_writting_numb or is_writting_changes):
                         is_writting_changes = True
                         file_name_text = font.render("Ancien nom de l'image : .png", True, (0,0,0))
@@ -1137,12 +1188,16 @@ while running:
                     #On ajoute une backup de la map    
                     else:
                         addBackup()
-                        if file_name != "bloc_types_mam":
+                        #Si on est en train de poser un bloc appartenant à une image composée de plusieurs blocs
+                        if file_name != "bloc_types_map":
                             if len(used_type[0].split("_")) > 1:
+                                #On récupère la largeur et la hauteur de l'image totale
                                 image_width = int(used_type[0].split("_")[2].split("-")[0])
                                 image_height = int(used_type[0].split("_")[2].split("-")[1])
+                                #On récupère les coordonnée du bloc dans l'image totale
                                 imagex = int(used_type[0].split("_")[1].split("-")[0])
                                 imagey = int(used_type[0].split("_")[1].split("-")[1])
+                                #On calcule le décalage entre le dernier bloc cliqué et le bloc actuellement cliqué
                                 img_x_offset = last_column-column
                                 img_y_offset = last_ligne-ligne
                         
