@@ -1,4 +1,18 @@
-step : 1 {
+place : école, step : 8-11 {
+[Safran :: Un meurtre ?
+A priori je n'y suis pour rien !]
+add_step : 1
+}
+
+place : école, step : 12 {
+[Safran :: Un meurtre ?
+A priori je n'y suis pour rien !
+A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+add_step : 1
+}
+
+step : 1-100 {
 [Safran :: Droit au but !!]
-[Safran :: T'aurais pas vu Chrome ? Il est 
+[Safran :: T'aurais pas vu Chrome ? Il est parti à la bibliothèque mais il a disparu !]
+[Safran :: Je l'ai cherché partout]
 }
