@@ -8,7 +8,8 @@ Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : htt
 [Chrome :: En ce moment, je trouve que Joshwaffle et Maître Choné sont suspicieux. Même Professeur Gandalf a changé.
 Bon, après Léninodie a toujours été bizarre, et je ne parle même pas de Solal ! Mais à priori, Romarin et Safran sont clean.
 Vous devriez essayer de leur parler]
-add_step : 1}
+add_step : 1
+}
 
 step : 1-100 {
 [Chrome :: ...]

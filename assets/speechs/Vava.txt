@@ -10,7 +10,8 @@ Je suis sûre que c'est Sasa qui l'a prise mais ne lui dites rien !
 Sasa :: Tu sais que je suis juste là ?
 Vava :: Euhhhh...
 Bref, vous devriez aller voir Pom, c'est lui qui gère les baguettes.]
-add_step : 1}
+add_step : 1
+}
 
 place : boulangerie, step 3 {
 [Vava :: Alors comme ça c'était Pom ? J'y crois pas !]
