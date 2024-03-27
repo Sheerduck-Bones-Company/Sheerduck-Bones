@@ -197,10 +197,7 @@ def writeMessage(text_message, counter, is_error=False):
 def readFile(file_name):
     mape = []
     global img_library
-<<<<<<< HEAD
     #On ouvre le fichier texte
-=======
->>>>>>> edf370d83504322eff55ad810ee3c6530e1513ab
     with open(f'assets/map/{file_name}.txt', 'r', encoding='utf-8') as fichier:
         map_text = fichier.read()
         #Pour chaque couche, chaque ligne, on récupère les caractéristiques des blocs
