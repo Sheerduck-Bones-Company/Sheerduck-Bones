@@ -9,7 +9,7 @@ class Player(pygame.sprite.Sprite):
 		self.images = ImportFolder("assets/graphics/player")
 		self.image = self.images.get("front_stand")
 		self.game = game
-		self.rect = self.image.get_rect(center = pos).inflate(-4,-4)
+		self.rect = self.image.get_rect(topleft = pos).inflate(-4,-4)
 		self.direction = pygame.math.Vector2()
 		self.speed = 12
 		self.status = "front_stand"

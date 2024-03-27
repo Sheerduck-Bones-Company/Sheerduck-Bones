@@ -9,11 +9,11 @@ class Game():
         self.is_thinking = False
         self.screen = screen
         self.pressed = {}
-        self.player = player.Player(self, (640,360))
+        self.player = player.Player(self, (2338,1136))
         self.maps = loadMap(self.player, self)
         self.current_map_name = "ville.txt"
         self.camera_group = camera.Camera(self)
-        self.current_step = 1
+        self.current_step = 0
     
     #Lancer la partie    
     def start(self):

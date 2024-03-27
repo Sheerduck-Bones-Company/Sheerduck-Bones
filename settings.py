@@ -79,7 +79,7 @@ def loadMap(player, game):
         obstacles_group = pygame.sprite.Group()
         visible_group = pygame.sprite.Group(player)
         interact_group = pygame.sprite.Group()
-        with open(f'assets/map/{map_name}', 'r') as fichier:
+        with open(f'assets/map/{map_name}', 'r', encoding='utf-8') as fichier:
             map_text = fichier.read()
             for lay_index, layer in enumerate(map_text.split('$')):
                 mape.append([])
