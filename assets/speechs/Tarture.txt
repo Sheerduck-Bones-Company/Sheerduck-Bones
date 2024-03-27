@@ -1,4 +1,4 @@
-place : ville {
+step : 1-100 {
 [Tarture :: Stop HLM !]
 [Tarture :: ...]
 [Tarture :: Je suis en visite.]

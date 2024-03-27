@@ -1,4 +1,4 @@
-place : école, step : 8-11 {
+step : 8-11 {
 [Maître Choné :: Quoi un meurtre ??? Mais c'est affreux !
 Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Attendez que je retrouve mes notes !
@@ -7,7 +7,7 @@ Si vous changez d'avis n'hésitez pas à venir me voir !]
 add_step : 1
 }
 
-place : école, step : 12 {
+step : 12 {
 [Maître Choné :: Quoi un meurtre ??? Mais c'est affreux !
 Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Attendez que je retrouve mes notes !
@@ -17,7 +17,7 @@ A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la biblioth
 add_step : 1
 }
 
-place : école, step : 1-100 {
+step : 1-100 {
 [Maître Choné :: Pensez outside the box !]
 
 [Maître Choné :: Ce qui nous intéresse c’est de faire bouger les choses.

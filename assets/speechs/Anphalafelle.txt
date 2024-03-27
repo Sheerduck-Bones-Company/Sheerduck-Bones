@@ -1,4 +1,9 @@
-place : egouts, step : 100 {
+place : egouts, step : 24 {
+[Anphalafelle :: T'es pas censé me retrouver maintenant sale tricheur !
+Retourne d'où tu viens ou je vais te manger
+}
+
+place : egouts, step : 25 {
 [Anphalafelle :: Wow, coucou, je pensais pas que quelqu'un me retrouverais un jour !
 C'est Charlie qui m'a poussée de la falaise car il était jaloux que nos parents m'aient reconnnue...
 En fait, c'est mon demi-frère ! Quand je lui ait dit qu'on se ressemblait pas parce que j'étais bien plus belle que lui il s'est énervé et il m'a poussé...

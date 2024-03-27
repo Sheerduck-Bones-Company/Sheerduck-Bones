@@ -1,9 +1,3 @@
-place : boulangerie, step : 1-100 {
-[Vava :: Kakou kakou]
-[Vava :: euhhh oui?]
-[Vava :: *slurpslurpslurp*]
-}
-
 place : boulangerie, step : 1 {
 [Vava :: Il y a quelques jours, une baguette a disparu de notre boulangerie ! Paf ! Comme ça envolée ! C'est vraiment mystérieux...
 Je suis sûre que c'est Sasa qui l'a prise mais ne lui dites rien !
@@ -15,4 +9,10 @@ add_step : 1
 
 place : boulangerie, step : 3 {
 [Vava :: Alors comme ça c'était Pom ? J'y crois pas !]
+}
+
+place : boulangerie, step : 1-100 {
+[Vava :: Kakou kakou]
+[Vava :: euhhh oui?]
+[Vava :: *slurpslurpslurp*]
 }

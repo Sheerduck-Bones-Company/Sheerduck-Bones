@@ -1,11 +1,18 @@
-place : école, step : 1 {
-[Romarin :: Oui ?]
-
-[Romarin :: Euhh je sais pas désolé.]
-}
-
-place : école, step : 7 {
+step : 8-11 {
 [Romarin :: Désolé je suis en retard en cours !
 Ah c'est rapide ? Bon d'accord !
 Je n'en sais rien désolé, je suis toujours avec Zolala !]
+}
+
+step : 12 {
+[Romarin :: Désolé je suis en retard en cours !
+Ah c'est rapide ? Bon d'accord !
+Je n'en sais rien désolé, je suis toujours avec Zolala !
+A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+}
+
+step : 1-100 {
+[Romarin :: Oui ?]
+
+[Romarin :: Si je sais qui est le meurtrier ? Euhh je sais pas désolé.]
 }

@@ -1,11 +1,11 @@
-place : école, step : 8-11 {
+step : 8-11 {
 [Zolala :: C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
 Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
 Tu t'y connais toi en géométrie sphérique ?]
 add_step : 1
 }
 
-place : école, step : 12 {
+step : 12 {
 [Zolala :: C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
 Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
 Tu t'y connais toi en géométrie sphérique ?

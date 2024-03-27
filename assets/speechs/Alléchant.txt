@@ -1,13 +1,10 @@
-step : 1 {
+step : 20 {
+[Alléchant :: T'as vraiment cru que c'était les Laqués ?! Eh vazy sale poussoloss tu connais même pas]
+}
+
+step : 1-100 {
 [Alléchant :: Vazy carré]
 [Alléchant :: Ouais c’est ça je crois
 Salut poussin je t’avais pas vu, tu veux venir jouer avec nous ?]
 [Alléchant :: T’as vu le match d’hier ?? Les Nuggets ils sont poustouflants !]
-}
-
-step : 8 {
-[Alléchant :: Eh toi, tu sais quelle équipe gagne cette saison de la Nuggets Barbecue Association ?]
-[Player :: Les Laqués [tapper a]                                                                                  Les Wadlers [tapper b]                                                                                               Les Quacktors [tapper c]                                                                                             Les Tenders [tapper d]
-Alléchant :: Eh vazy sale poussoloss tu connais même pas !]
-[Alléchant :: Ça se voit que tu suis bien les matchs ! Tu sais je trouve que  agit bizarrement en ce moment… Tu devrais peut-être aller le voir]
 }

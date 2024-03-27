@@ -5,8 +5,18 @@ Tenez, voilà le maire ! Je vous laisse lui parler.
 À bientôt !]
 }
 
-place : bibliothèque, step : 1 {
+place : bibliothèque, step : 20 {
+[Salsa :: Si les Quacktors sont les plus forts ? Bien sûr que non ! Je suis déçu de vos pauvres connaissances en la matière]
+}
+
+place : bibliothèque, step : 1-100 {
 [Salsa :: Je serai le roi des pirates !]
 
 [Salsa :: Arise]
+
+}
+
+step : 1-100 {
+[Salsa :: Alors vous vous en sortez ?
+(Comme quoi, on peut trouver des bonnes affaires pour pas cher)]
 }

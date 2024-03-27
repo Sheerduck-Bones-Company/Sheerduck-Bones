@@ -1,14 +1,15 @@
-place : atelier, step : 1 {
+place : atelier, step : 15 {
+[Remixeur :: Un fichier enregistré dans ma mémoire vient de refaire surface. V-v-v-voulez v-v-voulez  vous lll’écouter ?
+Ouverture du f-f-fichier.
+01001010 00100111 01100001 01101001 00100000 01110000 01101111 01110101 01110011 01110011 11000011 10101001 00100000 01000001 01101110 01110000 01101000 01100001 01101100 01100001 01100110 01100101 01101100 01101100 01100101 00100000 01100001 01101000 01100001 01101000
+Bip-bip-bip. F-f-fin du fichier. Lecture terminée]
+add_step : 1
+}
+
+place : atelier, step : 1-100 {
 [Remixeur :: B-b-bonjour… Vouuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 Ah... Mes capteurs une incohérence indique. Je l’investigue.]
 
 [Remixeur :: Bip-bip-bip-bip-bip
 boubipbipbipbipbipbip]
-}
-
-place : atelier, step : 8 {
-[Remixeur :: Un fichier enregistré dans ma mémoire vient de refaire surface. V-v-v-voulez v-v-voulez  vous lll’écouter ?
-Ouverture du f-f-fichier.
-01001010 00100111 01100001 01101001 00100000 01110000 01101111 01110101 01110011 01110011 11000011 10101001 00100000 01000001 01101110 01110000 01101000 01100001 01101100 01100001 01100110 01100101 01101100 01101100 01100101 00100000 01100001 01101000 01100001 01101000
-Bip-bip-bip. F-f-fin du fichier. Lecture terminée]
 }

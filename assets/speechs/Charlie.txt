@@ -1,4 +1,4 @@
-step : 1 {
+step : 1-3 {
 [Charlie :: Bonjour !]
 [Charlie :: C'est un peu austère ici... C'est pour ça que j'ai planté des fleurs !
 On devrait se rappeler de nos morts avec joie pas avec tristesse :)]

@@ -5,20 +5,6 @@ Je vous souhaite bonne chance Mr Bones.]
 add_step : 1
 }
 
-place : fontaine, step : 1 {
-[Matcha :: J’espère que notre belle ville vous plait ?]
-[Matcha :: Passez à la mairie si vous avez besoin d’informations !]
-}
-
-place : mairie, step : 1 {
-[Matcha :: Oui ?]
-
-[Matcha :: Hmm ?
-Attendez j'ai des papiers de la plus haute importance à remplir.]
-
-[Matcha :: Ah ce tableau ? C'est celui de mon ancienne femme, Oscour. Malheureusement elle n'est plus de ce monde... Elle s'est envolée vers de meilleurs horizons.]
-}
-
 place : mairie, step : 5 {
 [Matcha :: Thifraude est encore allée au bar...
 Ah vous l'avez vue ? Oui, je sais qu'elle me trompe... Ce n'est pas comme si elle avait fait attention à le cacher ! Tout ça pour un magicien nul !
@@ -30,4 +16,18 @@ Quand elle est revenue elle était très faible, j'ai du rester à son chevet pe
 Cette période était très éprouvante, et c'est à ce moment là que j'ai recontré Thifraude qui m'a beaucoup aidé... Quand ma femme nous a quitté RIP lol, elle m'a aidée à supporter cela.
 Elle m'a même donné une adorable fille...
 Détective !! Vous devez absolument la retrouver !]
+}
+
+place : mairie, step : 1-100 {
+[Matcha :: Oui ?]
+
+[Matcha :: Hmm ?
+Attendez j'ai des papiers de la plus haute importance à remplir.]
+
+[Matcha :: Ah ce tableau ? C'est celui de mon ancienne femme, Oscour. Malheureusement elle n'est plus de ce monde... Elle s'est envolée vers de meilleurs horizons.]
+}
+
+step : 1-100 {
+[Matcha :: J’espère que notre belle ville vous plait ?]
+[Matcha :: Passez à la mairie si vous avez besoin d’informations !]
 }

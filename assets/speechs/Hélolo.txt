@@ -7,11 +7,12 @@ step : 3 {
 Hélolo :: J'ai entendu des bruits bizarres chez l'antiquaire, vous devriez peut-être aller voir ça ?]
 }
 
-step : 10 {
-[Hélolo :: Babybel ? Ce qu’il aime ?
+step : 22 {
+[Hélolo :: Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
 Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
 De toute façon, il dépense tout son argent dans l’alcool...
 Peut-être qu'ils en ont en stock à l'auberge...]
+add_step : 1
 }
 
 step : 1-100 {

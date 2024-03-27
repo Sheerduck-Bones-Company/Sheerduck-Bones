@@ -1,4 +1,4 @@
-place : école, step : 8-11 {
+step : 8-11 {
 [Gandalf :: Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
 Ah c'est pas ça qu'il vous a dit ?
 Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
@@ -6,7 +6,7 @@ Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des c
 add_step : 1
 }
 
-place : école, step : 12 {
+step : 12 {
 [Gandalf :: Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
 Ah c'est pas ça qu'il vous a dit ?
 Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
@@ -15,7 +15,12 @@ A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la biblioth
 add_step : 1
 }
 
-place : école, step : 1-100 {
+step : 20 {
+[Gandalf :: T'as vraiment cru que c'était les Wadlers ?! Qu'est ce que tu es ignorant !]
+}
+
+
+step : 1-100 {
 [Gandalf :: Youyou !!!
 hahahaHAHAHAHAHA]
 

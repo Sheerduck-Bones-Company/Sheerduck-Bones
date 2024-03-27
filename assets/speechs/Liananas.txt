@@ -1,4 +1,15 @@
-step : 1 {
+step : 18 {
+[Liananas :: Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
+Ah oui c'est mon tableau. Je peins ce que je vois.
+Je crois que j'ai vu ça sur la falaise. En fait non je sais plus. C'est pas très intéressant si ?
+En tout cas, je pense que si il y a quelquechose d'intéressant, c'est dans les égouts. Mais il n'y a que Babybel qui a la clé et il ne se laissera pas amadouer si facilement. Ah ! Tu devrais peut-être parler à Macadame et Alléchant, il connaissent bien Babybel.]
+
+[Liananas :: De toute façon la vie ça sert à rien.
+Kill me.]
+add_step : 1
+}
+
+step : 1-100 {
 [Liananas :: heheheha]
 
 [Liananas :: *side eye*
@@ -12,13 +23,4 @@ step : 1 {
 [Liananas :: mais arrête enfait]
 
 [Liananas :: sale kk]
-}
-
-step 8 {
-[Liananas :: Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
-ah oui c'est mon tableau. Je peins ce que je vois.
-je crois que j'ai vu ça sur la falaise. En fait non je sais plus. C'est pas très intéressant si ?]
-
-[Liananas :: De toute façon la vie ça sert à rien.
-Kill me.]
 }

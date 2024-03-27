@@ -1,4 +1,16 @@
-step : 1 {
+step : 19 {
+[Macadame :: Eh toi, tu sais quelle équipe gagne cette saison de la Nuggets Barbecue Association ?
+Si tu penses que c'est les Laqués il faut parler à Alléchant, à Gandalf si tu penses que c'est les Wadlers, à Salsa pour les Quacktors et à Safran pour les Tenders
+Reviens me voir quand tu as correctement répondu !]
+add_step : 1
+}
+
+step : 21 {
+[Ça se voit que tu suis bien les matchs ! Tu voulais des infos sur Babybel, n'est-ce pas ? C'est à Hélolo qu'il faut parler. Elle connaît tout le monde]
+add_step : 1
+}
+
+step : 1-100 {
 
 [Macadame :: Salut mec, ca va ?]
 
