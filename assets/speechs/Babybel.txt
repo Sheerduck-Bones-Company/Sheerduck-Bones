@@ -1,4 +1,4 @@
-step : 0{
+step : 0 {
 [Babybel :: Babybel : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Babybel :: Babybel : Il est grand et musclé.]
 }
@@ -11,8 +11,12 @@ Peut-être parce que je suis plus beau que lui ahahahahah]
 place : auberge, step : 24 {
 [Babybel :: Babybel : Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
 Babybel : Oh mais tu m'as apporté une offrande, comment tu as su pour le sandwich au cheddar ?
-Babybel : Bref, bah du coup rends-toi au Nord-Est extrême de la ville, tu y trouveras les égouts]
+Babybel : Bref, bah du coup rends-toi au sud-ouest extrême de la ville, tu y trouveras les égouts, je t'attendrais là bas si tu n'arrives pas à le trouver ahah]
 add_step : 1
+}
+
+place : auberge, step : 25 {
+[Babybel :: Babybel : Bah t'attends quoi ? Vas y je t'ai dit, je finis mon verre et je te rejoins ahah.]
 }
 
 place : auberge, step : 1-100 {

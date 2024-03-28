@@ -4,7 +4,11 @@ step : 0 {
 }
 
 step : 20 {
-[Alléchant :: Alléchant : T'as vraiment cru que c'était les Laqués ?! Eh vazy sale poussoloss tu connais même pas]
+[Alléchant :: Attends je suis occupé là, va voir Macadame]
+}
+
+step : 21 {
+[Alléchant :: Alléchant : T'as vraiment cru que c'était les Laqués qu'avait gagné?! Eh vazy sale poussoloss tu connais même pas]
 }
 
 step : 1-100 {

@@ -1,13 +1,15 @@
-step : 0{
+step : 0 {
 [Liananas :: Liananas : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Liananas :: Liananas : Il est grand et musclé.]
 }
 
-step : 18 {
+step : 19 {
 [Liananas :: Liananas : Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
 Liananas : Ah oui c'est mon tableau. Je peins ce que je vois.
-Liananas : Je crois que j'ai vu ça sur la falaise. En fait non je sais plus. C'est pas très intéressant si ?
-Liananas : En tout cas, je pense que si il y a quelquechose d'intéressant, c'est dans les égouts. Mais il n'y a que Babybel qui a la clé et il ne se laissera pas amadouer si facilement. Ah ! Tu devrais peut-être parler à Macadame et Alléchant, il connaissent bien Babybel. Ils doivent être en train de jouer au basket]
+Liananas : Je crois que j'ai vu ça sur près du pont. En fait non je sais plus. C'est pas très intéressant si ?
+Liananas : Je pense que si il y a quelque chose d'intéressant, c'est dans les égouts. Mais il n'y a que Babybel qui a la clé et il ne se laissera pas amadouer si facilement. Ah ! Tu devrais peut-être parler à Macadame et Alléchant, il connaissent bien Babybel. Ils doivent être en train de jouer au basket
+Liananas : Comment ça on dirait Charlie sur ma peinture ? C'est qui Charlie ?
+Liananas : Bon t'as fini avec tes questions ? Je vais te karatsuber !]
 add_step : 1
 }
 

@@ -1,6 +1,17 @@
-step : 0{
+step : 0 {
 [Charlie :: Charlie : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Charlie :: Charlie : Il est grand et musclé.]
+}
+
+step : 17 {
+[Charlie :: Charlie : Quoi ? Un vol de robot ? 
+Charlie : Ah vous parlez de Remixeur ! Pauvre Tartatin et Philemonade... Ils avaient travaillé longtemps dessus !
+Charlie : C'est vraiment sordide comme histoire...
+Charlie : Vous savez détective, c'est peut-être Mewton qui a fait le coup ?..
+Charlie : Non, oubliez que j'ai dit ça !
+Charlie : C'est juste que je le trouve assez suspect... Il est toujours à la recherche de nouvelles pièces pour son musée et ça ne m'étonnerait pas que Remixeur ait été dans son viseur.
+Charlie : Oh, ça rime !]
+add_step : 1
 }
 
 step : 1-100 {

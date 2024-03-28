@@ -5,19 +5,20 @@ step : 0 {
 
 step : 8-11 {
 [Safran :: Safran : Un meurtre ?
-Safran : A priori je n'y suis pour rien !]
+Safran : À priori je n'y suis pour rien !]
 add_step : 1
 }
 
 step : 12 {
 [Safran :: Safran : Un meurtre ?
-Safran : A priori je n'y suis pour rien !
-Safran : A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+Safran : À priori je n'y suis pour rien !
+Safran : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
 add_step : 1
 }
 
-step : 20 {
-[Safran :: Safran : Ouiiiii, vous avez réussi ! C'est effectivement les Tenders qui sont en tête !]
+step : 21 {
+[Safran :: Safran : Ouiiiii ! C'est effectivement les Tenders qui sont en tête !
+Safran : On est trop forts ahahahah !]
 add_step : 1
 }
 
@@ -26,5 +27,4 @@ step : 1-100 {
 [Safran :: Safran : T'aurais pas vu Chrome ? Il est parti à la bibliothèque mais il a disparu !]
 [Safran :: Safran : Je l'ai cherché partout !]
 [Safran :: Safran : Le répétez surtout pas à Macadame mais je déteste Poulet Curry. James Lebrun est bien meilleur !]
-
 }

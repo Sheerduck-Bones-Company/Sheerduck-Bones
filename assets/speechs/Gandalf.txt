@@ -20,8 +20,8 @@ Gandalf : A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à l
 add_step : 1
 }
 
-step : 20 {
-[Gandalf :: Gandalf : T'as vraiment cru que c'était les Wadlers ?! Qu'est ce que tu es ignorant !]
+step : 21 {
+[Gandalf :: Gandalf : T'as vraiment cru que c'était les Wadlers ?! Qu'est-ce que tu es ignorant !]
 }
 
 
