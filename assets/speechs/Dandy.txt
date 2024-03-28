@@ -1,3 +1,8 @@
+step : 0{
+[Dandy :: Dandy : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Dandy :: Dandy : Il est grand et musclé.]
+}
+
 step : 4 {
 [Dandy :: Dandy : Bonjour détective ! Avec Peaudevigne on s'est dit qu'on se devait de vous inviter chez nous !
 Dandy : Venez quand vous voulez, on habite dans la maison au nord-ouest de la ville :)]

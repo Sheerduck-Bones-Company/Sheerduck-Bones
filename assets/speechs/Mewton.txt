@@ -1,3 +1,8 @@
+step : 0 {
+[Mewton :: Mewton : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Mewton :: Mewton : Il est grand et musclé.]
+}
+
 place : musée, step : 17 {
 [Mewton :: Mewton: Malheur, j'ai vu Liananas peindre encore un autre tableau...
 Mewton : Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !]

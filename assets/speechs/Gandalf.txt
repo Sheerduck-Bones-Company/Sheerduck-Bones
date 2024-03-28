@@ -1,3 +1,8 @@
+step : 0{
+[Gandalf :: Gandalf : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Gandalf :: Gandalf : Il est grand et musclé.]
+}
+
 step : 8-11 {
 [Gandalf :: Gandalf : Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
 Gandalf : Ah c'est pas ça qu'il vous a dit ?

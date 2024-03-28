@@ -1,3 +1,8 @@
+step : 0 {
+[Pom :: Pom : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Pom :: Pom : Il est grand et musclé.]
+}
+
 step : 2 {
 [Pom :: Pom : Hein ? Une baguette qui a été volée ?
 Pom : Ah oui ça doit être moi, j'en ai mangée une comme casse-croûte il y a quelques jours... Ah là là, elles vont encore me passer un savon.

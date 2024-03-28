@@ -1,3 +1,8 @@
+step : 0 {
+[Terrine :: Terrine : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Terrine :: Terrine : Il est grand et musclé.]
+}
+
 place : auberge, step : 4 {
 [Terrine :: Terrine : Tu me donnes quoi en échange ??
 Terrine : Ah ouais t'es célibataire ?! Je peux te trouver quelqu'un si tu veux ! Tu sais il y a pleins de poussins en manque d'amour ici !

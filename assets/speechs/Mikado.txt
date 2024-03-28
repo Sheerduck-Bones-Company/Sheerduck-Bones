@@ -1,3 +1,8 @@
+step : 0 {
+[Mikado :: Mikado : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Mikado :: Mikado : Il est grand et musclé.]
+}
+
 place : bibliotheque, step : 1-100 {
 [Mikado :: Mikado : Ne troublez pas l’austérité de ce lieu s’il vous plaît.]
 

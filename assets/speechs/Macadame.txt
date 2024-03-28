@@ -1,3 +1,8 @@
+step : 0 {
+[Macadame :: Macadame : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Macadame :: Macadame : Il est grand et musclé.]
+}
+
 step : 19 {
 [Macadame :: Macadame : Eh toi, tu sais quelle équipe gagne cette saison de la Nuggets Barbecue Association ?
 Macadame : Si tu penses que c'est les Laqués il faut parler à Alléchant, à Gandalf si tu penses que c'est les Wadlers, à Salsa pour les Quacktors et à Safran pour les Tenders

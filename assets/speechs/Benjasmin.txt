@@ -1,3 +1,8 @@
+step : 0{
+[Benjasmin :: Benjasmin : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Benjasmin :: Benjasmin : Il est grand et musclé.]
+}
+
 step : 1-100 {
 [Benjasmin :: Benjasmin : Ouuiiiinnn ouiiiiiinnnn, pourquoi tu es morte ?]
 [Benjasmin :: Benjasmin : Laisse moi te rejoindre ma chérie]

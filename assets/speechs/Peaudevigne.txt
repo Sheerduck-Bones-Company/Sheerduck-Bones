@@ -1,3 +1,8 @@
+step : 0 {
+[Peaudevigne :: Peaudevigne : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Peaudevigne :: Peaudevigne : Il est grand et musclé.]
+}
+
 step : 4 {
 [Peaudevigne :: Peaudevigne : Tu veux venir voir chez nous ? C’est très joli :)
 Peaudevigne : Passe quand tu veux ! On habite dans la petite maison au nord-est de la ville :)]

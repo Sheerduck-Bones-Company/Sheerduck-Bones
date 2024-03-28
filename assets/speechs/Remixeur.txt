@@ -1,3 +1,8 @@
+step : 0 {
+[Remixeur :: Remixeur : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Remixeur :: Remixeur : Il est grand et musclé.]
+}
+
 place : atelier, step : 15 {
 [Remixeur :: Remixeur : Un fichier enregistré dans ma mémoire vient de refaire surface. V-v-v-voulez v-v-voulez  vous lll’écouter ?
 Remixeur : Ouverture du f-f-fichier.

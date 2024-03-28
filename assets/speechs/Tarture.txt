@@ -1,3 +1,8 @@
+step : 0 {
+[Tarture :: Tarture : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Tarture :: Tarture : Il est grand et musclé.]
+}
+
 step : 1-100 {
 [Tarture :: Tarture : Stop HLM !]
 [Tarture :: Tarture : ...]

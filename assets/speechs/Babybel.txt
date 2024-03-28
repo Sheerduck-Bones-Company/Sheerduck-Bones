@@ -1,3 +1,8 @@
+step : 0{
+[Babybel :: Babybel : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Babybel :: Babybel : Il est grand et musclé.]
+}
+
 place : auberge, step : 6 {
 [Babybel :: Babybel : Je sais pas pourquoi mais le maire a l'air de ne pas trop m'apprécier...
 Peut-être parce que je suis plus beau que lui ahahahahah]

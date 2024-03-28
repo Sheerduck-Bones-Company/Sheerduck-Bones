@@ -1,3 +1,8 @@
+step : 0 {
+[Malice :: Malice : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Malice :: Malice : Il est grand et musclé.]
+}
+
 step 1-100 {
 [Malice :: Malice : Excuse moi mon chéri, tu pourrais arrêter d'être aussi agressif ?
 Malice : Period

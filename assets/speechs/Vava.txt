@@ -1,3 +1,8 @@
+step : 0 {
+[Vava :: Vava : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Vava :: Vava : Il est grand et musclé.]
+}
+
 place : boulangerie, step : 1 {
 [Vava :: Vava : Il y a quelques jours, une baguette a disparu de notre boulangerie ! Paf ! Comme ça envolée ! C'est vraiment mystérieux...
 Vava : Je suis sûre que c'est Sasa qui l'a prise mais ne lui dites rien !

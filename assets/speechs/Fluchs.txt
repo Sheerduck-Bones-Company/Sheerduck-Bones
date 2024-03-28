@@ -1,3 +1,8 @@
+step : 0{
+[Fluchs :: Fluchs : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Fluchs :: Fluchs : Il est grand et musclé.]
+}
+
 place : auberge, step : 4 {
 
 [Fluchs :: Fluchs : Humm ? Pourquoi tu veux me parler de Terrine ?
