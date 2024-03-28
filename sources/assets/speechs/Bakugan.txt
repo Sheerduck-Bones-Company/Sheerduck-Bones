@@ -6,7 +6,6 @@ step : 0{
 place : antiquaire, step : 3 {
 [Bakugan :: Bakugan : Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
 Bakugan : Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]
-[Bakugan :: Bakugan : Laissez moi méditer en paix, me connecter avec les morts]
 add_step : 1
 }
 

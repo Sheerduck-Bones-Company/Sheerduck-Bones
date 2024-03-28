@@ -5,10 +5,6 @@ Matcha : Je vous souhaite bonne chance Mr Bones.]
 add_step : 1
 }
 
-step : 6 {
-[Matcha :: Matcha : Venez me voir dans la mairie]
-}
-
 place : mairie, step : 6 {
 [Matcha :: Matcha : Thifraude est encore allée au bar...
 Matcha : Ah vous l'avez vue ? Oui, je sais qu'elle me trompe... Ce n'est pas comme si elle avait fait attention à le cacher ! Tout ça pour un magicien nul !
@@ -20,6 +16,10 @@ Matcha : Cette période était très éprouvante, et c'est à ce moment là que 
 Matcha : Elle m'a même donné une adorable fille...
 Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
 add_step : 1}
+
+step : 6 {
+[Matcha :: Matcha : Venez me voir dans la mairie]
+}
 
 place : mairie, step : 7 {
 [Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]

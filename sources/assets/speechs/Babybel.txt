@@ -25,3 +25,11 @@ Babybel : vioummmmm-
 Babybel : Oh mince
 Babybel : T’as rien vu.]
 }
+
+step : 1-100 {
+[Babybel :: Babybel : Toutes mes salutatiiiiiiiiions mon Coloneeeeeeel !]
+[Babybel :: Babybel : Vous aussi vous êtes magicien ? Parce que je vous trouve aussi bizarre que moi hahahahahahaha !]
+[Babybel :: Babybel : Ah mais tu as un jumeau ? Mais il fallait dire que vous étiez deux !
+Babybel : ...
+Babybel : Ah non, c'est juste une hallucination...]
+}
