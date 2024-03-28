@@ -3,12 +3,12 @@ step : 0 {
 [Mewton :: Mewton : Il est grand et musclé.]
 }
 
-place : musée, step : 17 {
+place : musee, step : 17 {
 [Mewton :: Mewton: Malheur, j'ai vu Liananas peindre encore un autre tableau...
 Mewton : Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !]
-}
+add_step : 1}
 
-place : musée, step : 1-100 {
+place : musee, step : 1-100 {
 [Mewton :: Mewton : Bienvenue dans le musée de Coincoinville.]
 
 [Mewton :: Mewton : Je peux vous aider ?]

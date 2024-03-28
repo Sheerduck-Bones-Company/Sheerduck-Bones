@@ -3,7 +3,7 @@ step : 0{
 [Lanceloeuf :: Lanceloeuf : Il est grand et musclé.]
 }
 
-place : musée, step : 1-100 {
+place : musee, step : 1-100 {
 [Lanceloeuf :: Lanceloeuf : Il y a plein de belles œuvres dans notre musée ! N’hésitez pas à le visiter...]
 
 [Lanceloeuf :: Lanceloeuf : Que dit le poussin à l’ours ?

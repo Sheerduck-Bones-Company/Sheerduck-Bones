@@ -8,6 +8,7 @@ step : 2 {
 Pom : Ah oui ça doit être moi, j'en ai mangée une comme casse-croûte il y a quelques jours... Ah là là, elles vont encore me passer un savon.
 Pom : Par contre s'il manque des croissants c'est forcément Sarat ! Vous ne pouvez pas imaginer le nombre de croissants qu'elle inhale par jour... C'est phénoménal...]
 add_step : 1
+add_hint : baguette
 }
 
 step : 1-100 {

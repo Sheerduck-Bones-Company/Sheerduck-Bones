@@ -9,12 +9,19 @@ Dandy : Venez quand vous voulez, on habite dans la maison au nord-ouest de la vi
 add_step : 1
 }
 
-place : maison, step : 5 {
-[Dandy :: Dandy : Ça te plait ?
-Dandy : Dandy : Ah oui cette batte ? On étaient champions de baseball à notre époque !
+place : peaudevigne0, step : 1-3{
+[Dandy :: Dandy : Un intrus !]
+}
+
+place : peaudevigne0, step : 5 {
+[Dandy :: Dandy : Ça te plait ?]
+}
+
+place : peaudevigne1,  step : 5{
+[Dandy :: Ah oui cette batte ? On étaient champions de baseball à notre époque !
 Peaudevigne :: Peaudevigne : Mais on défonçait pas que les équipes adverses si tu vois ce que je veux dire ihihihih
 Dandy :: Dandy : On était un peu violents à cette époque ! héhéhé
-Peaudevigne :: Peaudevigne : Mais cette époque est révolue, maintenant on passe nos vieux jours autour du lac :)
+Peaudevigne :: Peaudevigne : Mais cette époque est révolue, maintenant on passe nos vieux jours du côté du lac :)
 Peaudevigne : C'est super paisible là bas ! Tu pourras aller voir !]
 add_step : 1
 }

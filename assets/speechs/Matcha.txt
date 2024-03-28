@@ -5,17 +5,24 @@ Matcha : Je vous souhaite bonne chance Mr Bones.]
 add_step : 1
 }
 
-place : mairie, step : 5 {
+step : 6 {
+[Matcha :: Matcha : Venez me voir dans la mairie]
+}
+
+place : mairie, step : 6 {
 [Matcha :: Matcha : Thifraude est encore allée au bar...
 Matcha : Ah vous l'avez vue ? Oui, je sais qu'elle me trompe... Ce n'est pas comme si elle avait fait attention à le cacher ! Tout ça pour un magicien nul !
 Matcha : ? Je parle de Babybel ! Toujours à trainer à l'auberge, c'est sur qu'il y est c'est pour voir ma femme ! Si il n'y va pas, il traîne dans les égoûts pour y faire je ne sais quoi...
-Matcha : Quoi ? Fluchs ? Il est très sympa oui, c'est un très bon gérant. Vous parlez de quoi ?]
-
-[Matcha :: Matcha : En tout cas, j'attire uniquement des femmes cachotières apparemment... Une fois, ma première femme a disparu pendant 9 mois ! Sans donner aucune nouvelle !
+Matcha : Quoi ? Fluchs ? Il est très sympa oui, c'est un très bon gérant. Vous parlez de quoi ?
+Matcha :: Matcha : En tout cas, j'attire uniquement des femmes cachotières apparemment... Une fois, ma première femme a disparu pendant 9 mois ! Sans donner aucune nouvelle !
 Matcha : Quand elle est revenue elle était très faible, j'ai du rester à son chevet pendant plusieurs heures en attendant qu'elle s'endorme...
 Matcha : Cette période était très éprouvante, et c'est à ce moment là que j'ai recontré Thifraude qui m'a beaucoup aidé... Quand ma femme nous a quitté RIP lol, elle m'a aidée à supporter cela.
 Matcha : Elle m'a même donné une adorable fille...
 Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
+add_step : 1}
+
+place : mairie, step : 7 {
+[Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
 }
 
 place : mairie, step : 1-100 {
