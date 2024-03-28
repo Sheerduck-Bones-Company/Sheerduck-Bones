@@ -16,9 +16,9 @@ clock = pygame.time.Clock()
 FPS = 60
 
 #On crée les boutons de démarage
-start_button = button.Button(screen, 'start', 30, -20, 10)
-exit_button = button.Button(screen, 'exit', -30, -20, 10)
-help_button = button.Button(screen, 'help', -10, 20, 10)
+start_button = button.Button(screen, 'start', 20, 85, 10)
+exit_button = button.Button(screen, 'exit', -20, 85, 10)
+help_button = button.Button(screen, 'help', -10, 10, 10)
 hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
 #On crée notre partie
@@ -27,6 +27,9 @@ game = Game(screen)
 #On intialise la musique
 pygame.mixer.music.load("assets/music/not-rickroll.mp3")
 
+#On initialise l'écran de démarrage
+start_screen = pygame.image.load('assets/graphics/screens/start-screen.png')
+start_screen.convert()
 running = True
 
 #On lance la boucle principale
@@ -39,7 +42,7 @@ while running:
         
     #Sinon on affiche l'écran d'accueil    
     else:
-        screen.fill((88, 41, 0))
+        screen.blit(start_screen, (0,0))
         start_button.draw()
         exit_button.draw()
         help_button.draw()
