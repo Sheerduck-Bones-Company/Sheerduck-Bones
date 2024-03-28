@@ -9,7 +9,7 @@ place : bibliothèque, step : 20 {
 [Salsa :: Salsa : Si les Quacktors sont les plus forts ? Bien sûr que non ! Je suis déçu de vos pauvres connaissances en la matière]
 }
 
-place : bibliothèque, step : 1-100 {
+place : bibliotheque, step : 1-100 {
 [Salsa :: Salsa : Je serai le roi des pirates !]
 
 [Salsa :: Salsa : Arise]

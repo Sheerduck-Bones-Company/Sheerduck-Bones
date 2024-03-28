@@ -22,7 +22,7 @@ step : 20 {
 
 step : 1-100 {
 [Gandalf :: Gandalf : Youyou !!!
-hGandalf : ahahaHAHAHAHAHA]
+Gandalf : ahahaHAHAHAHAHA]
 
 [Gandalf :: Gandalf : UuRrgghhHHhh-
 Gandalf : Oh ! Coucou :)]
