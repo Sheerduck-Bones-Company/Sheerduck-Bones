@@ -1,0 +1,67 @@
+step : 0{
+[Hélolo :: Hélolo : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Hélolo :: Hélolo : Il est grand et musclé.]
+}
+
+step : 1 {
+[Hélolo :: Hélolo : Vous devriez aller voir la boulangerie...]
+}
+
+step : 3 {
+[Hélolo :: Hélolo : Ah c'est encore vous ?
+Hélolo :: Hélolo : J'ai entendu des bruits bizarres chez l'antiquaire, vous devriez peut-être aller voir ça ?]
+}
+
+step : 4 {
+[Hélolo :: Hélolo : Ah c'est encore vous ?
+Hélolo :: Hélolo : Je crois que Terrine a des choses à vous révéler... Vous pourrez la retrouver à l'auberge, près du pont.]
+}
+
+step : 6 {
+[Hélolo :: Hélolo : Ah vous tombez à pic !
+Hélolo :: Hélolo : L'auberge est très agitée en ce moment, vous devrier y passer faire un tour !
+Hélolo : Ah et avant d'oublier...
+Matcha :: Matcha : OÙ ÊTES VOOUUUUUUUS, MISTER BONES ?
+Hélolo :: Ah bah je vais devoir vous laisser, le maire vous appelle]
+}
+
+step : 7 {
+[Hélolo :: Hélolo : Salut
+Hélolo : Je crois que Chrome veut vous parler, à la bibliothèque]
+}
+
+step : 14 {
+[Hélolo :: Hélolo : Tartatin est à l'ateleier, au Sud-Ouest de la ville, il a besoin d'aide pour réparer Remixeur.]
+}
+
+step : 17 {
+[Hélolo :: Hélolo : Le musée vient d'accueillir de nouvelles peintures de Liananas. Vous pourriez y jeter un oeil...
+Hélolo : Il se situe à l'est du village.]
+}
+
+step : 20 {
+[Hélolo :: Hélolo : Macadame et Alléchant ? Ils sont en train de jouer au basket, à côté de la boulangerie]
+
+step : 21 {
+[Hélolo :: Hélolo : Wow mais tu cherches plein de gens !!
+Hélolo : Salsa travaille à la bibliothèque, c'est le petit batiment bleu au nord-ouest. Gandalf est prof à l'école mais ça doit être l'heure de la récrée tu pourras le trouver à côté !
+Hélolo : Safran est soit à la bibliothèque avec Chrome soit à l'école... Sinon Alléchant est toujours en train de faire du basket.
+Hélolo : Reviens quand tu veux ahah, j'ai l'impression de faire les renseignements :)]
+}
+
+step : 23 {
+[Hélolo :: Hélolo : Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
+Hélolo : Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
+Hélolo : De toute façon, il dépense tout son argent dans l’alcool...
+Hélolo : Peut-être qu'ils en ont en stock à l'auberge...]
+add_step : 1
+}
+
+step : 1-100 {
+[Hélolo :: Hélolo : Coucou !
+Hélolo : Tout se passe bien ?]
+
+[Hélolo :: Hélolo : Oui ?]
+
+[Hélolo :: Hélolo : Où est-ce que j'habite ? Ahah, c'est un secret !]
+}

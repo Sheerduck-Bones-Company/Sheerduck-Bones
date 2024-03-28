@@ -1,0 +1,37 @@
+place : bibliotheque, step : 0 {
+[Chrome :: Chrome : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Chrome :: Chrome : Il est grand et musclé.]
+}
+
+place : bibliotheque, step : 7 {
+[Chrome :: Chrome : Connaissez vous le théorème du sandwich au jambon ?
+Chrome : Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
+Chrome : Ah vous connaissez ?
+Chrome : Mais vous êtes mathématicien et détective !!
+Chrome : Et vous avez vu la super démonstration ? Elle est sur wiki, voici le lien : https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_du_sandwich_au_jambon]
+
+[Chrome :: Chrome : En ce moment, je trouve que Joshwaffle et Maître Choné sont suspicieux. Même Professeur Gandalf a changé.
+Chrome : Bon, après Léninodie a toujours été bizarre, et je ne parle même pas de Zolala ! Mais à priori, Romarin et Safran sont clean.
+Chrome : Vous devriez essayer de leur parler, ils sont à l'école]
+add_step : 1
+}
+
+place : bibliotheque, step : 13 {
+[Chrome :: Chrome : Alors des nouvelles des suspects, Sheerduck ?
+Chrome : Comme je me le disais, ils sont tous suspects. Mais n'oublions pas les autres habitants !
+Chrome : Je pense que vous devriez inspecter du côté de l'atelier.
+Chrome : Ne me remerciez surtout pas !]
+add_step : 1
+}
+
+step : 1-100 {
+[Chrome :: Chrome : ...]
+
+[Chrome :: Chrome : ...
+Chrome : Si je ne te réponds pas ce n'est pas parce que je n'ai pas entendu tu sais ?]
+
+[Chrome :: Chrome : ...
+Chrome : Je m'attelle à une tâche plus importante que de converser avec un être tel que vous. Revenez quand Obi vaincra Yoda]
+
+[Chrome :: Chrome : Je vous parlerai à l'arrivée des coquecigrues.]
+}

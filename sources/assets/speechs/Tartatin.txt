@@ -1,0 +1,25 @@
+step : 0 {
+[Tartatin :: Tartatin : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Tartatin :: Tartatin : Il est grand et musclé.]
+}
+
+place : atelier, step : 14 {
+[Tartatin :: Tartatin : Remixeur a disparu il y a quelques temps... Quand il est revenu il était tout cassé !
+Tartatin : Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et s'est amusé avec ! Mais je ne sais pas qui...
+Tartatin : Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça... Je programmerais Remixeur pour qu'il se venge !
+Tartatin : Non je n'irais pas moi même, vous comprenez...
+Tartatin : Remixeur !! Qu'est-ce qu'il se passe ?]
+add_step : 1
+}
+
+place : atelier, step : 15-16 {
+[Tartatin :: Tartatin : Oh non, Remixeur fait encore n'importe quoi !]
+}
+
+place : atelier, step : 1-100 {
+[Tartatin :: Tartatin : Je suis occupé repassez plus tard.]
+[Tartatin :: Tartatin : Je travaille pour réparer Remixeur, tu penses qu’il devrait être bleu ou rouge ? Nous ne sommes pas d’accord avec Philémonade.
+Tartatin : Ah merci ! Je lui dirais que tu es d’accord avec moi]
+[Tartatin :: Tartatin : Je voulais faire un programme pour trouver le chemin le plus court entre deux stations de métro mais il n’y pas de métro ici.
+Tartatin : Par contre il y a des égouts pas utilisés depuis longtemps...]
+}

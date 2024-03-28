@@ -1,0 +1,23 @@
+step : 0 {
+[Mewton :: Mewton : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Mewton :: Mewton : Il est grand et musclé.]
+}
+
+place : musee, step : 17 {
+[Mewton :: Ah oui Remixeur ? Bien sûr que je ne l'ai pas volé !! Pour qui vous me prenez... On ne pourrait même pas qualifier ce tas de ferraille d'oeuvre d'art, alors l'exposer dans mon si beau musée ?!]
+
+[Mewton: Malheur, j'ai vu Liananas peindre encore un autre tableau...
+Mewton : Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !
+Mewton : Elle est souvent près de la rivière ou dans son atelier à l'ouest de la ville... Si seulement son atelier pouvait brûler on en serait enfin débarrassé !]
+add_step : 1
+}
+
+place : musee, step : 1-100 {
+[Mewton :: Mewton : Bienvenue dans le musée de Coincoinville.]
+
+[Mewton :: Mewton : Je peux vous aider ?]
+
+[Mewton :: Mewton : Vous aussi vous êtes fan de la peinture de Jacques-Louis David ?
+Mewton : Face à ça, les peintures de Liananas sont d’un niveau inférieur *d’un ton plein de dédain*
+Mewton : Si vous voulez en prendre une d'ailleurs j'en ait tout un tas. Elle est tellement déprimée qu'elle essaye de déprimer les autres en montrant ses tableaux affreux !]
+}

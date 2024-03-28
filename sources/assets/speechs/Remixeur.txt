@@ -1,0 +1,27 @@
+step : 0 {
+[Remixeur :: Remixeur : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Remixeur :: Remixeur : Il est grand et musclé.]
+}
+
+place : atelier, step : 15 {
+[Remixeur :: Remixeur : Un fichier enregistré dans ma mémoire vient de refaire surface. V-v-v-voulez v-v-voulez  vous lll’écouter ?
+Remixeur : Ouverture du f-f-fichier.
+Remixeur : 01001010 00100111 01100001 01101001 00100000 01110000 01101111 01110101 01110011 01110011 11000011 10101001 00100000 01000001 01101110 01110000 01101000 01100001 01101100 01100001 01100110 01100101 01101100 01101100 01100101 00100000 01100001 01101000 01100001 01101000
+Remixeur : Bip-bip-bip. F-f-fin du fichier. Lecture terminée]
+add_step : 1
+}
+
+place : atelier, step : 16 {
+[Remixeur :: Remixeur : Le fichier a été supprimé. Mes capteurs indiquent un mouvement.
+Remixeur : Philemonade ? Phiiiiii-lleeee
+Remixeur : moooooo-moooo- mooooooooo-ooooo-oooo
+Remixeur : de-de-d-e- ade]
+}
+
+place : atelier, step : 1-100 {
+[Remixeur :: Remixeur : B-b-bonjour… Vouuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+Remixeur : Ah... Mes capteurs une incohérence indique. Je l’investigue.]
+
+[Remixeur :: Remixeur : Bip-bip-bip-bip-bip
+Remixeur : boubipbipbipbipbipbip]
+}

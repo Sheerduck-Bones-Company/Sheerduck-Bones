@@ -1,0 +1,19 @@
+step : 0 {
+[Alléchant :: Alléchant : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Alléchant :: Alléchant : Il est grand et musclé.]
+}
+
+step : 20 {
+[Alléchant :: Attends je suis occupé là, va voir Macadame]
+}
+
+step : 21 {
+[Alléchant :: Alléchant : T'as vraiment cru que c'était les Laqués qu'avait gagné?! Eh vazy sale poussoloss tu connais même pas]
+}
+
+step : 1-100 {
+[Alléchant :: Alléchant : Vazy carré]
+[Alléchant :: Alléchant : Ouais c’est ça je crois
+Alléchant : Salut poussin je t’avais pas vu, tu veux venir jouer avec nous ?]
+[Alléchant :: Alléchant : T’as vu le match d’hier ?? Les Nuggets ils sont poustouflants !]
+}
