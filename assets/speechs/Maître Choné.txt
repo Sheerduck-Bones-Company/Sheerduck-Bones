@@ -18,6 +18,11 @@ add_step : 1
 }
 
 step : 1-100 {
+
+[Maître Choné :: C'est la recrée ! Profitez-en au lien d'essayer de rentrer dans l'école !
+Je l'ai fermée pour éviter les bosseurs comme vous de trop travailler !
+Ah vous n'êtes pas un élève ? Bon c'est pas grave, n'essayez quand même pas de rentrer]
+
 [Maître Choné :: Pensez outside the box !]
 
 [Maître Choné :: Ce qui nous intéresse c’est de faire bouger les choses.
