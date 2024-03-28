@@ -1,4 +1,7 @@
 step : 0{
+[Chludding :: Chlothilde : Bonjour ! Je m'appelle Chlothilde et je suis en première NSI, lors de ce projet, je me suis d'abord occupée des écrans notamment l'écran d’accueil. Pour faire celà, j'ai programmé les boutons, comme ceux pour commencer le jeu, sortir du jeu et les indices.
+Chlothilde : J'ai aussi travaillé aux graphismes en pixels ainsi que les dialogues et les personnages dans le jeu.]
+
 [Chludding :: Chludding : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Chludding :: Chludding : Il est grand et musclé.]
 }

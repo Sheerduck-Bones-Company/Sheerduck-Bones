@@ -1,4 +1,8 @@
 step : 0 {
+[Thifraude :: Thibault : Bonjour, moi c'est Thibault ! Un élève de 1ere en NSI. Je suis très heureux de participer au projet :)
+Thibault : Moi, je gère les animations et les déplacements du personnage en programmation mais j'ai surtout travaillé sur les dialogues, comment ils s'opéraient avec nos différentes étapes (c'est à dire les différents moments du jeu)
+Thibault : J'ai aussi essayé quelques graphismes, et ça plutôt bien marché !]
+
 [Thifraude :: Thifraude : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Thifraude :: Thifraude : Il est grand et musclé.]
 }

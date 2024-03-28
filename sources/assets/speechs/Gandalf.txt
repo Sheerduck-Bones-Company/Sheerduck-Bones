@@ -1,4 +1,6 @@
 step : 0{
+[Gandalf :: Antoine : Je suis Antoine, élève de première NSI :) J'ai développé un créateur de cartes qui a permis de créer le sol où je me trouve :) ainsi qu'un séparateur d’image permettant de séparer les plus grosses images en bloc, facilitant les collisions (entièrement par moi-même).
+Antoine : J'ai aussi créé la boucle générale du jeu !]
 [Gandalf :: Gandalf : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Gandalf :: Gandalf : Il est grand et musclé.]
 }
