@@ -27,6 +27,11 @@ exit_button = button.Button(screen, 'exit', -20, -10, 10)
 help_button = button.Button(screen, 'help', -10, 10, 10)
 hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
+#On crée les boutons / texte du menu help
+exit_button2 = button.Button(screen, "exit2", -10, 10, 5)
+font = pygame.font.SysFont(None, 50)
+help_text = [font.render(text, True, (0,0,0)) for text in ["Contôles utiles :", "", "q/z/d/s = Se déplacer", "échap = écran de démarrage", "e = intéraction personnage ou entrée / sortie des batiments", "Bouton indices en bas à droite = indices donnés", "dans le jeu à relier"]]
+
 #On crée notre partie
 game = Game(screen)
 
@@ -54,8 +59,15 @@ while running:
         hint_button.draw()
         current_music = start_music
         current_channel = start_channel
-        
-    #Sinon on affiche l'écran d'accueil    
+    #Si on est dans l'aide
+    elif game.is_helping:
+        screen.fill((255,255,255))
+        exit_button2.draw()
+        for i, text_ligne in enumerate(help_text):
+            screen.blit(text_ligne, text_ligne.get_rect(topleft=(30, 30+i*50)))
+        current_music = game_music
+        current_channel = game_channel
+    #Sinon on affiche l'écran d'accueil 
     else:
         screen.blit(start_screen, start_screen.get_rect())
         start_button.draw()
@@ -84,6 +96,8 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 if game.is_playing:
                     game.stop()
+                elif game.is_helping:
+                    game.stop_helping()
                 else:
                     running = False
                     pygame.quit()
@@ -113,7 +127,10 @@ while running:
                     sys.exit()
                 #Demander de l'aide
                 elif help_button.rect.collidepoint(event.pos):
-                    print('OSCOUR')
+                    game.helping()
+                #Quitter l'aide
+                elif exit_button2.rect.collidepoint(event.pos):
+                    game.stop_helping()
             #Si c'est le clic gauche
             elif event.button == 1:
                 #Si on clique sur le bouton pour accéder au tableau d'indices

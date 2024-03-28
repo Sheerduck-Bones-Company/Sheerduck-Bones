@@ -8,6 +8,7 @@ class Game():
         self.is_playing = False
         self.is_speeking = False
         self.is_thinking = False
+        self.is_helping = False
         self.screen = screen                            #On récupère l'écran
         self.pressed = {}                               #On crée une liste pour les touches pressées
         self.player = player.Player(self, (2402,1200))  #On crée un joueur
@@ -24,6 +25,12 @@ class Game():
     #Arrêter la partie
     def stop(self):
         self.is_playing = False
+    
+    def helping(self):
+        self.is_helping = True
+    
+    def stop_helping(self):
+        self.is_helping = False
     
     #Lancer une boîte de dialogue
     def say(self, text:list):
