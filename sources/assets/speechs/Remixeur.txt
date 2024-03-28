@@ -11,6 +11,13 @@ Remixeur : Bip-bip-bip. F-f-fin du fichier. Lecture terminée]
 add_step : 1
 }
 
+place : atelier, step : 16 {
+[Remixeur :: Remixeur : Le fichier a été supprimé. Mes capteurs indiquent un mouvement.
+Remixeur : Philemonade ? Phiiiiii-lleeee
+Remixeur : moooooo-moooo- mooooooooo-ooooo-oooo
+Remixeur : de-de-d-e- ade]
+}
+
 place : atelier, step : 1-100 {
 [Remixeur :: Remixeur : B-b-bonjour… Vouuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 Remixeur : Ah... Mes capteurs une incohérence indique. Je l’investigue.]

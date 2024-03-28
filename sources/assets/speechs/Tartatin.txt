@@ -8,11 +8,11 @@ place : atelier, step : 14 {
 Tartatin : Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et s'est amusé avec ! Mais je ne sais pas qui...
 Tartatin : Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça... Je programmerais Remixeur pour qu'il se venge !
 Tartatin : Non je n'irais pas moi même, vous comprenez...
-Tartatin : Oh non, Remixeur fait encore n'importe quoi !]
+Tartatin : Remixeur !! Qu'est-ce qu'il se passe ?]
 add_step : 1
 }
 
-place : atelier, step : 15 {
+place : atelier, step : 15-16 {
 [Tartatin :: Tartatin : Oh non, Remixeur fait encore n'importe quoi !]
 }
 
