@@ -11,7 +11,7 @@ Peaudevigne : Si tu as besoin de quoi que ce soit n'hésites pas :3]
 [Peaudevigne :: Peaudevigne : Quoi ? La batte ? Ah oui, nous aussi on a été jeune hihihi]
 }
 
-step : 1 {
+step : 1-100 {
 [Peaudevigne :: Peaudevigne : Oh, une nouvelle tête !
 Peaudevigne : Notre ville est très paisible. J’espère que vous vous y plairez.
 Dandy :: Dandy : Ah vous ne vous installez pas ? C'est dommage !

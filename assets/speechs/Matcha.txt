@@ -1,33 +1,33 @@
 step : 0 {
-[Matcha :: Enchanté de vous rencontrer cher Sheerduck Bones, je suis Matcha, le maire de Coincoinville. Les circonstances veulent que nous nous rencontrions de cette manière si impromptue mais j’aurais aimé vous connaître dans un autre contexte.
-J'espère que vous réussierez à résoudre ce dont je vous ait parlé par téléphone.
-Je vous souhaite bonne chance Mr Bones.]
+[Matcha :: Matcha : Enchanté de vous rencontrer cher Sheerduck Bones, je suis Matcha, le maire de Coincoinville. Les circonstances veulent que nous nous rencontrions de cette manière si impromptue mais j’aurais aimé vous connaître dans un autre contexte.
+Matcha : J'espère que vous réussierez à résoudre ce dont je vous ait parlé par téléphone.
+Matcha : Je vous souhaite bonne chance Mr Bones.]
 add_step : 1
 }
 
 place : mairie, step : 5 {
-[Matcha :: Thifraude est encore allée au bar...
-Ah vous l'avez vue ? Oui, je sais qu'elle me trompe... Ce n'est pas comme si elle avait fait attention à le cacher ! Tout ça pour un magicien nul !
-? Je parle de Babybel ! Toujours à trainer à l'auberge, c'est sur qu'il y est c'est pour voir ma femme ! Si il n'y va pas, il traîne dans les égoûts pour y faire je ne sais quoi...
-Quoi ? Fluchs ? Il est très sympa oui, c'est un très bon gérant. Vous parlez de quoi ?]
+[Matcha :: Matcha : Thifraude est encore allée au bar...
+Matcha : Ah vous l'avez vue ? Oui, je sais qu'elle me trompe... Ce n'est pas comme si elle avait fait attention à le cacher ! Tout ça pour un magicien nul !
+Matcha : ? Je parle de Babybel ! Toujours à trainer à l'auberge, c'est sur qu'il y est c'est pour voir ma femme ! Si il n'y va pas, il traîne dans les égoûts pour y faire je ne sais quoi...
+Matcha : Quoi ? Fluchs ? Il est très sympa oui, c'est un très bon gérant. Vous parlez de quoi ?]
 
-[Matcha :: En tout cas, j'attire uniquement des femmes cachotières apparemment... Une fois, ma première femme a disparu pendant 9 mois ! Sans donner aucune nouvelle !
-Quand elle est revenue elle était très faible, j'ai du rester à son chevet pendant plusieurs heures en attendant qu'elle s'endorme...
-Cette période était très éprouvante, et c'est à ce moment là que j'ai recontré Thifraude qui m'a beaucoup aidé... Quand ma femme nous a quitté RIP lol, elle m'a aidée à supporter cela.
-Elle m'a même donné une adorable fille...
-Détective !! Vous devez absolument retrouver le meurtrier !]
+[Matcha :: Matcha : En tout cas, j'attire uniquement des femmes cachotières apparemment... Une fois, ma première femme a disparu pendant 9 mois ! Sans donner aucune nouvelle !
+Matcha : Quand elle est revenue elle était très faible, j'ai du rester à son chevet pendant plusieurs heures en attendant qu'elle s'endorme...
+Matcha : Cette période était très éprouvante, et c'est à ce moment là que j'ai recontré Thifraude qui m'a beaucoup aidé... Quand ma femme nous a quitté RIP lol, elle m'a aidée à supporter cela.
+Matcha : Elle m'a même donné une adorable fille...
+Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
 }
 
 place : mairie, step : 1-100 {
-[Matcha :: Oui ?]
+[Matcha :: Matcha : Oui ?]
 
-[Matcha :: Hmm ?
-Attendez j'ai des papiers de la plus haute importance à remplir.]
+[Matcha :: Matcha : Hmm ?
+Matcha : Attendez j'ai des papiers de la plus haute importance à remplir.]
 
-[Matcha :: Ah ce tableau ? C'est celui de mon ancienne femme, Oscour. Malheureusement elle n'est plus de ce monde... Elle s'est envolée vers de meilleurs horizons.]
+[Matcha :: Matcha : Ah ce tableau ? C'est celui de mon ancienne femme, Oscour. Malheureusement elle n'est plus de ce monde... Elle s'est envolée vers de meilleurs horizons.]
 }
 
 step : 1-100 {
-[Matcha :: J’espère que notre belle ville vous plait ?]
-[Matcha :: Passez à la mairie si vous avez besoin d’informations !]
+[Matcha :: Matcha : J’espère que notre belle ville vous plait ?]
+[Matcha :: Matcha : Passez à la mairie si vous avez besoin d’informations !]
 }
