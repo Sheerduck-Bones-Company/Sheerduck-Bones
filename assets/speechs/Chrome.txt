@@ -1,3 +1,8 @@
+step : 0{
+[Chrome :: Chrome : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Chrome :: Chrome : Il est grand et musclé.]
+}
+
 place : bibliotheque, step : 7 {
 [Chrome :: Chrome : Connaissez vous le théorème du sandwich au jambon ?
 Chrome : Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.

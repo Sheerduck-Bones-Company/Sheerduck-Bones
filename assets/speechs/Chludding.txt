@@ -1,3 +1,8 @@
+step : 0{
+[Chludding :: Chludding : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Chludding :: Chludding : Il est grand et musclé.]
+}
+
 step : 1-100 {
 
 [Chludding :: Chludding : Bonjour !!!!!!!!!!

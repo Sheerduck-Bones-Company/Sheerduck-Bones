@@ -1,3 +1,8 @@
+step : 0{
+[Avoine :: Avoine : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Avoine :: Avoine : Il est grand et musclé.]
+}
+
 step : 1-100 {
 [Avoine :: Avoine : Tu viens pêcher avec moi un de ces jours ?]
 

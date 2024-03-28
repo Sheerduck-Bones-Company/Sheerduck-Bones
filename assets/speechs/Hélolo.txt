@@ -1,3 +1,8 @@
+step : 0{
+[Hélolo :: Hélolo : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Hélolo :: Hélolo : Il est grand et musclé.]
+}
+
 step : 1 {
 [Hélolo :: Hélolo : Vous devriez aller voir la boulangerie...]
 }

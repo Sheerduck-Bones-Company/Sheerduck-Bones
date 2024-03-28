@@ -1,3 +1,8 @@
+step : 0{
+[Bakugan :: Bakugan : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Bakugan :: Bakugan : Il est grand et musclé.]
+}
+
 place : antiquaire, step : 3 {
 [Bakugan :: Bakugan : Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
 Bakugan : Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]

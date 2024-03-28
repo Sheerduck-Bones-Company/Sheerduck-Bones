@@ -1,4 +1,4 @@
-place : egouts, step : 24 {
+place : egouts, step : 0-24 {
 [Anphalafelle :: Anphalafelle : T'es pas censé me retrouver maintenant sale tricheur !
 Anphalafelle : Retourne d'où tu viens ou je vais te manger
 }

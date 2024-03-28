@@ -1,3 +1,8 @@
+step : 0{
+[Charlie :: Charlie : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Charlie :: Charlie : Il est grand et musclé.]
+}
+
 step : 1-100 {
 [Charlie :: Charlie : Bonjour !]
 [Charlie :: Charlie : C'est un peu austère ici... C'est pour ça que j'ai planté des fleurs !
