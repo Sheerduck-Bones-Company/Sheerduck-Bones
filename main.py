@@ -25,7 +25,13 @@ hint_button = button.Button(screen, 'hint', -2, -2, 5)
 game = Game(screen)
 
 #On intialise la musique
-pygame.mixer.music.load("assets/music/not-rickroll.mp3")
+pygame.mixer.init() 
+start_music = pygame.mixer.Sound("assets/music/music3.mp3") 
+game_music = pygame.mixer.Sound("assets/music/music2.mp3")                
+start_channel = pygame.mixer.Channel(0)
+game_channel = pygame.mixer.Channel(1)
+channel = start_channel
+music = start_music
 
 #On initialise l'écran de démarrage
 start_screen = pygame.image.load('assets/graphics/screens/start-screen.png')
@@ -35,10 +41,16 @@ running = True
 #On lance la boucle principale
 while running:
     #Si on est en train de jouer
+    
+    #On joue la musique
+    channel.play(music, loops=-1, fade_ms=250)
+    
     if game.is_playing:
         #On actualise la partie
         game.update()
         hint_button.draw()
+        music = start_music
+        channel = start_channel
         
     #Sinon on affiche l'écran d'accueil    
     else:
@@ -46,7 +58,8 @@ while running:
         start_button.draw()
         exit_button.draw()
         help_button.draw()
-        pygame.mixer.music.play(loops=-1)
+        music = game_music
+        channel = game_channel
     
     #On actualise l'écran    
     pygame.display.flip()

@@ -915,11 +915,11 @@ while running:
                                         bloc.set_image()
                     show_map_path = not show_map_path
                     
-                #Afficher disparaître le menu d'infos
+                #Afficher / faire disparaître le menu d'infos
                 if event.key == pygame.K_i:
                     is_searching_for_info = True
                 
-                #Actver / Désactiver la transparence des couches
+                #Activer / Désactiver la transparence des couches
                 if event.key == pygame.K_l:
                     show_transparent_layer = not show_transparent_layer
                     

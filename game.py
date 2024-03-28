@@ -42,24 +42,6 @@ class Game():
 
     #Actualiser la partie
     def update(self):
-        """
-        if not self.already_start:
-            self.screen.fill((255,255,255))
-            
-            for i, ligne in enumerate(self.lignes):
-                rect = self.lignes_rect
-                rect.y += i*31
-                self.screen.blit(ligne, rect)
-                if i == len(self.lignes)-1:
-                    lastRect = rect
-            
-            self.lignes_rect.y -= 10
-            
-            if lastRect.bottom < 0:
-                self.already_start = True
-        
-        else:
-        """
         #On actualise les différent groupes de sprites actuellement utilisés
         for group in self.maps.get(self.current_map_name).get("group_list"):
             group.update()
