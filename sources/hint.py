@@ -7,8 +7,9 @@ FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 class Hint():
     def __init__(self, hint):
         self.type = hint                                                                                            #Le nom de l'indice
-        self.image = pygame.image.load(f"{FILE_PATH}/assets/graphics/hints/{hint}.png").convert_alpha()                         #L'image de l'indice
-        self.image = pygame.transform.scale(self.image, (100,100))
+        self.image = pygame.image.load(f"{FILE_PATH}/assets/graphics/hints/{hint}.png").convert_alpha()             #L'image de l'indice
+        size_vect = pygame.Vector2(self.image.get_size())                                             #On change la taille de l'image
+        self.image = pygame.transform.scale(self.image, size_vect*100/max(size_vect.x, size_vect.y))
         self.rect = self.image.get_rect(topleft=(10,10))
         self.link_rect = self.image.get_rect(left=self.rect.centerx-15, top=self.rect.y+10, width=30, height=30)    #On définie le rectangle de la punaise de l'indice
         self.offset = pygame.Vector2((0,0))                                                                         #Le décalage de la souris par rapport au coin en haut à gauche
