@@ -1,5 +1,5 @@
 step : 8-11 {
-[Maître Choné :: Quoi un meurtre ??? Mais c'est affreux !
+[Maître-Chone :: Quoi un meurtre ??? Mais c'est affreux !
 Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Attendez que je retrouve mes notes !
 Ça ne vous intéresse pas ? C'est dommage !
@@ -8,7 +8,7 @@ add_step : 1
 }
 
 step : 12 {
-[Maître Choné :: Quoi un meurtre ??? Mais c'est affreux !
+[Maître-Chone :: Quoi un meurtre ??? Mais c'est affreux !
 Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Attendez que je retrouve mes notes !
 Ça ne vous intéresse pas ? C'est dommage !
@@ -18,22 +18,26 @@ add_step : 1
 }
 
 step : 1-100 {
+<<<<<<< HEAD:assets/speechs/Maître Choné.txt
 
 [Maître Choné :: C'est la recrée ! Profitez-en au lien d'essayer de rentrer dans l'école !
 Je l'ai fermée pour éviter les bosseurs comme vous de trop travailler !
 Ah vous n'êtes pas un élève ? Bon c'est pas grave, n'essayez quand même pas de rentrer]
 
 [Maître Choné :: Pensez outside the box !]
+=======
+[Maître-Chone :: Pensez outside the box !]
+>>>>>>> 182dde8f6a5f06bdfee42c568988785272f43f52:assets/speechs/Maître-Chone.txt
 
-[Maître Choné :: Ce qui nous intéresse c’est de faire bouger les choses.
+[Maître-Chone :: Ce qui nous intéresse c’est de faire bouger les choses.
 En fait ça va pas vraiment bouger mais ça va bouger conceptuellement
 Pour ça, on donne des vies aux gens et ça c’est gentil, parce que voilà !
 C’est ça qui est génial, regarder les choses bouger !}]
 
-[Maître Choné :: Les poussins sont des plans projectifs.]
+[Maître-Chone :: Les poussins sont des plans projectifs.]
 
-[Maître Choné :: Et c’est ça qui est absolument magnifique !!]
+[Maître-Chone :: Et c’est ça qui est absolument magnifique !!]
 
-[Maître Choné :: La géométrie est magnifique.
+[Maître-Chone :: La géométrie est magnifique.
 La vie est belle.]
 }

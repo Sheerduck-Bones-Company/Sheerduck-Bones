@@ -12,7 +12,7 @@ add_step : 1
 }
 
 step : 1-100 {
-[Joshwaflle :: Hein ?
+[Joshwaffle :: Hein ?
 Flemme.]
 
 [Joshwaffle :: Non, je vous assure que tout va bien.]
