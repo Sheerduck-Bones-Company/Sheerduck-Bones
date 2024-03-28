@@ -10,7 +10,9 @@ Terrine : Ah oui c'est vrai que je t'avais dit que je te dirais quelque chose...
 Terrine : Alors tu sais pas ce que j'ai entendu ! En passant devant chez Peaudevigne et Dandy, quelqu'un aurait entendu des cris à glacer le sang... Puis en regardant par la fenêtre, il aurait vu une batte pleine de sang !!
 Terrine : Quoi, qui me l'a dit ? Ah ça c'est un secret !
 Terrine : Si t'as d'autres choses à me dire hésite pas !]
-add_step : 1}
+add_step : 1
+add_hint : Peaudevigne-Dandy
+}
 
 place : auberge, step : 6-10 {
 [Terrine :: Terrine : Qu'est ce que tu veux que je te dise ?
@@ -19,6 +21,7 @@ Terrine : Non désolé, je ne dois pas craquer.
 Terrine : ...
 Terrine : Bon, je peux faire des exceptions mais tu le répètes pas, hein ?
 Terrine : Bon, Fluchs et Thifraude sont secrètement ensemble mais chuuuut]
+add_hint : FluchsEtThifraude
 }
 
 place : auberge, step : 1-100 {
