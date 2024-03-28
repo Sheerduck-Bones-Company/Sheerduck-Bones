@@ -42,6 +42,7 @@ class Game():
 
     #Actualiser la partie
     def update(self):
+        """
         if not self.already_start:
             self.screen.fill((255,255,255))
             
@@ -58,30 +59,31 @@ class Game():
                 self.already_start = True
         
         else:
-            #On actualise les différent groupes de sprites actuellement utilisés
-            for group in self.maps.get(self.current_map_name).get("group_list"):
-                group.update()
-            
-            #Si on utilise pas le tableau d'indice, on affiche toute la carte et les blocs
-            if not self.is_thinking:
-                self.camera_group.custom_draw(self.player)
-            #Sinon on actualise le tableau
-            else:
-                self.screen.fill((88, 41, 0))
-                #Pour chaque indice, on affiche son image, puis les différents liens qu'il possède avec les autres indices
-                for hint in self.player.hints:
-                    hint.draw(self.screen)
-                    
-                for hint in self.player.hints:
-                    hint.draw_links(self.screen)
-                    
-                    #Si on est en train de créer un lien, on l'affiche connecté à la souris
-                    if hint.is_linking:
-                        pygame.draw.line(self.screen, "red", hint.link_rect.center, pygame.mouse.get_pos())
-            
-            #Si on est en train de parler, on afiche la bulle de dialogue
-            if self.is_speeking:
-                self.speech_bubble.draw()
+        """
+        #On actualise les différent groupes de sprites actuellement utilisés
+        for group in self.maps.get(self.current_map_name).get("group_list"):
+            group.update()
+        
+        #Si on utilise pas le tableau d'indice, on affiche toute la carte et les blocs
+        if not self.is_thinking:
+            self.camera_group.custom_draw(self.player)
+        #Sinon on actualise le tableau
+        else:
+            self.screen.fill((88, 41, 0))
+            #Pour chaque indice, on affiche son image, puis les différents liens qu'il possède avec les autres indices
+            for hint in self.player.hints:
+                hint.draw(self.screen)
+                
+            for hint in self.player.hints:
+                hint.draw_links(self.screen)
+                
+                #Si on est en train de créer un lien, on l'affiche connecté à la souris
+                if hint.is_linking:
+                    pygame.draw.line(self.screen, "red", hint.link_rect.center, pygame.mouse.get_pos())
+        
+        #Si on est en train de parler, on afiche la bulle de dialogue
+        if self.is_speeking:
+            self.speech_bubble.draw()
     
     #Une méthode pour détecter une collision entre un sprite et un groupe de sprites
     def check_collisions(self, sprite, group):
