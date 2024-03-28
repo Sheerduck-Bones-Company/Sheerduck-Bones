@@ -1,0 +1,18 @@
+Les bibliothhèques utilisées à installer sont les suivantes:
+    - os
+    - sys
+    - pygame
+    - re
+    - PIL
+    - tkinter
+
+Les fichiers suivants sont intépendants et peuvent être exécutés:
+    - main.py (jeu)
+    - map_editor.py (éditeur de carte)
+    - split_img.py (séparateur d'images)
+
+L'utilisation du fichier map_editor.py est précisée dans le fichier README.md.
+Tous les autres fichiers sont utiles au bon fonctionnement des trois fichiers précédents.
+Le fonctionnement de chaque programme est précisé dans le dossier "doc".
+
+Tous les élémments audio-visuels-textuels sont présents dans le dossier "assets".

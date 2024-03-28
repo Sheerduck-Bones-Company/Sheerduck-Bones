@@ -1,10 +1,13 @@
-import pygame
+import pygame, os
+
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #Une classe pour gérer tous les indices que possède le joueur
 class Hint():
     def __init__(self, hint):
         self.type = hint                                                                                            #Le nom de l'indice
-        self.image = pygame.image.load(f"assets/graphics/hints/{hint}.png").convert_alpha()                         #L'image de l'indice
+        self.image = pygame.image.load(f"{FILE_PATH}/assets/graphics/hints/{hint}.png").convert_alpha()                         #L'image de l'indice
         self.image = pygame.transform.scale(self.image, (100,100))
         self.rect = self.image.get_rect(topleft=(10,10))
         self.link_rect = self.image.get_rect(left=self.rect.centerx-15, top=self.rect.y+10, width=30, height=30)    #On définie le rectangle de la punaise de l'indice

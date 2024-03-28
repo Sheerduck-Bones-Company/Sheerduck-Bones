@@ -1,5 +1,8 @@
-import pygame
+import pygame, os
 from hint import Hint
+
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #Une classe pour créer des boîtes de dialogues
 class Dialogues():
@@ -178,7 +181,7 @@ class SpeechBubble():
     def create_face(self, name):
         #Si le nom est donné, on crée l'image
         if name != None:
-            self.character_surf = pygame.image.load(f"assets/graphics/characters/{name}.png").convert_alpha()
+            self.character_surf = pygame.image.load(f"{FILE_PATH}/assets/graphics/characters/{name}.png").convert_alpha()
             self.character_surf = pygame.transform.scale(self.character_surf, (128,128))
         else:
             self.character_surf = pygame.Surface((0,0))

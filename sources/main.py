@@ -1,11 +1,14 @@
 #On importe les modules nécessaires
-import pygame, random, sys, button
+import pygame, os, sys, button
 from game import Game
+
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #On initialise la fenêtre
 pygame.init()
 pygame.display.set_caption('Sheerduck-Bones')
-pygame.display.set_icon(pygame.image.load('assets/graphics/icons/game.ico'))
+pygame.display.set_icon(pygame.image.load(f'{FILE_PATH}/assets/graphics/icons/game.ico'))
 
 #On crée notre écran
 WIDTH, HEIGHT = 1080, 720
@@ -15,10 +18,13 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SCALED)
 clock = pygame.time.Clock()
 FPS = 60
 
+#On initialise l'écran de démarrage
+start_screen = pygame.image.load(f'{FILE_PATH}/assets/graphics/screens/start-screen.png').convert_alpha()
+
 #On crée les boutons de démarage
-start_button = button.Button(screen, 'start', 20, 85, 10)
-exit_button = button.Button(screen, 'exit', -20, 85, 10)
-help_button = button.Button(screen, 'help', -10, 10, 10)
+start_button = button.Button(screen, 'start', 30, -20, 10)
+exit_button = button.Button(screen, 'exit', -30, -20, 10)
+help_button = button.Button(screen, 'help', -10, 20, 10)
 hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
 #On crée notre partie
@@ -26,40 +32,37 @@ game = Game(screen)
 
 #On intialise la musique
 pygame.mixer.init() 
-start_music = pygame.mixer.Sound("assets/music/music3.mp3") 
-game_music = pygame.mixer.Sound("assets/music/music2.mp3")                
+start_music = pygame.mixer.Sound(f"{FILE_PATH}/assets/music/music3.mp3") 
+game_music = pygame.mixer.Sound(f"{FILE_PATH}/assets/music/music2.mp3")                
 start_channel = pygame.mixer.Channel(0)
 game_channel = pygame.mixer.Channel(1)
-channel = start_channel
-music = start_music
+current_channel = start_channel
+current_music = start_music
 
-#On initialise l'écran de démarrage
-start_screen = pygame.image.load('assets/graphics/screens/start-screen.png')
-start_screen.convert()
 running = True
 
 #On lance la boucle principale
 while running:
-    #Si on est en train de jouer
     
     #On joue la musique
-    channel.play(music, loops=-1, fade_ms=250)
+    current_channel.play(current_music, loops=-1, fade_ms=250)
     
+    #Si on est en train de jouer
     if game.is_playing:
         #On actualise la partie
         game.update()
         hint_button.draw()
-        music = start_music
-        channel = start_channel
+        current_music = start_music
+        current_channel = start_channel
         
     #Sinon on affiche l'écran d'accueil    
     else:
-        screen.blit(start_screen, (0,0))
+        screen.blit(start_screen, start_screen.get_rect())
         start_button.draw()
         exit_button.draw()
         help_button.draw()
-        music = game_music
-        channel = game_channel
+        current_music = game_music
+        current_channel = game_channel
     
     #On actualise l'écran    
     pygame.display.flip()

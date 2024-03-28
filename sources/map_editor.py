@@ -1,5 +1,8 @@
 import pygame, sys, button, os
 
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
+
 #On crée une classe permettant de gérer les blocs
 class Bloc(pygame.sprite.Sprite):
     def __init__(self,
@@ -27,7 +30,7 @@ class Bloc(pygame.sprite.Sprite):
     
     #Définir l'image du bloc
     def set_image(self):
-        self.image = pygame.image.load(f"assets/graphics/blocs/{self.type}.png").convert_alpha()
+        self.image = pygame.image.load(f"{FILE_PATH}/assets/graphics/blocs/{self.type}.png").convert_alpha()
         self.info_surface = pygame.Surface((16,16))
         if self.big:
             self.image = pygame.transform.scale(self.image, (64,64))
@@ -71,7 +74,7 @@ class Bloc(pygame.sprite.Sprite):
 #On initialise la fenêtre
 pygame.init()
 pygame.display.set_caption('Création de map custom')
-pygame.display.set_icon(pygame.image.load('assets/graphics/icons/edit_icon.ico'))
+pygame.display.set_icon(pygame.image.load(f'{FILE_PATH}/assets/graphics/icons/edit_icon.ico'))
 
 #On crée notre écran
 screen_width, screen_height = 1500, 900
@@ -112,7 +115,7 @@ mouse_pressed = {}
 img_library = {}
 mape = []
 map_backup = []
-bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir('assets/graphics/blocs'))]   #La liste de toutes les images de blocs dans le dossier des graphiques
+bloc_types = [Bloc(name[:-4], (50+(i%15)*64,50+((i//15)%10)*64), True) for i, name in enumerate(os.listdir(f'{FILE_PATH}/assets/graphics/blocs'))]   #La liste de toutes les images de blocs dans le dossier des graphiques
 change_name_bloc = [[]]
 
 #On défini les caractéristiques de la caméra
@@ -198,7 +201,7 @@ def readFile(file_name):
     mape = []
     global img_library
     #On ouvre le fichier texte
-    with open(f'assets/map/{file_name}.txt', 'r', encoding='utf-8') as fichier:
+    with open(f'{FILE_PATH}/assets/map/{file_name}.txt', 'r', encoding='utf-8') as fichier:
         map_text = fichier.read()
         #Pour chaque couche, chaque ligne, on récupère les caractéristiques des blocs
         for lay_index, layer in enumerate(map_text.split('$')):
@@ -254,7 +257,7 @@ def readFile(file_name):
 #Ecrire les éléments de la map dans un fichier texte
 def writeMapInFile(mape, file_name):
     #On ouvre ou on crée le fichier texte
-    with open(f"assets/map/{file_name}.txt", "w", encoding='utf-8') as fichier:
+    with open(f"{FILE_PATH}/assets/map/{file_name}.txt", "w", encoding='utf-8') as fichier:
         map_len = len(mape)
         for layer_index, layer in enumerate(mape):
             layer_len = len(layer)
@@ -750,7 +753,7 @@ while running:
                     #Si on est en train de lier une carte à un bloc
                     elif is_writting_path:
                         #Si la carte existe bien, on rajoute le lien
-                        if written_text + '.txt' in os.listdir("assets/map"):
+                        if written_text + '.txt' in os.listdir(f"{FILE_PATH}/assets/map"):
                             mape[layer_number][ligne][column].map_path = written_text
                             writeMessage("Lien ajouté", 60)
                             is_writting = False
@@ -771,7 +774,7 @@ while running:
                             change_name_bloc[-1].append(written_text)
                         #On entre le nouveau nom
                         else:
-                            if written_text + ".png" in os.listdir("assets/graphics/blocs"):
+                            if written_text + ".png" in os.listdir(f"{FILE_PATH}/assets/graphics/blocs"):
                                 change_name_bloc[-1].append(written_text)
                                 change_name_bloc.append([])
                                 is_writting_changes = False
@@ -782,7 +785,7 @@ while running:
                     #Si on est en train de sauvegarder
                     elif is_leaving or is_saving:
                         #On vérifie si le fichier n'existe pas déjà et on sauvgarde
-                        if written_text+'.txt' in os.listdir('assets/map') and written_text != file_name:
+                        if written_text+'.txt' in os.listdir(f'{FILE_PATH}/assets/map') and written_text != file_name:
                             is_confirming = True
                             confirm_text = font.render(f"Attention : \"{written_text}\" existe déjà, voulez-vous le remplacer ?", True, (255,0,0))
                             confirm_rect = confirm_text.get_rect()
@@ -915,11 +918,11 @@ while running:
                                         bloc.set_image()
                     show_map_path = not show_map_path
                     
-                #Afficher / faire disparaître le menu d'infos
+                #Afficher disparaître le menu d'infos
                 if event.key == pygame.K_i:
                     is_searching_for_info = True
                 
-                #Activer / Désactiver la transparence des couches
+                #Actver / Désactiver la transparence des couches
                 if event.key == pygame.K_l:
                     show_transparent_layer = not show_transparent_layer
                     
