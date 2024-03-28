@@ -1,33 +1,33 @@
 step : 8-11 {
-[Gandalf :: Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
-Ah c'est pas ça qu'il vous a dit ?
-Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
-Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des conseils ! D'ailleurs Rémixeur a disparu à la même période ça m'avait bien embêté...]
+[Gandalf :: Gandalf : Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
+Gandalf : Ah c'est pas ça qu'il vous a dit ?
+Gandalf : Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
+Gandalf : Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des conseils ! D'ailleurs Rémixeur a disparu à la même période ça m'avait bien embêté...]
 add_step : 1
 }
 
 step : 12 {
-[Gandalf :: Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
-Ah c'est pas ça qu'il vous a dit ?
-Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
-Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des conseils ! D'ailleurs Rémixeur a disparu à la même période ça m'avait bien embêté...
-A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+[Gandalf :: Gandalf : Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
+Gandalf : Ah c'est pas ça qu'il vous a dit ?
+Gandalf : Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
+Gandalf : Philémonade ou Tartatin pourront vous le confirmer je leur avait demandé des conseils ! D'ailleurs Rémixeur a disparu à la même période ça m'avait bien embêté...
+Gandalf : A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
 add_step : 1
 }
 
 step : 20 {
-[Gandalf :: T'as vraiment cru que c'était les Wadlers ?! Qu'est ce que tu es ignorant !]
+[Gandalf :: Gandalf : T'as vraiment cru que c'était les Wadlers ?! Qu'est ce que tu es ignorant !]
 }
 
 
 step : 1-100 {
-[Gandalf :: Youyou !!!
-hahahaHAHAHAHAHA]
+[Gandalf :: Gandalf : Youyou !!!
+hGandalf : ahahaHAHAHAHAHA]
 
-[Gandalf :: UuRrgghhHHhh-
-Oh ! Coucou :)]
+[Gandalf :: Gandalf : UuRrgghhHHhh-
+Gandalf : Oh ! Coucou :)]
 
-[Gandalf :: We're no strangers to death
+[Gandalf :: Gandalf : We're no strangers to death
 You know the graves and so do I
 A full commitment, I'm thinking of death
 You wouldn't get this from any other guy
@@ -46,5 +46,5 @@ We know the game and we're gonna play it
 And if you ask me how I'm feeling
 Don't tell me you're too dead to see !]
 
-[Gandalf :: Ne ratez pas mon cours en salle 2 ! Ceux qui sont en retard n’auront pas de poulet à la cantine !]
+[Gandalf :: Gandalf : Ne ratez pas mon cours en salle 2 ! Ceux qui sont en retard n’auront pas de poulet à la cantine !]
 }

@@ -1,17 +1,17 @@
 step : 1-100 {
-[Avoine :: Tu viens pêcher avec moi un de ces jours ?]
+[Avoine :: Avoine : Tu viens pêcher avec moi un de ces jours ?]
 
-[Avoine :: Il y a très longtemps les poussins savaient nager]
+[Avoine :: Avoine : Il y a très longtemps les poussins savaient nager]
 
-[Avoine :: La pêche était bonne aujourd’hui ! Regarde ce gros poisson !]
+[Avoine :: Avoine : La pêche était bonne aujourd’hui ! Regarde ce gros poisson !]
 
-[Avoine :: Ah la jeunesse, toujours pleine d’énergie !
-Quand j’étais jeune je voulais devenir nageur mais un accident est vite arrivé...
-N’abandonne jamais tes rêves mon petit]
+[Avoine :: Avoine : Ah la jeunesse, toujours pleine d’énergie !
+Avoine : Quand j’étais jeune je voulais devenir nageur mais un accident est vite arrivé...
+Avoine : N’abandonne jamais tes rêves mon petit]
 
-[Avoine :: Connais-tu l’histoire de la sirène ?
-Il y a très longtemps, une fille a été jetée à l’eau par ses parents qui voulaient s’en débarrasser.
-Mais lorsqu’elle a touché l’eau, elle a disparu. Ses parents n’ont jamais retrouvé son corps.
-Il paraît qu’elle nage encore dans la mer.
-Si tu trouves un poisson arc-en-ciel, tu pourras la rencontrer.]
+[Avoine :: Avoine : Connais-tu l’histoire de la sirène ?
+Avoine : Il y a très longtemps, une fille a été jetée à l’eau par ses parents qui voulaient s’en débarrasser.
+Avoine : Mais lorsqu’elle a touché l’eau, elle a disparu. Ses parents n’ont jamais retrouvé son corps.
+Avoine : Il paraît qu’elle nage encore dans la mer.
+Avoine : Si tu trouves un poisson arc-en-ciel, tu pourras la rencontrer.]
 }

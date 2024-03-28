@@ -1,22 +1,22 @@
 place : antiquaire, step : 3 {
-[Bakugan :: Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
-Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]
-[Bakugan :: Laissez moi méditer en paix, me connecter avec les morts]
+[Bakugan :: Bakugan : Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
+Bakugan : Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]
+[Bakugan :: Bakugan : Laissez moi méditer en paix, me connecter avec les morts]
 add_step : 1
 }
 
 place : antiquaire, step : 4 {
-[Bakugan :: Laissez moi méditer en paix, me connecter avec les morts]
+[Bakugan :: Bakugan : Laissez moi méditer en paix, me connecter avec les morts]
 }
 
 place : antiquaire, step : 1-100 {
-[Bakugan :: Bonjour, mon enfant
-Toi aussi tu t’intéresses aux artefacts ?
-Par exemple, cette plume de chagrin peut réaliser tes désirs]
+[Bakugan :: Bakugan - Bonjour, mon enfant
+Bakugan : Toi aussi tu t’intéresses aux artefacts ?
+Bakugan : Par exemple, cette plume de chagrin peut réaliser tes désirs]
 
-[Bakugan :: Veux-tu m’écouter jouer du didgeridoo ?
-J’ai un talent incomparable.
-Savoure en silence]
+[Bakugan :: Bakugan : Veux-tu m’écouter jouer du didgeridoo ?
+Bakugan : J’ai un talent incomparable.
+Bakugan : Savoure en silence]
 
-[Bakugan :: Ne rentre surtout pas dans ma cave !]
+[Bakugan :: Bakugan : Ne rentre surtout pas dans ma cave !]
 }

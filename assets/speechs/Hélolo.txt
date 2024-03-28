@@ -1,23 +1,23 @@
 step : 1 {
-[Hélolo :: Vous devriez aller voir la boulangerie...]
+[Hélolo :: Hélolo : Vous devriez aller voir la boulangerie...]
 }
 
 step : 3 {
-[Hélolo :: Ah c'est encore vous ?
-Hélolo :: J'ai entendu des bruits bizarres chez l'antiquaire, vous devriez peut-être aller voir ça ?]
+[Hélolo :: Hélolo : Ah c'est encore vous ?
+Hélolo :: Hélolo : J'ai entendu des bruits bizarres chez l'antiquaire, vous devriez peut-être aller voir ça ?]
 }
 
 step : 22 {
-[Hélolo :: Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
-Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
-De toute façon, il dépense tout son argent dans l’alcool...
-Peut-être qu'ils en ont en stock à l'auberge...]
+[Hélolo :: Hélolo : Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
+Hélolo : Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
+Hélolo : De toute façon, il dépense tout son argent dans l’alcool...
+Hélolo : Peut-être qu'ils en ont en stock à l'auberge...]
 add_step : 1
 }
 
 step : 1-100 {
-[Hélolo :: Coucou !
-Tout se passe bien ?]
+[Hélolo :: Hélolo : Coucou !
+Hélolo : Tout se passe bien ?]
 
-[Hélolo :: Oui ?]
+[Hélolo :: Hélolo : Oui ?]
 }

@@ -1,18 +1,18 @@
 place : auberge, step : 6 {
-[Babybel :: Je sais pas pourquoi mais le maire a l'air de ne pas trop m'apprécier...
+[Babybel :: Babybel : Je sais pas pourquoi mais le maire a l'air de ne pas trop m'apprécier...
 Peut-être parce que je suis plus beau que lui ahahahahah]
 }
 
 place : auberge, step : 24 {
-[Babybel :: Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
-Oh mais tu m'as apporté une offrande, comment tu as su pour le sandwich au cheddar ?
-Bref, bah du coup rends-toi au Nord-Est extrême de la ville, tu y trouveras les égouts]
+[Babybel :: Babybel : Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
+Babybel : Oh mais tu m'as apporté une offrande, comment tu as su pour le sandwich au cheddar ?
+Babybel : Bref, bah du coup rends-toi au Nord-Est extrême de la ville, tu y trouveras les égouts]
 add_step : 1
 }
 
 place : auberge, step : 1-100 {
-[Babybel :: Tu veux voir un tour de magie ?
-vioummmmm-
-Oh mince
-T’as rien vu.]
+[Babybel :: Babybel : Tu veux voir un tour de magie ?
+Babybel : vioummmmm-
+Babybel : Oh mince
+Babybel : T’as rien vu.]
 }

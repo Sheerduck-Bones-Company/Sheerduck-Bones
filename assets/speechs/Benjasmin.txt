@@ -1,6 +1,6 @@
 step : 1-100 {
-[Benjasmin :: Ouuiiiinnn ouiiiiiinnnn, pourquoi tu es morte ?]
-[Benjasmin :: Laisse moi te rejoindre ma chérie]
-[Benjasmin :: T'es qui toi ? A quoi tu joues là ?]
-[Benjasmin :: Chante avec moi pour bénir ce critarium !]
+[Benjasmin :: Benjasmin : Ouuiiiinnn ouiiiiiinnnn, pourquoi tu es morte ?]
+[Benjasmin :: Benjasmin : Laisse moi te rejoindre ma chérie]
+[Benjasmin :: Benjasmin : T'es qui toi ? A quoi tu joues là ?]
+[Benjasmin :: Benjasmin : Chante avec moi pour bénir ce critarium !]
 }

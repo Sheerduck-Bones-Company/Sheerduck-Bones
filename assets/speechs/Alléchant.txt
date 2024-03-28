@@ -1,10 +1,10 @@
 step : 20 {
-[Alléchant :: T'as vraiment cru que c'était les Laqués ?! Eh vazy sale poussoloss tu connais même pas]
+[Alléchant :: Alléchant : T'as vraiment cru que c'était les Laqués ?! Eh vazy sale poussoloss tu connais même pas]
 }
 
 step : 1-100 {
-[Alléchant :: Vazy carré]
-[Alléchant :: Ouais c’est ça je crois
-Salut poussin je t’avais pas vu, tu veux venir jouer avec nous ?]
-[Alléchant :: T’as vu le match d’hier ?? Les Nuggets ils sont poustouflants !]
+[Alléchant :: Alléchant : Vazy carré]
+[Alléchant :: Alléchant : Ouais c’est ça je crois
+Alléchant : Salut poussin je t’avais pas vu, tu veux venir jouer avec nous ?]
+[Alléchant :: Alléchant : T’as vu le match d’hier ?? Les Nuggets ils sont poustouflants !]
 }
