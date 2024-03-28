@@ -1,3 +1,8 @@
+step : 0 {
+[Maître-Chone :: Maître-Chone : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Maître-Chone :: Maître-Chone : Il est grand et musclé.]
+}
+
 step : 8-11 {
 [Maître-Chone :: Maître-Chone : Quoi un meurtre ??? Mais c'est affreux !
 Maître-Chone : Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...

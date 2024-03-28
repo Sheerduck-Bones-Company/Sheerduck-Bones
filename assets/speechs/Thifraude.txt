@@ -1,3 +1,8 @@
+step : 0 {
+[Thifraude :: Thifraude : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Thifraude :: Thifraude : Il est grand et musclé.]
+}
+
 place : auberge, step : 4-100 {
 [Thifraude :: Thifraude : Il est beau quand il travaille Fluchs.
 Thifraude : Ah non je dis ça comme ça ! C'est par habitude.

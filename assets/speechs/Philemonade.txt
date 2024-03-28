@@ -1,3 +1,8 @@
+step : 0 {
+[Philemonade :: Philemonade : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Philemonade :: Philemonade : Il est grand et musclé.]
+}
+
 place : atelier, step : 14 {
 [Philemonade :: Philemonade : Je ne sais pas qui a encore cassé Remixeur. Tout ça commence à me taper sur le système]
 

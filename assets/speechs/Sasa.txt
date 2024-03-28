@@ -1,3 +1,8 @@
+step : 0 {
+[Sasa :: Sasa : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Sasa :: Sasa : Il est grand et musclé.]
+}
+
 place : boulangerie, step : 1 {
 [Sasa :: Sasa : C'est vous le fameux détective dont tout le monde parle ?
 Vava :: Vava : Arrête de mentir, personne ne parle de lui...

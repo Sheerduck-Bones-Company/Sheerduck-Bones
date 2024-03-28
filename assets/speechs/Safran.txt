@@ -1,3 +1,8 @@
+step : 0 {
+[Safran :: Safran : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Safran :: Safran : Il est grand et musclé.]
+}
+
 step : 8-11 {
 [Safran :: Safran : Un meurtre ?
 Safran : A priori je n'y suis pour rien !]

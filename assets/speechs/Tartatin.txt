@@ -1,3 +1,8 @@
+step : 0 {
+[Tartatin :: Tartatin : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Tartatin :: Tartatin : Il est grand et musclé.]
+}
+
 place : atelier, step : 14 {
 [Tartatin :: Tartatin : Remixeur a disparu il y a quelques temps... Quand il est revenu il était tout cassé !
 Tartatin : Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et s'est amusé avec ! Mais je ne sais pas qui...

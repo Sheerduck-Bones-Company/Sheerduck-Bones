@@ -1,3 +1,8 @@
+step : 0 {
+[Zolala :: Zolala : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Zolala :: Zolala : Il est grand et musclé.]
+}
+
 step : 8-11 {
 [Zolala :: Zolala : C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
 Zolala : Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.

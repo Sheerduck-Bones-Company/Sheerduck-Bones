@@ -1,3 +1,8 @@
+step : 0 {
+[Turbo :: Turbo : Allez voir le maire, il est entre la fontaine et la mairie.]
+[Turbo :: Turbo : Il est grand et musclé.]
+}
+
 step : 1-100 {
 [Turbo :: Turbo : Il parait que le plat préféré des “Coincoinvillets” c’est la pizza, et après on dit que le Grand Remplacement n’existe pas...]
 
