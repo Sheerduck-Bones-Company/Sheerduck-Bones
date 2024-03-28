@@ -3,10 +3,13 @@ from settings import ImportFolder
 from speech_bubble import Dialogues
 from hint import Hint
 
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
+
 class Player(pygame.sprite.Sprite):
 	def __init__(self, game, pos):
 		super().__init__()
-		self.images = ImportFolder("assets/graphics/player")						#Les images du joueur
+		self.images = ImportFolder(f"{FILE_PATH}/assets/graphics/player")			#Les images du joueur
 		self.image = self.images.get("front_stand")									#On définie l'image actuelle du joueur
 		self.game = game
 		self.rect = self.image.get_rect(topleft = pos).inflate(-4,-4)				#Le rect du joueur

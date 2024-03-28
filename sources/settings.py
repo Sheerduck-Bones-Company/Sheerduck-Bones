@@ -2,6 +2,9 @@ import os, pygame, re
 from pygame.sprite import Group
 from speech_bubble import Dialogues
 
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
+
 #On importe un dossier d'images
 def ImportFolder(path:str):
     folder = {}
@@ -14,8 +17,8 @@ def ImportFolder(path:str):
 #On importe tous les dialogues avec des Regex
 def ImportSpeech(name_character, game):
     #Si le personnage possède des boîtes de dialogues, on les apporte à partir de son fichier texte
-    if name_character+'.txt' in os.listdir("assets/speechs"):
-        with open(f"assets/speechs/{name_character}.txt", 'r', encoding='utf-8') as fichier:
+    if name_character+'.txt' in os.listdir(f"{FILE_PATH}/assets/speechs"):
+        with open(f"{FILE_PATH}/assets/speechs/{name_character}.txt", 'r', encoding='utf-8') as fichier:
             #On lie le fichier texte
             txt = fichier.read()
             #On récupère tout les groupes de dialogues présents dans le fichier texte
@@ -92,7 +95,7 @@ def ImportSpeech(name_character, game):
 #On importe les cartes du jeu
 def loadMap(player, game):
     maps = {}
-    for map_name in os.listdir("assets/map"):
+    for map_name in os.listdir(f"{FILE_PATH}/assets/map"):
         #On initialise les données de la carte à importer (carte / dernières coords du joueur sur la carte / groupe de bloc visile / groupe d'obstacles / groupe de blocs intéractifs)
         mape = []
         last_coord = (0,0)
@@ -101,7 +104,7 @@ def loadMap(player, game):
         interact_group = pygame.sprite.Group()
         
         #On ouvre le fichier texte de la carte
-        with open(f'assets/map/{map_name}', 'r', encoding='utf-8') as fichier:
+        with open(f'{FILE_PATH}/assets/map/{map_name}', 'r', encoding='utf-8') as fichier:
             map_text = fichier.read()
             #Pour chaque couche, chaque ligne, chaque bloc, on récupère les information du bloc
             for lay_index, layer in enumerate(map_text.split('$')):
@@ -125,19 +128,19 @@ def loadMap(player, game):
                                 #Si le bloc concerné est celui tout en bas à gauche de l'image, on affiche l'image entière
                                 if crt_type.split('_')[1] == "0-0":
                                     crt_type = crt_type.split('_')[0]
-                                    crt_img = pygame.image.load(f"assets/graphics/group_blocs/{crt_type}.png").convert_alpha()
+                                    crt_img = pygame.image.load(f"{FILE_PATH}/assets/graphics/group_blocs/{crt_type}.png").convert_alpha()
                                     crt_img = pygame.transform.scale(crt_img, (crt_img.get_size()[0]*4,crt_img.get_size()[1]*4))
                                     crt_rect = crt_img.get_rect(bottomleft=(bloc_index*64, (lin_index+1)*64))
                                 
                                 #Sinon on met un bloc invisible
                                 else:
-                                    crt_img = pygame.image.load(f"assets/graphics/blocs/invisible-barrier.png").convert_alpha()
+                                    crt_img = pygame.image.load(f"{FILE_PATH}/assets/graphics/blocs/invisible-barrier.png").convert_alpha()
                                     crt_img = pygame.transform.scale(crt_img, (64,64))
                                     crt_rect = pygame.Rect(bloc_index*64, lin_index*64, 64, 64)
                             
                             #Sinon, récupère simplement l'image du bloc
                             else:
-                                crt_img = pygame.image.load(f"assets/graphics/blocs/{crt_type}.png").convert_alpha()
+                                crt_img = pygame.image.load(f"{FILE_PATH}/assets/graphics/blocs/{crt_type}.png").convert_alpha()
                                 crt_img = pygame.transform.scale(crt_img, (64,64))
                                 crt_rect = pygame.Rect(bloc_index*64, lin_index*64, 64, 64)
                             
@@ -165,7 +168,7 @@ def loadMap(player, game):
                                 interact_group.add(InteractTile(crt_rect.inflate(28,28), map_path=crt_attributes[4]))
                             
                             #Si le bloc est un joueur, on importe ses dialogues
-                            if crt_type+'.png' in os.listdir("assets/graphics/characters"):
+                            if crt_type+'.png' in os.listdir(f"{FILE_PATH}/assets/graphics/characters"):
                                 crt_speech = ImportSpeech(crt_type, game)
                                 interact_group.add(InteractTile(crt_rect.inflate(28,28), speech=crt_speech))
 

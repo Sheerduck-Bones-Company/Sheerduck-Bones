@@ -1,7 +1,10 @@
 from PIL import Image, ImageTk
 import tkinter
 from tkinter import filedialog
-import pygame
+import pygame, os
+
+#On récupère le path absolu du fichier pour que les chemins relatifs marchent toujours (qu'on lance le programme depuis le fichier lui-même ou depuis le dosisier du projet)
+FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #On récupère un fichier dans le navigateur de dossiers
 def get_file():
@@ -11,7 +14,7 @@ def get_file():
         openFile_button.pack_forget()
         
         #On récupère l'image
-        file_path = filedialog.askopenfilename(initialdir="assets/graphics/group_blocs")
+        file_path = filedialog.askopenfilename(initialdir=f"{FILE_PATH}/assets/graphics/group_blocs")
         img = Image.open(file_path)
         surface = pygame.image.load(file_path)
         
@@ -52,7 +55,7 @@ def split_img():
     for i in range(long16):
         for j in range(haut16):
             area=img.crop((i*16, j*16, (i+1)*16, (j+1)*16)).copy()
-            area.save(f"assets/graphics/blocs/{name}_{i}-{haut16-1-j}_{long16-1}-{haut16-1}.png")
+            area.save(f"{FILE_PATH}/assets/graphics/blocs/{name}_{i}-{haut16-1-j}_{long16-1}-{haut16-1}.png")
             
     #On réinitialise la fenêtre
     img = None
@@ -74,7 +77,7 @@ root = tkinter.Tk()
 root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}")
 
 #On récupère l'icone de la fenêtre
-ico = Image.open('assets/graphics/icons/split_img.ico')
+ico = Image.open(f'{FILE_PATH}/assets/graphics/icons/split_img.ico')
 photo = ImageTk.PhotoImage(ico)
 root.wm_iconphoto(False, photo)
 
