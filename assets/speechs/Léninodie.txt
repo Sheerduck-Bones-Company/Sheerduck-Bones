@@ -1,24 +1,24 @@
 step : 8-11 {
-[Léninodie :: La société dans laquelle on vit est vraiment affreuse...
-Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
-Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...
-Sinon tu viens à notre réunion ce soir ?
-Non ? C'est dommage !]
+[Léninodie :: Léninodie : La société dans laquelle on vit est vraiment affreuse...
+Léninodie : Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
+Léninodie : Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...
+Léninodie : Sinon tu viens à notre réunion ce soir ?
+Léninodie : Non ? C'est dommage !]
 add_step : 1
 }
 
 step : 12 {
-[Léninodie :: La société dans laquelle on vit est vraiment affreuse...
-Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
-Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...
-Sinon tu viens à notre réunion ce soir ?
-Non ? C'est dommage !
-A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+[Léninodie :: Léninodie : La société dans laquelle on vit est vraiment affreuse...
+Léninodie : Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
+Léninodie : Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...
+Léninodie : Sinon tu viens à notre réunion ce soir ?
+Léninodie : Non ? C'est dommage !
+Léninodie : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
 add_step : 1
 }
 
 step : 1-100 {
-[Léninodie :: Tu veux discuter de la société ?]
-Il y a une réunion ce soir à 18h tu veux venir ?]
-[Léninodie :: T’as vu les nouvelles mesures prises par le maire ? C’est vraiment n’importe quoi !]
+[Léninodie :: Léninodie : Tu veux discuter de la société ?]
+Léninodie : Il y a une réunion ce soir à 18h tu veux venir ?]
+[Léninodie :: Léninodie : T’as vu les nouvelles mesures prises par le maire ? C’est vraiment n’importe quoi !]
 }

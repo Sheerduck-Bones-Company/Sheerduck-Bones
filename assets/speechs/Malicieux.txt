@@ -1,9 +1,9 @@
 step : 17-19 {
-[Malicieux :: Excuse moi, tu peux arrêter d’être aussi agressif ?
-...
-Tu le sais toi aussi ? C'était Charlie qui était avec Remixeur mais chuuuuut.]
+[Malicieux :: Malicieux : Excuse moi, tu peux arrêter d’être aussi agressif ?
+Malicieux : ...
+Malicieux : Tu le sais toi aussi ? C'était Charlie qui était avec Remixeur mais chuuuuut.]
 }
 
 step : 1-100 {
-[Malicieux :: Excuse moi, tu peux arrêter d’être aussi agressif ?]
+[Malicieux :: Malicieux : Excuse moi, tu peux arrêter d’être aussi agressif ?]
 }

@@ -1,28 +1,28 @@
 place : auberge, step : 4 {
-[Terrine :: Tu me donnes quoi en échange ??
-Ah ouais t'es célibataire ?! Je peux te trouver quelqu'un si tu veux ! Tu sais il y a pleins de poussins en manque d'amour ici !
-Ah oui c'est vrai que je t'avais dit que je te dirais quelque chose...
-Alors tu sais pas ce que j'ai entendu ! En passant devant chez Peaudevigne et Dandy, quelqu'un aurait entendu des cris à glacer le sang... Puis en regardant par la fenêtre, il aurait vu une batte pleine de sang !!
-Quoi, qui me l'a dit ? Ah ça c'est un secret !
-Si t'as d'autres choses à me dire hésite pas !]
+[Terrine :: Terrine : Tu me donnes quoi en échange ??
+Terrine : Ah ouais t'es célibataire ?! Je peux te trouver quelqu'un si tu veux ! Tu sais il y a pleins de poussins en manque d'amour ici !
+Terrine : Ah oui c'est vrai que je t'avais dit que je te dirais quelque chose...
+Terrine : Alors tu sais pas ce que j'ai entendu ! En passant devant chez Peaudevigne et Dandy, quelqu'un aurait entendu des cris à glacer le sang... Puis en regardant par la fenêtre, il aurait vu une batte pleine de sang !!
+Terrine : Quoi, qui me l'a dit ? Ah ça c'est un secret !
+Terrine : Si t'as d'autres choses à me dire hésite pas !]
 }
 
 place : auberge, step : 6-10 {
-[Terrine :: Qu'est ce que tu veux que je te dise ?
-...
-Non désolé, je ne dois pas craquer.
-...
-Bon, je peux faire des exceptions mais tu le répètes pas, hein ?
-Bon, Fluchs et Thifraude sont secrètement ensemble mais chuuuut]
+[Terrine :: Terrine : Qu'est ce que tu veux que je te dise ?
+Terrine : ...
+Terrine : Non désolé, je ne dois pas craquer.
+Terrine : ...
+Terrine : Bon, je peux faire des exceptions mais tu le répètes pas, hein ?
+Terrine : Bon, Fluchs et Thifraude sont secrètement ensemble mais chuuuut]
 }
 
 place : auberge, step : 1-100 {
-[Terrine :: ohh un nouveau ?
-T’as des secrets intéressants ?]
+[Terrine :: Terrine : ohh un nouveau ?
+Terrine : T’as des secrets intéressants ?]
 
-[Terrine :: J’ai entendu des choses...
-Mais je suis pas censée te le dire]
+[Terrine :: Terrine : J’ai entendu des choses...
+Terrine : Mais je suis pas censée te le dire]
 
-[Terrine :: Tu devineras jamais ce que j'ai entendu l'autre jour !
-Mince je dois rien dire]
+[Terrine :: Terrine : Tu devineras jamais ce que j'ai entendu l'autre jour !
+Terrine : Mince je dois rien dire]
 }

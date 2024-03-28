@@ -1,11 +1,11 @@
 step : 2 {
-[Pom :: Hein ? Une baguette qui a été volée ?
-Ah oui ça doit être moi, j'en ai mangée une comme casse-croûte il y a quelques jours... Ah là là, elles vont encore me passer un savon.
-Par contre s'il manque des croissants c'est forcément Sarat ! Vous ne pouvez pas imaginer le nombre de croissants qu'elle inhale par jour... C'est phénoménal...]
+[Pom :: Pom : Hein ? Une baguette qui a été volée ?
+Pom : Ah oui ça doit être moi, j'en ai mangée une comme casse-croûte il y a quelques jours... Ah là là, elles vont encore me passer un savon.
+Pom : Par contre s'il manque des croissants c'est forcément Sarat ! Vous ne pouvez pas imaginer le nombre de croissants qu'elle inhale par jour... C'est phénoménal...]
 add_step : 1
 }
 
 step : 1-100 {
-[Pom :: Baguettes toutes chaudes ! Baguettes toutes chaudes !]
-[Pom :: Désolé je suis en livraison, on se parle plus tard détective !]
+[Pom :: Pom : Baguettes toutes chaudes ! Baguettes toutes chaudes !]
+[Pom :: Pom : Désolé je suis en livraison, on se parle plus tard détective !]
 }

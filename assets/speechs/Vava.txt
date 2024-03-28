@@ -1,18 +1,18 @@
 place : boulangerie, step : 1 {
-[Vava :: Il y a quelques jours, une baguette a disparu de notre boulangerie ! Paf ! Comme ça envolée ! C'est vraiment mystérieux...
-Je suis sûre que c'est Sasa qui l'a prise mais ne lui dites rien !
-Sasa :: Tu sais que je suis juste là ?
-Vava :: Euhhhh...
-Bref, vous devriez aller voir Pom, c'est lui qui gère les baguettes.]
+[Vava :: Vava : Il y a quelques jours, une baguette a disparu de notre boulangerie ! Paf ! Comme ça envolée ! C'est vraiment mystérieux...
+Vava : Je suis sûre que c'est Sasa qui l'a prise mais ne lui dites rien !
+Sasa :: Sasa : Tu sais que je suis juste là ?
+Vava :: Vava : Euhhhh...
+Vava : Bref, vous devriez aller voir Pom, c'est lui qui gère les baguettes.]
 add_step : 1
 }
 
 place : boulangerie, step : 3 {
-[Vava :: Alors comme ça c'était Pom ? J'y crois pas !]
+[Vava :: Vava : Alors comme ça c'était Pom ? J'y crois pas !]
 }
 
 place : boulangerie, step : 1-100 {
-[Vava :: Kakou kakou]
-[Vava :: euhhh oui?]
-[Vava :: *slurpslurpslurp*]
+[Vava :: Vava : Kakou kakou]
+[Vava :: Vava : euhhh oui?]
+[Vava :: Vava : *slurpslurpslurp*]
 }

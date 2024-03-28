@@ -1,5 +1,5 @@
 step : 1-100 {
-[Tarture :: Stop HLM !]
-[Tarture :: ...]
-[Tarture :: Toi aussi tu es un voyageur perdu sur cette île ?]
+[Tarture :: Tarture : Stop HLM !]
+[Tarture :: Tarture : ...]
+[Tarture :: Tarture : Toi aussi tu es un voyageur perdu sur cette île ?]
 }

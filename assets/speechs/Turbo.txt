@@ -1,11 +1,11 @@
 step : 1-100 {
-[Turbo :: Il parait que le plat préféré des “Coincoinvillets” c’est la pizza, et après on dit que le Grand Remplacement n’existe pas...]
+[Turbo :: Turbo : Il parait que le plat préféré des “Coincoinvillets” c’est la pizza, et après on dit que le Grand Remplacement n’existe pas...]
 
-[Turbo :: Mais moi je suis pouliste ! Je pense que toutes les poules devraient pouvoir s'exprimer librement !
-Enfin dans une certaine mesure mais mon avocat m'a dit de ne pas en dire plus.]
+[Turbo :: Turbo : Mais moi je suis pouliste ! Je pense que toutes les poules devraient pouvoir s'exprimer librement !
+Turbo : Enfin dans une certaine mesure mais mon avocat m'a dit de ne pas en dire plus.]
 
-[Turbo :: Attends regarde ce que je sais faire
-*tchip raté*
-*tchip encore raté*
-Pas mal hein ?]
+[Turbo :: Turbo : Attends regarde ce que je sais faire
+Turbo : *tchip raté*
+Turbo : *tchip encore raté*
+Turbo : Pas mal hein ?]
 }

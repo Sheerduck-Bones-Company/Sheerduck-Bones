@@ -1,23 +1,23 @@
 step : 8-11 {
-[Zolala :: C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
-Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
-Tu t'y connais toi en géométrie sphérique ?]
+[Zolala :: Zolala : C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
+Zolala : Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
+Zolala : Tu t'y connais toi en géométrie sphérique ?]
 add_step : 1
 }
 
 step : 12 {
-[Zolala :: C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
-Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
-Tu t'y connais toi en géométrie sphérique ?
-A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+[Zolala :: Zolala : C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
+Zolala : Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
+Zolala : Tu t'y connais toi en géométrie sphérique ?
+Zolala : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
 add_step : 1
 }
 
 step : 1-100 {
-[Zolala :: Bonjour !]
-[Zolala :: Je me présente, je m'appelle...
-Ah, je vous avais pas vu]
-[Zolala :: T'as fait tes exos ?]
-[Zolala :: J'ai une relation difficile avec mon chat... C'est une relation d'équivalence !]
-[Zolala :: Si tu continues à m'espionner, je vais te goummer]
+[Zolala :: Zolala : Bonjour !]
+[Zolala :: Zolala : Je me présente, je m'appelle...
+Zolala : Ah, je vous avais pas vu]
+[Zolala :: Zolala : T'as fait tes exos ?]
+[Zolala :: Zolala : J'ai une relation difficile avec mon chat... C'est une relation d'équivalence !]
+[Zolala :: Zolala : Si tu continues à m'espionner, je vais te goummer]
 }

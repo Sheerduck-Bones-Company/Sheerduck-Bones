@@ -1,16 +1,16 @@
 place : auberge, step : 23 {
-[Sarat :: Salut, tu veux quoi ? Un sandwich au cheddar ? Ça tombe bien, les stocks ne s’épuisent pas depuis des jours. Tiens, n'hésite pas à repasser à l'occasion !]
+[Sarat :: Sarat : Salut, tu veux quoi ? Un sandwich au cheddar ? Ça tombe bien, les stocks ne s’épuisent pas depuis des jours. Tiens, n'hésite pas à repasser à l'occasion !]
 add_step : 1
 }
 
 place : auberge, step : 1-100 {
-[Sarat :: Je te sers quelque chose ?]
+[Sarat :: Sarat : Je te sers quelque chose ?]
 
-[Sarat :: C’est un poussin qui rentre dans un bar.]
+[Sarat :: Sarat : C’est un poussin qui rentre dans un bar.]
 
-[Sarat :: Vous connaissez la spécialité du moment ?
-C’est le QUASOOOOOOO]
+[Sarat :: Sarat : Vous connaissez la spécialité du moment ?
+Sarat : C’est le QUASOOOOOOO]
 
-[Sarat :: Terrine a toujours quelque chose à raconter ! Si tu cherches des infos c'est elle que faut aller voir.
-Après avoir bu un coup, évidemment !]
+[Sarat :: Sarat : Terrine a toujours quelque chose à raconter ! Si tu cherches des infos c'est elle que faut aller voir.
+Sarat : Après avoir bu un coup, évidemment !]
 }

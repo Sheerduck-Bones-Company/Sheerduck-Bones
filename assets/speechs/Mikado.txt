@@ -1,6 +1,6 @@
 place : bibliotheque, step : 1-100 {
-[Mikado :: Ne troublez pas l’austérité de ce lieu s’il vous plaît.]
+[Mikado :: Mikado : Ne troublez pas l’austérité de ce lieu s’il vous plaît.]
 
-[Mikado :: Mais qu’est ce que vous faites...
-Rangez les romans à leur place et pas avec les BD s’il vous plaît.]
+[Mikado :: Mikado : Mais qu’est ce que vous faites...
+Mikado : Rangez les romans à leur place et pas avec les BD s’il vous plaît.]
 }

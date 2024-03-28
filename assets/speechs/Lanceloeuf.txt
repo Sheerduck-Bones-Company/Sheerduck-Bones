@@ -1,12 +1,12 @@
 place : musée, step : 1-100 {
-[Lanceloeuf :: Il y a plein de belles œuvres dans notre musée ! N’hésitez pas à le visiter...]
+[Lanceloeuf :: Lanceloeuf : Il y a plein de belles œuvres dans notre musée ! N’hésitez pas à le visiter...]
 
-[Lanceloeuf :: Que dit le poussin à l’ours ?
-Quack
-...
-Tu as le droit de rire tu sais ?]
+[Lanceloeuf :: Lanceloeuf : Que dit le poussin à l’ours ?
+Lanceloeuf : Quack
+Lanceloeuf : ...
+Lanceloeuf : Tu as le droit de rire tu sais ?]
 
-[Lanceloeuf :: Il manque vraiment d’un tailleur dans cette ville...
-Je suis obligé de partir dans la ville la plus proche qui est à 30 km pour acheter des costumes !]
+[Lanceloeuf :: Lanceloeuf : Il manque vraiment d’un tailleur dans cette ville...
+Lanceloeuf : Je suis obligé de partir dans la ville la plus proche qui est à 30 km pour acheter des costumes !]
 
 }

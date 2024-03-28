@@ -1,24 +1,24 @@
 step : 8-11 {
-[Joshwaffle :: Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
-C'est pas parce que je suis proviseur adjoint que je sais ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent sécher les cours...]
+[Joshwaffle :: Joshwaffle : Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
+Joshwaffle : C'est pas parce que je suis proviseur adjoint que je sais ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent sécher les cours...]
 add_step : 1
 }
 
 step : 12 {
-[Joshwaffle :: Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
-C'est pas parce que je suis proviseur adjoint que je sais ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent sécher les cours...
-A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+[Joshwaffle :: Joshwaffle : Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
+Joshwaffle : C'est pas parce que je suis proviseur adjoint que je sais ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent sécher les cours...
+Joshwaffle : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
 add_step : 1
 }
 
 step : 1-100 {
-[Joshwaffle :: Hein ?
-Flemme.]
+[Joshwaffle :: Joshwaffle : Hein ?
+Joshwaffle : Flemme.]
 
-[Joshwaffle :: Non, je vous assure que tout va bien.]
+[Joshwaffle :: Joshwaffle : Non, je vous assure que tout va bien.]
 
-[Joshwaffle :: J'ai arrêté de suivre l'activité de l'école depuis looooooongtemps.]
+[Joshwaffle :: Joshwaffle : J'ai arrêté de suivre l'activité de l'école depuis looooooongtemps.]
 
-[Joshwaffle :: Bon j'avoue, c’est moi qui ai mangé le dernier cookie.]
+[Joshwaffle :: Joshwaffle : Bon j'avoue, c’est moi qui ai mangé le dernier cookie.]
 
 }

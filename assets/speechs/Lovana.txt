@@ -1,10 +1,10 @@
 step : 1-100 {
-[Lovana :: Tu veux sauver nos confrères ?
-En raison de l’assimilation intuitive du poulet mis en scène à celui qui entre dans la composition des sandwichs eux-mêmes représentés dans la publicité critiquée, de l’importance du décalage entre la représentation de ce poulet et la réalité des conditions d’élevage des poulets utilisés par KFC et de la sensibilité particulière du public à cette question, le Jury considère que la publicité critiquée est de nature à induire ce dernier en erreur sur cette réalité et méconnaît ainsi les principes de loyauté et de véracité repris dans le code ICC. Tout poulet sachant pouleter, poulet pouleur devant pouler sur un poulailler. Les hommes pouleront. Plus de pavés. CQFD.
-Signe cette pétition.]
+[Lovana :: Lovana : Tu veux sauver nos confrères ?
+Lovana : En raison de l’assimilation intuitive du poulet mis en scène à celui qui entre dans la composition des sandwichs eux-mêmes représentés dans la publicité critiquée, de l’importance du décalage entre la représentation de ce poulet et la réalité des conditions d’élevage des poulets utilisés par KFC et de la sensibilité particulière du public à cette question, le Jury considère que la publicité critiquée est de nature à induire ce dernier en erreur sur cette réalité et méconnaît ainsi les principes de loyauté et de véracité repris dans le code ICC. Tout poulet sachant pouleter, poulet pouleur devant pouler sur un poulailler. Les hommes pouleront. Plus de pavés. CQFD.
+Lovana : Signe cette pétition.]
 
-[Lovana :: Tu manges de la viande ?
-*side eye*
-N’entends-tu pas les cris de douleur de ton assiette ?
-sigh… Mais où est ta poussainité ?]
+[Lovana :: Lovana : Tu manges de la viande ?
+Lovana : *side eye*
+Lovana : N’entends-tu pas les cris de douleur de ton assiette ?
+Lovana : sigh… Mais où est ta poussainité ?]
 }
