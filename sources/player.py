@@ -18,7 +18,7 @@ class Player(pygame.sprite.Sprite):
 		self.status = "front_stand"													#Le statut actuel du joueur
 		self.animation_counter = 0
 		self.current_speech = None													#Le dialogue actuel
-		self.hints = [Hint("photo"), Hint("board"), Hint("photo"), Hint("board")]	#La liste des indices du joueur
+		self.hints = [Hint("Remixeur"), Hint("Bakugan"), Hint("photo"), Hint("baguette")]	#La liste des indices du joueur
 		self.current_hint = None													#L'indice actuellement utilisé
   
 	#On actualise les coordonnées du joueur
