@@ -14,10 +14,6 @@ class Camera(pygame.sprite.Group):
 		self.half_w = self.display_surface.get_size()[0] // 2
 		self.half_h = self.display_surface.get_size()[1] // 2
 
-		#On crée notre ground
-		self.ground_surf = pygame.image.load('assets/graphics/ground.png').convert_alpha()
-		self.ground_rect = self.ground_surf.get_rect(topleft = (0,0))
-
 		#On crée les varaibles utiles pour le zoom de la caméra
 		self.zoom_scale = 1
 		self.last_zoom_scale = 0
