@@ -10,7 +10,7 @@ class Game():
         self.is_thinking = False
         self.screen = screen                            #On récupère l'écran
         self.pressed = {}                               #On crée une liste pour les touches pressées
-        self.player = player.Player(self, (2338,1136))  #On crée un joueur
+        self.player = player.Player(self, (2402,1200))  #On crée un joueur
         self.maps = loadMap(self.player, self)          #On récupère les cartes du jeu
         self.current_map_name = "ville.txt"             #On définie la carte actuelle comme étant celle de la ville
         self.camera_group = camera.Camera(self)         #On crée une caméra

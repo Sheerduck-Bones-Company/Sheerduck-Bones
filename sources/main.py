@@ -22,9 +22,9 @@ FPS = 60
 start_screen = pygame.image.load(f'{FILE_PATH}/assets/graphics/screens/start-screen.png').convert_alpha()
 
 #On crée les boutons de démarage
-start_button = button.Button(screen, 'start', 30, -20, 10)
-exit_button = button.Button(screen, 'exit', -30, -20, 10)
-help_button = button.Button(screen, 'help', -10, 20, 10)
+start_button = button.Button(screen, 'start', 20, -10, 10)
+exit_button = button.Button(screen, 'exit', -20, -10, 10)
+help_button = button.Button(screen, 'help', -10, 10, 10)
 hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
 #On crée notre partie
