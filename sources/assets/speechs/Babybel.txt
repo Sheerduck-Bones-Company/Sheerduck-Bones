@@ -22,15 +22,15 @@ Babybel : Bref, bah du coup une fois que ce sera fait, rends-toi au sud-ouest ex
 add_step : 1
 }
 
-place : auberge, step : 27 {
+place : auberge, step : 28 {
 [Babybel :: Babybel : Bah t'attends quoi ? Vas y je t'ai dit, je finis mon verre et je te rejoins ahah.]
 }
 
-step : 27 {
+step : 27-28 {
 [Babybel :: Babybel : T'es pas allé voir le coupable encore ? Mais tu as tout les indices pour !]
 }
 
-step : 28 {
+step : 29 {
 [Babybel :: Babybel : Les égouts sont accessibles par les fleurs en dessous à gauche.]
 }
 

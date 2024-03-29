@@ -3,7 +3,6 @@ step : 0 {
 [Safran :: Safran : Il est grand et musclé.]
 }
 
-<<<<<<< HEAD
 step : 8-13 {
 [Safran :: Safran : Un meurtre ?
 Safran : À priori je n'y suis pour rien !]
@@ -18,9 +17,6 @@ add_step : 1
 }
 
 step : 23 {
-=======
-step : 20 {
->>>>>>> a0b6eaa793109c43ab7d2eb34f017d72101e0383
 [Safran :: Safran : Ouiiiii ! C'est effectivement les Tenders qui sont en tête !
 Safran : On est trop forts ahahahah !]
 add_step : 1

@@ -15,11 +15,7 @@ class Game():
         self.maps = loadMap(self.player, self)          #On récupère les cartes du jeu
         self.current_map_name = "ville.txt"             #On définie la carte actuelle comme étant celle de la ville
         self.camera_group = camera.Camera(self)         #On crée une caméra
-<<<<<<< HEAD
-        self.current_step = 0                           #On définie l'étape actuelle comme étant la première
-=======
-        self.current_step = 0                         #On définie l'étape actuelle comme étant la première
->>>>>>> a0b6eaa793109c43ab7d2eb34f017d72101e0383
+        self.current_step = 28                          #On définie l'étape actuelle comme étant la première
         self.generic_debut = Generic(screen, ['Bonjour Mister Sheerduck.', 'Vous êtes un détective.',
                                               'Vous devez investiguer sur', 'le mystère de Coincoinville.',
                                               'A vous de découvrir votre tâche', 'et de rassembler des preuves.',
@@ -28,13 +24,13 @@ class Game():
                                      60, bgimg='start-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique
         self.generic_fin = Generic(screen, ['Bravo !!', 'Vous avez réussi à résoudre le mystère :)',
                                             '', 'Crédits :', ''
-                                            'Programmation', 'Tout le Chicken Squad', ''
+                                            'Programmation', 'Toute la Sheerduck Bones Company', ''
                                             'Graphismes', 'Lianah LOMBARD', 'Chlothilde DINH', 'Thibault HOUPLAIN', '',
                                             'Script', 'Lianah LOMBARD', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
-                                            'Dialogues', 'Thibault Houplain', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
+                                            'Dialogues', 'Thibault HOUPLAIN', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
                                             'Jeux de mots et humour', 'Sarah CAILLAT--ROSEVEGUE', 'Thibault HOUPLAIN', 'ChatGPT', '',
                                             'Lieux du jeu (programme et réalisation)', 'Antoine GUILMOT', 'Sarah CAILLAT--ROSEVEGUE', '',
-                                            'Remerciements :', 'Tout le Chicken Squad se félicite personnellement', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', 'Antoine GUILMOT', 'Thibault HOUPLAIN', 'et Lianah LOMBARD', 'Logan, invité pour la musique'],
+                                            'Remerciements :', 'Toute la Sheerduck Bones Company se félicite personnellement', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', 'Antoine GUILMOT', 'Thibault HOUPLAIN', 'et Lianah LOMBARD', 'Logan, invité pour la musique'],
                                             60, bgimg='end-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique de fin
 
     #Lancer la partie    
@@ -72,7 +68,7 @@ class Game():
             pygame.quit()
             sys.exit()
             
-        elif self.current_step == 26: #Si on est à l'étape finale, on actualise le générique de fin
+        elif self.current_step == 30: #Si on est à l'étape finale, on actualise le générique de fin
             self.generic_fin.update()
             
         else:
