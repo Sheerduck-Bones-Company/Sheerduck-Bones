@@ -147,7 +147,7 @@ message_rect = message_text.get_rect()
 message_counter = 0
 confirm_text = font.render(f"Attention : \"{written_text}\" existe déjà, voulez-vous le remplacer ?", True, (255,0,0))
 confirm_rect = confirm_text.get_rect()
-info_text = [font.render(text, True, (0,0,0)) for text in ["Contôles utiles :", "", "q/z/d/s = Se déplacer", "LCTRL + Flèche = Ajouter des lignes/colonnes", "LSHIFT + Flèche = Retirer des lignes", "LCTRL + PLUS ou MOINS = Zoom/Dézoom", "LCTRL + z = Annulation de la dernière action", "LCTRL + s = Sauvegarder", "c = Afficher les collisions", "e = Afficher la bibliothèque", "i = Afficher le menu info", "Flèche HAUT ou BAS = Changer de couche", "g = Afficher les groupes", "p = afficher les liens de cartes"]]
+info_text = [font.render(text, True, (0,0,0)) for text in ["Contrôles utiles :", "", "q/z/d/s = Se déplacer", "LCTRL + Flèche = Ajouter des lignes/colonnes", "LSHIFT + Flèche = Retirer des lignes", "LCTRL + PLUS ou MOINS = Zoom/Dézoom", "LCTRL + z = Annulation de la dernière action", "LCTRL + s = Sauvegarder", "c = Afficher les collisions", "e = Afficher la bibliothèque", "i = Afficher le menu info", "Flèche HAUT ou BAS = Changer de couche", "g = Afficher les groupes", "p = afficher les liens de cartes", "r = Afficher le bloc derrière le personnage"]]
 
 #On défini quelques autres variables
 page_number = 1
