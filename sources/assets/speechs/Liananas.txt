@@ -1,11 +1,9 @@
 step : 0 {
-[Liananas :: Lianah : Et moi c'est Lianah, élève de première NSI. J'ai été la "graphiste" du groupe puisque j'ai développé la plupart des graphismes, notamment tous les personnages, qui sont des créations originales.
-Lianah : Pour la partie programmation, j'ai travaillé sur le système des dialogues qui permet maintenant de nous présenter.]
 [Liananas :: Liananas : Allez voir le maire, il est entre la fontaine et la mairie.]
 [Liananas :: Liananas : Il est grand et musclé.]
 }
 
-place : atelier, step : 21 {
+place : chez-liananas, step : 21 {
 [Liananas :: Liananas : Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
 Liananas : Ah oui c'est mon tableau. Je peins ce que je vois.
 Liananas : Je crois que j'ai vu ça sur près du pont. En fait non je sais plus. C'est pas très intéressant si ?
