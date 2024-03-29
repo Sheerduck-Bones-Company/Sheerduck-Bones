@@ -18,8 +18,7 @@ Matcha : Elle m'a même donné une adorable fille, Anphalafelle, qui a été ...
 Matcha : ...
 Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
 add_step : 1
-add_hint : Portrait-Oscour
-add_hint : Anphalafelle-disparition
+add_hint : AnphalafelleDisparition
 }
 
 step : 6 {

@@ -16,6 +16,7 @@ place : peaudevigne0, step : 1-4{
 
 place : peaudevigne0, step : 5-100 {
 [Dandy :: Dandy : Ça te plait ?]
+add_hint : horloge
 }
 
 place : peaudevigne1, step : 1-4{

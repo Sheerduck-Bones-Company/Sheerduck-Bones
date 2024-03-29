@@ -17,6 +17,7 @@ place : peaudevigne0, step : 1-4{
 place : peaudevigne0, step : 5-100 {
 [Peaudevigne :: Peaudevigne : Bienvenue chez nous ! C'est très paisible ici !
 Peaudevigne : Si tu as besoin de quoi que ce soit n'hésites pas :3]
+add_hint : horloge
 }
 
 place : peaudevigne1, step : 1-4{
@@ -27,7 +28,6 @@ place :  peaudevigne1, step : 5 {
 [Peaudevigne :: Peaudevigne : Quoi ? La batte ? Ah oui, nous aussi on a été jeune hihihi]
 add_step : 1
 add_hint : batte-ensanglantee
-add_hint : horloge
 }
 
 step : 1-100 {

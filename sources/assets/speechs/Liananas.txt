@@ -13,6 +13,7 @@ Liananas : Je pense que si il y a quelque chose d'intéressant, c'est dans les �
 Liananas : Comment ça on dirait Charlie sur ma peinture ? C'est qui Charlie ?
 Liananas : Bon t'as fini avec tes questions ? Je vais te karatsuber !]
 add_step : 1
+add_hint : PeintureLiananas
 }
 
 step : 1-100 {
