@@ -1,4 +1,4 @@
-import player, camera, speech_bubble, pygame
+import player, camera, speech_bubble, pygame, sys
 from settings import loadMap
 from generic import Generic
 
@@ -16,8 +16,19 @@ class Game():
         self.current_map_name = "ville.txt"             #On définie la carte actuelle comme étant celle de la ville
         self.camera_group = camera.Camera(self)         #On crée une caméra
         self.current_step = 0                           #On définie l'étape actuelle comme étant la première
-        self.generic = Generic(screen, ['Bonjour Mister Sheerduck', 'Vous êtes un détective', 'Vous devez investiguer sur', 'le mystère de Coincoinville','A vous de découvrir votre tâche', 'et de rassembler des preuves','Gagnez la confiance des villageois','afin de résoudre le problème','Nous vous souhaitons bonne chance !'], 60, bgimg='start-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique
-    
+        self.generic_debut = Generic(screen, ['Bonjour Mister Sheerduck', 'Vous êtes un détective', 'Vous devez investiguer sur', 'le mystère de Coincoinville','A vous de découvrir votre tâche', 'et de rassembler des preuves','Gagnez la confiance des villageois','afin de résoudre le problème','Nous vous souhaitons bonne chance !'],
+                                     60, bgimg='start-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique
+        self.generic_fin = Generic(screen, ['Bravo !!', 'Vous avez réussi à résoudre le mystère :)',
+                                            '', 'Crédits :', ''
+                                            'Programmation', 'Tout le Chicken Squad', ''
+                                            'Graphismes', 'Lianah LOMBARD', 'Chlothilde DINH', 'Thibault HOUPLAIN', '',
+                                            'Script', 'Lianah LOMBARD', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
+                                            'Dialogues', 'Thibault Houplain', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
+                                            'Jeux de mots et humour', 'Sarah CAILLAT--ROSEVEGUE', 'Thibault HOUPLAIN', 'ChatGPT', '',
+                                            'Lieux du jeu (programme et réalisation)', 'Antoine GUILMOT', 'Sarah CAILLAT--ROSEVEGUE', '',
+                                            'Remerciements :', 'Tout le Chicken Squad se félicite personnellement', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', 'Antoine GUILMOT', 'Thibault HOUPLAIN', 'et Lianah LOMBARD', 'Logan, invité pour la musique'],
+                                            60, bgimg='end-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique de fin
+
     #Lancer la partie    
     def start(self):
         self.is_playing = True
@@ -26,6 +37,7 @@ class Game():
     def stop(self):
         self.is_playing = False
     
+    #Afficher le menu d'aide
     def helping(self):
         self.is_helping = True
     
@@ -45,8 +57,13 @@ class Game():
 
     #Actualiser la partie
     def update(self):
-        if not self.generic.finish: #On affiche le générique de début s'il n'est pas terminé
-            self.generic.update()
+        if not self.generic_debut.finish: #On affiche le générique de début s'il n'est pas terminé
+            self.generic_debut.update()
+        elif self.generic_fin.finish:
+            pygame.quit()
+            sys.exit()
+        elif self.current_step == 27:
+            self.generic_fin.update()
         else:
             #On actualise les différent groupes de sprites actuellement utilisés
             for group in self.maps.get(self.current_map_name).get("group_list"):

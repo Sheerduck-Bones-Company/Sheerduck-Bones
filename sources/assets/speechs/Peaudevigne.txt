@@ -10,14 +10,19 @@ add_step : 1
 add_hint : Peaudevigne-Dandy
 }
 
-place : peaudevigne0, step : 1-3{
+place : peaudevigne0, step : 1-4{
 [Peaudevigne :: Peaudevigne : Un intrus !]
 }
 
-place : peaudevigne0, step : 5 {
+place : peaudevigne0, step : 5-100 {
 [Peaudevigne :: Peaudevigne : Bienvenue chez nous ! C'est très paisible ici !
 Peaudevigne : Si tu as besoin de quoi que ce soit n'hésites pas :3]
 }
+
+place : peaudevigne1, step : 1-4{
+[Peaudevigne :: Peaudevigne : Un intrus ! Que faites-vous dans mon grenier ???]
+}
+
 place :  peaudevigne1, step : 5 {
 [Peaudevigne :: Peaudevigne : Quoi ? La batte ? Ah oui, nous aussi on a été jeune hihihi]
 add_step : 1

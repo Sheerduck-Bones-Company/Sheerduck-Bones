@@ -15,7 +15,7 @@ place : antiquaire, step : 4 {
 }
 
 place : antiquaire, step : 1-100 {
-[Bakugan :: Bakugan - Bonjour, mon enfant
+[Bakugan :: Bakugan : Bonjour, mon enfant
 Bakugan : Toi aussi tu t’intéresses aux artefacts ?
 Bakugan : Par exemple, cette plume de chagrin peut réaliser tes désirs]
 
