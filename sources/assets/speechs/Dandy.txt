@@ -30,6 +30,7 @@ Peaudevigne :: Peaudevigne : Mais cette époque est révolue, maintenant on pass
 Peaudevigne : C'est super paisible là bas ! Tu pourras aller voir !]
 add_step : 1
 add_hint : batte-ensanglantee
+add_hint : horloge
 }
 
 place : peaudevigne1, step : 6-100 {

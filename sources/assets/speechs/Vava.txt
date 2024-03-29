@@ -10,6 +10,7 @@ Sasa :: Sasa : Tu sais que je suis juste là ?
 Vava :: Vava : Euhhhh...
 Vava : Bref, vous devriez aller voir Pom, c'est lui qui gère les baguettes.]
 add_step : 1
+add_hint : baguette
 }
 
 place : boulangerie, step : 3 {

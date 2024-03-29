@@ -8,7 +8,8 @@ place : bibliotheque, step : 7 {
 Chrome : Soient n parties Lebesgue-mesurables et de mesures finies d'un espace euclidien de dimension n. Alors, il existe au moins un hyperplan affine divisant chaque partie en deux sous-ensembles de mesures égales.
 Chrome : Ah vous connaissez ?
 Chrome : Mais vous êtes mathématicien et détective !!
-Chrome : Et vous avez vu la super démonstration ? Elle est sur wikiChrome : En ce moment, je trouve que Joshwaffle et Maître Choné sont suspicieux. Même Professeur Gandalf a changé.
+Chrome : Et vous avez vu la super démonstration ? Elle est sur wiki
+Chrome : En ce moment, je trouve que Joshwaffle et Maître Choné sont suspicieux. Même Professeur Gandalf a changé.
 Chrome : Bon, après Léninodie a toujours été bizarre, et je ne parle même pas de Zolala ! Mais à priori, Romarin et Safran sont clean.
 Chrome : Vous devriez essayer de leur parler, ils sont à l'école]
 add_step : 1

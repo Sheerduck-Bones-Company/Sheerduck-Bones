@@ -11,6 +11,7 @@ Vava :: Vava : Toi chut, t'es trop méchante avec moi
 Sasa ::Sasa :  Est-ce que vous pourriez nous aider ? En fait une baguette nous a été volée...
 Vava :: Vava : Vous devriez aller voir Pom ! C'est notre livreur.]
 add_step : 1
+add_hint : baguette
 }
 
 place : boulangerie, step : 2 {

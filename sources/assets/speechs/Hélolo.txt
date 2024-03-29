@@ -30,6 +30,10 @@ step : 7 {
 Hélolo : Je crois que Chrome veut vous parler, à la bibliothèque]
 }
 
+step : 8 {
+[Hélolo : L'école ? Elle est juste à gauche de la mairie.]
+}
+
 step : 14 {
 [Hélolo :: Hélolo : Tartatin est à l'ateleier, au Sud-Ouest de la ville, il a besoin d'aide pour réparer Remixeur.]
 }

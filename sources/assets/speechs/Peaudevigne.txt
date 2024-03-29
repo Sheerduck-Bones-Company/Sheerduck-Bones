@@ -26,7 +26,9 @@ place : peaudevigne1, step : 1-4{
 place :  peaudevigne1, step : 5 {
 [Peaudevigne :: Peaudevigne : Quoi ? La batte ? Ah oui, nous aussi on a été jeune hihihi]
 add_step : 1
-add_hint : batte-ensanglantee}
+add_hint : batte-ensanglantee
+add_hint : horloge
+}
 
 step : 1-100 {
 [Peaudevigne :: Peaudevigne : Oh, une nouvelle tête !
