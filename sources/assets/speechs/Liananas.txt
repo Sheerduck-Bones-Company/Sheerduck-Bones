@@ -5,7 +5,7 @@ Lianah : Pour la partie programmation, j'ai travaillé sur le système des dialo
 [Liananas :: Liananas : Il est grand et musclé.]
 }
 
-step : 21 {
+place : atelier, step : 21 {
 [Liananas :: Liananas : Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
 Liananas : Ah oui c'est mon tableau. Je peins ce que je vois.
 Liananas : Je crois que j'ai vu ça sur près du pont. En fait non je sais plus. C'est pas très intéressant si ?
@@ -14,6 +14,11 @@ Liananas : Comment ça on dirait Charlie sur ma peinture ? C'est qui Charlie ?
 Liananas : Bon t'as fini avec tes questions ? Je vais te karatsuber !]
 add_step : 1
 add_hint : PeintureLiananas
+}
+
+step : 21 {
+[Liananas :: Liananas : Humm... Je dois aller dans mon atelier là.
+Liananas : Il est où ? Il est tout à notre gauche.]
 }
 
 step : 1-100 {

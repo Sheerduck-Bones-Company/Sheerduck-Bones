@@ -4,7 +4,7 @@ step : 0 {
 }
 
 step : 22 {
-[Alléchant :: Attends je suis occupé là, va voir Macadame]
+[Alléchant :: Alléchant : Attends je suis occupé là, va voir Macadame]
 }
 
 step : 23 {

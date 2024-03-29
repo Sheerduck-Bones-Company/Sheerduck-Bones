@@ -5,7 +5,7 @@ Salsa : Tenez, voilà le maire ! Je vous laisse lui parler.
 Salsa : À bientôt !]
 }
 
-place : bibliothèque, step : 23 {
+place : bibliotheque, step : 23 {
 [Salsa :: Salsa : Si les Quacktors sont les plus forts ? Bien sûr que oui !
 Salsa : Comment ça est-ce qu'ils ont gagnés ? Je suis déçu de vos pauvres connaissances en la matière. Vous vouliez me provoquer ?
 Salsa : D'ailleurs l'enquête ça avance ?
