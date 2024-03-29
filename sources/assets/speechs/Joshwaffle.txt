@@ -6,6 +6,7 @@ step : 0{
 step : 8-11 {
 [Joshwaffle :: Joshwaffle : Quoi ? Moi je faisais rien, j'étais chez moi à procrastiner comme d'habitude...
 Joshwaffle : C'est pas parce que je suis proviseur adjoint que je sais ce qui se passe ici ! Les élèves nous ont jamais posé de problème et s'ils veulent ils peuvent sécher les cours...]
+add_step : 1
 }
 
 step : 12 {
