@@ -5,7 +5,7 @@ Antoine : Et j'ai également créé la boucle générale du jeu !]
 [Gandalf :: Gandalf : Il est grand et musclé.]
 }
 
-step : 8-11 {
+step : 8-13 {
 [Gandalf :: Gandalf : Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
 Gandalf : Ah c'est pas ça qu'il vous a dit ?
 Gandalf : Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...
@@ -13,7 +13,7 @@ Gandalf : Philémonade ou Tartatin pourront vous le confirmer je leur avait dema
 add_step : 1
 }
 
-step : 12 {
+step : 14 {
 [Gandalf :: Gandalf : Chrome vous a parlé de moi ? Je suis flatté ! S'il a dit que j'avais eu 0,01 de moins que Sarat quand on était à l'école il a oublié que je l'avais battue de 0,02 le trimestre d'après ahah !!
 Gandalf : Ah c'est pas ça qu'il vous a dit ?
 Gandalf : Oui j'avais raté des cours il y a quelques temps parce que je travaillais sur un jeu mais j'ai tellement bossé que j'ai oublié de venir en cours ahah...

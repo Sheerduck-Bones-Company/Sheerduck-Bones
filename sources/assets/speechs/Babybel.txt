@@ -8,15 +8,30 @@ place : auberge, step : 6 {
 Peut-être parce que je suis plus beau que lui ahahahahah]
 }
 
-place : auberge, step : 24 {
+place : auberge, step : 22-25 {
+[Babybel :: Babybel : Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
+Babybel : Mais là je suis occupé à boire mon verre. Repasse plus tard.]
+}
+
+place : auberge, step : 27 {
 [Babybel :: Babybel : Quoi, tu veux que je t'emmène dans les égouts ? Pourquoi pas, ça fait longtemps que je n'y suis pas retourné...
 Babybel : Oh mais tu m'as apporté une offrande, comment tu as su pour le sandwich au cheddar ?
-Babybel : Bref, bah du coup rends-toi au sud-ouest extrême de la ville, tu y trouveras les égouts, je t'attendrais là bas si tu n'arrives pas à le trouver ahah]
+Babybel : Si tu veux que je t'y emmène tu dois d'abord trouver le coupable.
+Babybel : Comment je sais ? Tkt petit détective.
+Babybel : Bref, bah du coup une fois que ce sera fait, rends-toi au sud-ouest extrême de la ville, tu y trouveras les égouts, je t'attendrais là bas si tu n'arrives pas à le trouver ahah]
 add_step : 1
 }
 
-place : auberge, step : 25 {
+place : auberge, step : 27 {
 [Babybel :: Babybel : Bah t'attends quoi ? Vas y je t'ai dit, je finis mon verre et je te rejoins ahah.]
+}
+
+step : 27 {
+[Babybel :: Babybel : T'es pas allé voir le coupable encore ? Mais tu as tout les indices pour !]
+}
+
+step : 28 {
+[Babybel :: Babybel : Les égouts sont accessibles par les fleurs en dessous à gauche.]
 }
 
 place : auberge, step : 1-100 {

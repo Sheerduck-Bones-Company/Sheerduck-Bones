@@ -7,7 +7,7 @@ Sarah : J'ai aussi participé au script et à l'élaboration des dialogues des p
 [Sarat :: Sarat : Il est grand et musclé.]
 }
 
-place : auberge, step : 23 {
+place : auberge, step : 26 {
 [Sarat :: Sarat : Salut, tu veux quoi ? Un sandwich au cheddar ? Ça tombe bien, les stocks ne s’épuisent pas depuis des jours. Tiens, n'hésite pas à repasser à l'occasion !]
 add_step : 1
 }

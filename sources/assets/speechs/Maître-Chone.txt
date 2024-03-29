@@ -3,7 +3,7 @@ step : 0 {
 [Maître-Chone :: Maître-Chone : Il est grand et musclé.]
 }
 
-step : 8-11 {
+step : 8-13 {
 [Maître-Chone :: Maître-Chone : Quoi un meurtre ??? Mais c'est affreux !
 Maître-Chone : Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Maître-Chone : Attendez que je retrouve mes notes !
@@ -12,7 +12,7 @@ Maître-Chone : Si vous changez d'avis n'hésitez pas à venir me voir !]
 add_step : 1
 }
 
-step : 12 {
+step : 14 {
 [Maître-Chone :: Maître-Chone : Quoi un meurtre ??? Mais c'est affreux !
 Maître-Chone : Ça me rappelle le problème du TES (Théorème des Espaces Sphériques), un problème mortel sur lequel j'avais travaillé il y a quelque mois...
 Maître-Chone : Attendez que je retrouve mes notes !

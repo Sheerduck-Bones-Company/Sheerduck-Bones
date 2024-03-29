@@ -16,7 +16,7 @@ add_step : 1
 add_hint : School
 }
 
-place : bibliotheque, step : 13 {
+place : bibliotheque, step : 15 {
 [Chrome :: Chrome : Alors des nouvelles des suspects, Sheerduck ?
 Chrome : Comme je me le disais, ils sont tous suspects. Mais n'oublions pas les autres habitants !
 Chrome : Je pense que vous devriez inspecter du côté de l'atelier.

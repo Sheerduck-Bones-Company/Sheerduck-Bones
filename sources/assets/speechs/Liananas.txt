@@ -5,7 +5,7 @@ Lianah : Pour la partie programmation, j'ai travaillé sur le système des dialo
 [Liananas :: Liananas : Il est grand et musclé.]
 }
 
-step : 18 {
+step : 21 {
 [Liananas :: Liananas : Mais tu veux quoi ? T'as trop cru j'avais envie de te parler enfait
 Liananas : Ah oui c'est mon tableau. Je peins ce que je vois.
 Liananas : Je crois que j'ai vu ça sur près du pont. En fait non je sais plus. C'est pas très intéressant si ?

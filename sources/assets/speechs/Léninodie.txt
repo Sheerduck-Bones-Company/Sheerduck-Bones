@@ -3,7 +3,7 @@ step : 0{
 [Léninodie :: Léninodie : Il est grand et musclé.]
 }
 
-step : 8-11 {
+step : 8-13 {
 [Léninodie :: Léninodie : La société dans laquelle on vit est vraiment affreuse...
 Léninodie : Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
 Léninodie : Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...
@@ -12,7 +12,7 @@ Léninodie : Non ? C'est dommage !]
 add_step : 1
 }
 
-step : 12 {
+step : 14 {
 [Léninodie :: Léninodie : La société dans laquelle on vit est vraiment affreuse...
 Léninodie : Tu te dis pas qu'il faudrait la changer ? Tu vois des choses comme ça si on pensait aux autres avant de penser à nous même ça n'arriverait pas !
 Léninodie : Non moi j'ai rien vu de bizarre... À pars Turbo qui raconte conneries sur conneries ! C'est pas un journaliste ça...

@@ -3,7 +3,11 @@ step : 0 {
 [Remixeur :: Remixeur : Il est grand et musclé.]
 }
 
-place : atelier, step : 15 {
+place : atelier, step : 16 {
+[Remixeur :: Remixeur : Tartatin voulait voussssssssssssssssssss-s-s--s-s-]
+}
+
+place : atelier, step : 17 {
 [Remixeur :: Remixeur : Un fichier enregistré dans ma mémoire vient de refaire surface. V-v-v-voulez v-v-voulez  vous lll’écouter ?
 Remixeur : Ouverture du f-f-fichier.
 Remixeur : 01001010 00100111 01100001 01101001 00100000 01110000 01101111 01110101 01110011 01110011 11000011 10101001 00100000 01000001 01101110 01110000 01101000 01100001 01101100 01100001 01100110 01100101 01101100 01101100 01100101 00100000 01100001 01101000 01100001 01101000
@@ -12,7 +16,7 @@ add_step : 1
 add_hint : MessageRemixeur
 }
 
-place : atelier, step : 16 {
+place : atelier, step : 18 {
 [Remixeur :: Remixeur : Le fichier a été supprimé. Mes capteurs indiquent un mouvement.
 Remixeur : Philemonade ? Phiiiiii-lleeee
 Remixeur : moooooo-moooo- mooooooooo-ooooo-oooo

@@ -3,7 +3,7 @@ step : 0 {
 [Charlie :: Charlie : Il est grand et musclé.]
 }
 
-step : 17 {
+step : 19 {
 [Charlie :: Charlie : Quoi ? Un vol de robot ? 
 Charlie : Ah vous parlez de Remixeur ! Pauvre Tartatin et Philemonade... Ils avaient travaillé longtemps dessus !
 Charlie : C'est vraiment sordide comme histoire...
@@ -11,6 +11,21 @@ Charlie : Vous savez détective, c'est peut-être Mewton qui a fait le coup ?..
 Charlie : Non, oubliez que j'ai dit ça !
 Charlie : C'est juste que je le trouve assez suspect... Il est toujours à la recherche de nouvelles pièces pour son musée et ça ne m'étonnerait pas que Remixeur ait été dans son viseur.
 Charlie : Oh, ça rime !]
+add_step : 1
+}
+
+step : 28 {
+[Charlie :: Charlie : ACH NEINNNNN, tu m'as découvert :(
+Charlie : J'ai effectivement poussé Anphalafelle !! Mais elle le méritait.
+Charlie : C'est une batarde !! Thifraude l'a eu avec Fluchs et a fait semblant qu'elle était la fille de Matcha. Moi aussi j'aurais du être reconnu par mon père !!
+Charlie : Oui, Matcha est mon père. Oscour, ma mère, est morte après m'avoir donné naissance et elle m'a caché puisqu'elle craignait que quelqu'un s'en prenne à moi...
+Charlie : Mais Anphalafelle a été reconnue et a pu vivre la belle vie ! J'étais tout simplement jaloux.
+Charlie : J'étais bien plus beau qu'elle mais Benjasmin l'a quand même choisie !!! Je ne lui ait jamais pardonné.
+Charlie : Alors ce jour là sur le pont, lorsque je l'ai vue si joyeuse alors que j'étais dans ma vie misérable, j'ai craqué et je l'ai poussé !
+Charlie : Vous pouvez m'arrêter détective. J'ai pris la vie de ma soeur et aujourd'hui je le regrette énormément...
+Charlie : J'ai toujours espéré la revoir en vie pour pouvoir m'excuser.
+Charlie : Vous allez dans les égouts ? D'accord. J'irais voir mon père et je lui avouerais tout.
+Charlie : Je crois que je dois vous remercier Mr Bones. Sans vous, j'aurais continué de me mentir.]
 add_step : 1
 }
 

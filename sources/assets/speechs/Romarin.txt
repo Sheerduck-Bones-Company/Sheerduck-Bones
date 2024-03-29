@@ -3,17 +3,19 @@ step : 0 {
 [Romarin :: Romarin : Il est grand et musclé.]
 }
 
-step : 8-11 {
+step : 8-13 {
 [Romarin :: Romarin : Désolé je suis en retard en cours !
 Romarin : Ah c'est rapide ? Bon d'accord !
 Romarin : Je n'en sais rien désolé, je suis toujours avec Zolala !]
+add_step : 1
 }
 
-step : 12 {
+step : 14 {
 [Romarin :: Romarin : Désolé je suis en retard en cours !
 Romarin : Ah c'est rapide ? Bon d'accord !
 Romarin : Je n'en sais rien désolé, je suis toujours avec Zolala !
-Romarin : A d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+Romarin : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à la bibliothèque]
+add_step : 1
 }
 
 step : 1-100 {

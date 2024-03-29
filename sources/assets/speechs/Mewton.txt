@@ -3,7 +3,7 @@ step : 0 {
 [Mewton :: Mewton : Il est grand et musclé.]
 }
 
-place : musee, step : 17 {
+place : musee, step : 20 {
 [Mewton :: Ah oui Remixeur ? Bien sûr que je ne l'ai pas volé !! Pour qui vous me prenez... On ne pourrait même pas qualifier ce tas de ferraille d'oeuvre d'art, alors l'exposer dans mon si beau musée ?!]
 Mewton: Malheur, j'ai vu Liananas peindre encore un autre tableau...
 Mewton : Vous devriez aller la voir et la déconseiller avant qu'elle ne fasse une bêtise !

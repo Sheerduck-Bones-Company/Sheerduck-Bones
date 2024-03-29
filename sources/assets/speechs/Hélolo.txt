@@ -22,7 +22,8 @@ step : 6 {
 Hélolo :: Hélolo : L'auberge est très agitée en ce moment, vous devrier y passer faire un tour !
 Hélolo : Ah et avant d'oublier...
 Matcha :: Matcha : OÙ ÊTES VOOUUUUUUUS, MISTER BONES ?
-Hélolo :: Ah bah je vais devoir vous laisser, le maire vous appelle]
+Hélolo :: Ah bah je vais devoir vous laisser, le maire vous appelle.
+Hélolo : Allez le voir après je le trouve assez énervé]
 }
 
 step : 7 {
@@ -34,31 +35,37 @@ step : 8 {
 [Hélolo : L'école ? Elle est juste à gauche de la mairie.]
 }
 
-step : 14 {
+step : 16 {
 [Hélolo :: Hélolo : Tartatin est à l'ateleier, au Sud-Ouest de la ville, il a besoin d'aide pour réparer Remixeur.]
 }
 
-step : 17 {
+step : 19 {
+[Hélolo :: Hélolo : Le cimétière ? Il est au nord-est de la ville.
+Hélolo : C'était assez austère il y a quelques années mais Charlie s'est est bien occupé !]
+}
+
+step : 20 {
 [Hélolo :: Hélolo : Le musée vient d'accueillir de nouvelles peintures de Liananas. Vous pourriez y jeter un oeil...
 Hélolo : Il se situe à l'est du village.]
 }
 
-step : 19 {
+step : 22 {
 [Hélolo :: Hélolo : Macadame et Alléchant ? Ils sont en train de jouer au basket, à côté de la boulangerie]
 
-step : 20 {
-[Hélolo :: Hélolo : Wow mais tu cherches plein de gens !!
-Hélolo : Salsa travaille à la bibliothèque, c'est le petit batiment bleu au nord-ouest. Turbo est un journaliste tu pourras, le trouver à côté de l'auberge !
+step : 23 {
+[Hélolo :: Hélolo : Mais tu cherches plein de gens !!
+Hélolo : Salsa travaille à la bibliothèque, c'est le petit batiment bleu au nord-ouest. Turbo est un journaliste tu pourras le trouver à côté de l'auberge !
 Hélolo : Safran est soit à la bibliothèque avec Chrome soit à l'école... Sinon Alléchant est toujours en train de faire du basket.
 Hélolo : Reviens quand tu veux ahah, j'ai l'impression de faire les renseignements :)]
 }
 
-step : 22 {
+step : 25 {
 [Hélolo :: Hélolo : Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
 Hélolo : Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
 Hélolo : De toute façon, il dépense tout son argent dans l’alcool...
 Hélolo : Peut-être qu'ils en ont en stock à l'auberge...]
 add_step : 1
+add_hint : Sandwich
 }
 
 step : 1-100 {

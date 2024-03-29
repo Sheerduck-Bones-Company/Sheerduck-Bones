@@ -3,7 +3,7 @@ step : 0 {
 [Macadame :: Macadame : Il est grand et musclé.]
 }
 
-step : 19 {
+step : 22 {
 [Macadame :: Macadame : Eh toi, tu sais quelle équipe gagne cette saison de la Nuggets Barbecue Association ?
 Macadame : Ahah, tu veux vraiment avoir des choix ?
 Macadame : Vazy, si tu penses que c'est les Laqués va voir Alléchant.
@@ -11,9 +11,10 @@ Macadame : Jcrois que Turbo est fan des Wadlers.
 Macadame : Sinon Salsa est pour les Quacktors et Safran est pour les Tenders.
 Macadame : Reviens me voir quand t'auras trouvé quelle équipe c'est ahah.]
 add_step : 1
+add_hint : Basketball
 }
 
-step : 21 {
+step : 24 {
 [Macadame :: Macadame : Ça se voit que tu suis bien les matchs ! Tu voulais des infos sur Babybel, n'est-ce pas ? C'est à Hélolo qu'il faut parler, c'est la seule qui connaît son point faible ;).
 Macadame : Comment ça j'aurais pu te le dire avant ? Sinon ça aurait pas été drôle et je t'aurais pas vu courir aux quatres coins de la ville !]
 add_step : 1

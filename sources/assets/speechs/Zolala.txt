@@ -3,13 +3,14 @@ step : 0 {
 [Zolala :: Zolala : Il est grand et musclé.]
 }
 
-step : 8-11 {
+step : 8-13 {
 [Zolala :: Zolala : C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
 Zolala : Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
 Zolala : Tu t'y connais toi en géométrie sphérique ?]
+add_step : 1
 }
 
-step : 12 {
+step : 14 {
 [Zolala :: Zolala : C'est quoi Anphalafelle ? C'est un plat ? C'est bon a manger j'espère ?
 Zolala : Ah d'ailleurs j'ai besoin d'aide pour le problème du Tueur En Série.
 Zolala : Tu t'y connais toi en géométrie sphérique ?

@@ -1,9 +1,9 @@
-place : egouts, step : 0-24 {
+place : egouts, step : 0-27 {
 [Anphalafelle :: Anphalafelle : T'es pas censé me retrouver maintenant sale tricheur !
 Anphalafelle : Retourne d'où tu viens ou je vais te manger]
 }
 
-place : egouts, step : 25 {
+place : egouts, step : 29 {
 [Anphalafelle :: Anphalafelle : Wow, coucou, je pensais pas que quelqu'un me retrouverais un jour !
 Anphalafelle : Cela fait tellement longtemps que je sui là :(
 Anphalafelle : C'est Charlie qui m'a poussée dans la rivière car il était jaloux que nos parents m'aient reconnnue...

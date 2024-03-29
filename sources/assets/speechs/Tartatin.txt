@@ -3,7 +3,7 @@ step : 0 {
 [Tartatin :: Tartatin : Il est grand et musclé.]
 }
 
-place : atelier, step : 14 {
+place : atelier, step : 16 {
 [Tartatin :: Tartatin : Remixeur a disparu il y a quelques temps... Quand il est revenu il était tout cassé !
 Tartatin : Maintenant, on doit encore le réparer avec Philémonade... Je pense que quelqu'un du village l'a pris et s'est amusé avec ! Mais je ne sais pas qui...
 Tartatin : Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça... Je programmerais Remixeur pour qu'il se venge !
@@ -13,7 +13,7 @@ add_step : 1
 add_hint : Remixeur
 }
 
-place : atelier, step : 15-16 {
+place : atelier, step : 17-18 {
 [Tartatin :: Tartatin : Oh non, Remixeur fait encore n'importe quoi !]
 }
 
