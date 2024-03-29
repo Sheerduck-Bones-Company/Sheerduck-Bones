@@ -16,7 +16,7 @@ Safran : Ah d'ailleurs, tu devrais voir Chrome, il t'a dit de venir le voir à l
 add_step : 1
 }
 
-step : 21 {
+step : 20 {
 [Safran :: Safran : Ouiiiii ! C'est effectivement les Tenders qui sont en tête !
 Safran : On est trop forts ahahahah !]
 add_step : 1

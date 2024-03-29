@@ -13,8 +13,3 @@ Anphalafelle : J'attends aussi des problèmes de maths compliqués parce que qu'
 Anphalafelle : En tout cas merci, tu m'as sauvé !]
 add_step : 1
 }
-
-place : egouts, step : 26 {
-[Anphalafelle :: Anphalafelle : C'est la fin]
-add_step : 1
-}

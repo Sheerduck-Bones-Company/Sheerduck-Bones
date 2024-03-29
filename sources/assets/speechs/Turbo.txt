@@ -3,6 +3,10 @@ step : 0 {
 [Turbo :: Turbo : Il est grand et musclé.]
 }
 
+step : 20 {
+[Turbo :: Turbo : T'as vraiment cru que c'était les Wadlers ?! Qu'est-ce que tu es ignorant !]
+}
+
 step : 1-100 {
 [Turbo :: Turbo : Il parait que le plat préféré des “Coincoinvillets” c’est la pizza, et après on dit que le Grand Remplacement n’existe pas...]
 

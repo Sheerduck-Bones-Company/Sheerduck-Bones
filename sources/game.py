@@ -64,7 +64,7 @@ class Game():
             pygame.quit()
             sys.exit()
             
-        elif self.current_step == 27: #Si on est à l'étape finale, on actualise le générique de fin
+        elif self.current_step == 26: #Si on est à l'étape finale, on actualise le générique de fin
             self.generic_fin.update()
             
         else:

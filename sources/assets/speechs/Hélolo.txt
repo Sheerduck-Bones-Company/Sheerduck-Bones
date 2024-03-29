@@ -39,17 +39,17 @@ step : 17 {
 Hélolo : Il se situe à l'est du village.]
 }
 
-step : 20 {
+step : 19 {
 [Hélolo :: Hélolo : Macadame et Alléchant ? Ils sont en train de jouer au basket, à côté de la boulangerie]
 
-step : 21 {
+step : 20 {
 [Hélolo :: Hélolo : Wow mais tu cherches plein de gens !!
-Hélolo : Salsa travaille à la bibliothèque, c'est le petit batiment bleu au nord-ouest. Gandalf est prof à l'école mais ça doit être l'heure de la récrée tu pourras le trouver à côté !
+Hélolo : Salsa travaille à la bibliothèque, c'est le petit batiment bleu au nord-ouest. Turbo est un journaliste tu pourras, le trouver à côté de l'auberge !
 Hélolo : Safran est soit à la bibliothèque avec Chrome soit à l'école... Sinon Alléchant est toujours en train de faire du basket.
 Hélolo : Reviens quand tu veux ahah, j'ai l'impression de faire les renseignements :)]
 }
 
-step : 23 {
+step : 22 {
 [Hélolo :: Hélolo : Tu veux convaincre Babybel de t'emmener dans les égouts ? Il va falloir l'amadouer. Ah oui !
 Hélolo : Il raffole de sandwichs au cheddar mais malheureusement pour lui il oublie à chaque fois d’en acheter.
 Hélolo : De toute façon, il dépense tout son argent dans l’alcool...
