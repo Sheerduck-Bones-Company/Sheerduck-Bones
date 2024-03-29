@@ -142,15 +142,15 @@ class Player(pygame.sprite.Sprite):
 					for speech in sprites[0].speech:
 						if ((speech.place == None) and (speech.step == None)) or ((speech.place == None) and (self.game.current_step in speech.step)) or ((self.game.current_map_name[:-4] == speech.place) and (speech.step == None)) or ((self.game.current_map_name[:-4] == speech.place) and (self.game.current_step in speech.step)):
 							self.current_speech = speech
-							self.game.say(speech.text[speech.current_dial_num])
+							self.game.say(speech.text[speech.current_dial_num], speech)
 							speech.update()
 							break
 					if self.current_speech == None:
 						self.current_speech = Dialogues(None, None, [[(None, "...")]], None, None, self.game)
-						self.game.say(self.current_speech.text[self.current_speech.current_dial_num])
+						self.game.say(self.current_speech.text[self.current_speech.current_dial_num], self.current_speech)
 				#Sinon on actualise la boîte de dialogue déjà ouverte
 				else:
-					self.game.say(self.current_speech.text[self.current_speech.current_dial_num])
+					self.game.say(self.current_speech.text[self.current_speech.current_dial_num], self.current_speech)
 
 	#On vérifie si le joueur est en train d'intéragir avec un des indices du tableau d'indices
 	def check_document_interact(self, pos):

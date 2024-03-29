@@ -23,25 +23,24 @@ class Dialogues():
         #Si on atteint le dernier dialogue, on ajoute l'étape ou l'indice désiré
         if self.current_dial_num == len(self.text):
             self.current_dial_num = 0
-            self.AddStep()
-            self.AddHint()
     
     #Ajouter des étapes au jeu
     def AddStep(self):
-        if self.add_step != None and not self.is_step_added:
+        if self.add_step != None and not self.is_step_added and self.current_dial_num == len(self.text)-1:
             self.game.current_step += self.add_step
             self.is_step_added = True
 
     #Ajouter un indice au joueur
     def AddHint(self):
-        if self.add_hint != None and not self.is_hint_added:
+        if self.add_hint != None and not self.is_hint_added  and self.current_dial_num == len(self.text)-1:
             self.game.player.hints.append(Hint(self.add_hint))
             self.is_hint_added = True
             
 #Une classe pour gérer l'affichage des dialogues
 class SpeechBubble():
-    def __init__(self, game, text:list = []):
+    def __init__(self, game, text:list = [], speech=None):
         self.game = game
+        self.speech = speech
         #La liste des personnages qui parlent
         self.list_char = [elem[0] for elem in text]
         #La liste des répliques
@@ -117,6 +116,9 @@ class SpeechBubble():
             if self.index_sentence == len(self.splited_text) - 1:
                 self.game.is_speeking = False
                 self.game.player.current_speech = None
+                if self.speech != None:
+                    self.speech.AddHint()
+                    self.speech.AddStep()
                 return False
             #Sinon on passe à la réplique suivante
             else:
