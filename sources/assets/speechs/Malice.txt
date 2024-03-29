@@ -8,7 +8,7 @@ step 21-100 {
 Malice : Period
 Malice : Slayyyyyyy]
 
-[Malice :: Malice : J'ai vu Charlie poussé Anphalafelle !
+[Malice :: Malice : J'ai vu Charlie pousser Anphalafelle !
 Malice : Personne ne m'écoute...]
 add_hint : Charlie
 }
