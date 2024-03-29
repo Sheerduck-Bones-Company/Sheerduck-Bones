@@ -45,13 +45,14 @@ running = True
 while running:
     
     #On joue la musique
-    current_channel.play(current_music, loops=-1, fade_ms=250)
+    #current_channel.play(current_music, loops=-1, fade_ms=250)
     
     #Si on est en train de jouer
     if game.is_playing:
         #On actualise la partie
         game.update()
-        hint_button.draw()
+        if not game.is_speeking and game.generic.finish:
+            hint_button.draw()
         current_music = start_music
         current_channel = start_channel
         

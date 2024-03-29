@@ -101,6 +101,7 @@ def loadMap(player, game):
         last_coord = (0,0)
         obstacles_group = pygame.sprite.Group()
         visible_group = pygame.sprite.Group(player)
+        behind_group = pygame.sprite.Group()
         interact_group = pygame.sprite.Group()
         
         #On ouvre le fichier texte de la carte
@@ -144,18 +145,21 @@ def loadMap(player, game):
                                 crt_img = pygame.transform.scale(crt_img, (64,64))
                                 crt_rect = pygame.Rect(bloc_index*64, lin_index*64, 64, 64)
                             
-                            #Si la couche interprêtée est différente de la 1e, on ajoute le bloc au élément visibles
-                            if lay_index != 0:
-                                visible_group.add(Tile(crt_img, crt_rect))
-                            
-                            #On vérifie si le bloc doit être afficher devant le joueur
+                            #On vérifie si le bloc doit être affiché derrière le joueur
                             if int(crt_attributes[1]) == 1:
-                                crt_is_above_player = True
+                                crt_is_behind_player = True
                             else:
-                                crt_is_above_player = False
+                                crt_is_behind_player = False
+                            
+                            #Si le bloc doit être affiché derrière le joueur, on le rajoute au groupe des blocs a afficher en arrière plan
+                            if crt_is_behind_player:
+                                behind_group.add(Tile(crt_img, crt_rect))
+                            #Si la couche interprêtée est différente de la 1e, on ajoute le bloc au élément visibles
+                            elif lay_index != 0:
+                                visible_group.add(Tile(crt_img, crt_rect))
                                 
                             #On ajoute les caractéristiques du bloc
-                            mape[lay_index][lin_index].append({"image": crt_img, "rect": crt_rect, "is_above": crt_is_above_player})
+                            mape[lay_index][lin_index].append({"image": crt_img, "rect": crt_rect, "is_behind": crt_is_behind_player})
                             
                             #On ajoute les collisions du bloc au groupe d'obstacles
                             for col_index, collision in enumerate(crt_attributes[3]):
@@ -172,7 +176,7 @@ def loadMap(player, game):
                                 crt_speech = ImportSpeech(crt_type, game)
                                 interact_group.add(InteractTile(crt_rect.inflate(28,28), speech=crt_speech))
 
-        maps[map_name] = {"ground" : mape, "visible" : visible_group, "obstacles" : obstacles_group, "interact" : interact_group, "last_coord" : last_coord, "group_list" : [visible_group, obstacles_group, interact_group]}
+        maps[map_name] = {"ground" : mape, "visible" : visible_group, "behind" : behind_group, "obstacles" : obstacles_group, "interact" : interact_group, "last_coord" : last_coord, "group_list" : [visible_group, obstacles_group, interact_group]}
                            
     return maps
 

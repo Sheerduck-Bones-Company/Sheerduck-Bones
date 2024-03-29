@@ -9,7 +9,7 @@ class Bloc(pygame.sprite.Sprite):
                     bloc_type:str,                              #Le nom du bloc
                     top_left:tuple = (0,0),                     #Les coordonées du bloc
                     big = False,                                #Si on l'affiche en grand ou non
-                    is_above_player = False,                    #S'il doit être devant le joueur ou non
+                    is_behind_player = False,                   #S'il doit être derrière le joueur ou non
                     is_in_group = False,                        #S'il appartient à une image composée de plusieurs blocs
                     collisions = [False, False, False, False],  #Les collisions du bloc
                     map_path = '',                              #La carte à laquelle il mème si on intéragie avec lui
@@ -21,7 +21,7 @@ class Bloc(pygame.sprite.Sprite):
         self.set_image()
         self.rect = self.image.get_rect()
         self.rect.topleft = top_left
-        self.is_above_player = is_above_player
+        self.is_behind_player = is_behind_player
         self.is_in_group = is_in_group
         self.collisions = [elem for elem in collisions]
         self.map_path = map_path
@@ -39,7 +39,7 @@ class Bloc(pygame.sprite.Sprite):
     
     #Récupérer les collisions
     def get_booleans(self):
-        return self.is_above_player, self.collisions
+        return self.is_behind_player, self.collisions
     
     #Dessiner les collisions
     def draw_collisions(self):
@@ -57,9 +57,9 @@ class Bloc(pygame.sprite.Sprite):
         else:
             pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
     
-    #Affiche si le bloc doit être afficher devant le joueur
-    def draw_is_above(self):
-        if self.is_above_player:
+    #Affiche si le bloc doit être afficher derrière le joueur
+    def draw_is_behind(self):
+        if self.is_behind_player:
             pygame.draw.rect(self.info_surface, (0,255,0), pygame.Rect(0, 0, 16, 16))
         else:
             pygame.draw.rect(self.info_surface, (255,0,0), pygame.Rect(0, 0, 16, 16))
@@ -105,7 +105,7 @@ is_searching_for_info = False
 map_saved = False
 show_collisions = False
 show_group = False
-show_is_above = False
+show_is_behind = False
 show_map_path = False
 show_transparent_layer = True
 
@@ -223,11 +223,11 @@ def readFile(file_name):
                             if crt_attributes[0] == change[0]:
                                 crt_type = change[1]
                         
-                        #Si le bloc est devant le joueur
+                        #Si le bloc est derrière le joueur
                         if int(crt_attributes[1]) == 1:
-                            crt_is_above_player = True
+                            crt_is_behind_player = True
                         else:
-                            crt_is_above_player = False
+                            crt_is_behind_player = False
                             
                         #Si le bloc appartient à ue image composée de plusieurs blocs
                         if int(crt_attributes[2]) == 1:
@@ -248,10 +248,10 @@ def readFile(file_name):
                                 
                         #On ajoute les caractéristiques du bloc à la liste de la carte
                         if file_name == "bloc_types_map":
-                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, crt_map_path, bloc_index, lin_index))
+                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_behind_player, crt_is_in_group, crt_collisions, crt_map_path, bloc_index, lin_index))
                             img_library[crt_type] = (bloc_index, lin_index)
                         else:
-                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_above_player, crt_is_in_group, crt_collisions, crt_map_path, img_library.get(crt_type)[0], img_library.get(crt_type)[1]))
+                            mape[lay_index][lin_index].append(Bloc(crt_type, (0,0), False, crt_is_behind_player, crt_is_in_group, crt_collisions, crt_map_path, img_library.get(crt_type)[0], img_library.get(crt_type)[1]))
     return mape
 
 #Ecrire les éléments de la map dans un fichier texte
@@ -269,7 +269,7 @@ def writeMapInFile(mape, file_name):
                         fichier.write("0")
                     else:
                         fichier.write(bloc.type + ',')
-                        if bloc.is_above_player:
+                        if bloc.is_behind_player:
                             fichier.write('1,')
                         else:
                             fichier.write('0,')
@@ -409,9 +409,9 @@ while running:
                         if show_group:
                             bloc.draw_group()
                         
-                        #On affiche si le bloc est affiché devant le joueur
-                        if show_is_above:
-                            bloc.draw_is_above()
+                        #On affiche si le bloc est affiché derrière le joueur
+                        if show_is_behind:
+                            bloc.draw_is_behind()
                         
                         #On affiche si le bloc mène à une carte
                         if show_map_path:
@@ -420,7 +420,7 @@ while running:
                         #On affiche le bloc
                         map_surface.blit(bloc.image, bloc.rect.topleft+offset)
                         
-                        if show_group or show_is_above or show_collisions or show_map_path:
+                        if show_group or show_is_behind or show_collisions or show_map_path:
                             map_surface.blit(bloc.info_surface, bloc.rect.topleft+offset)
                         
         #On effectue le zoom et on affiche l'écran
@@ -447,10 +447,10 @@ while running:
                         mape[layer_number][ligne][column].is_in_group = not mape[layer_number][ligne][column].is_in_group
                     except:
                         writeMessage("Veuillez cliquer un bloc", 30, True)
-            #Afficher ou non le bloc devant le joueur
-            elif show_is_above:
+            #Afficher ou non le bloc derrière le joueur
+            elif show_is_behind:
                 try:
-                    mape[layer_number][ligne][column].is_above_player = not mape[layer_number][ligne][column].is_above_player
+                    mape[layer_number][ligne][column].is_behind_player = not mape[layer_number][ligne][column].is_behind_player
                 except:
                     writeMessage("Veuillez cliquer un bloc", 30, True)
             #Ajouter un lien à un bloc
@@ -487,7 +487,7 @@ while running:
                                                             #On réupère le type de bloc qu'il faut poser
                                                             model = bloc_types_map[0][ligne_num][column_num]
                                                             mape[layer_number][ligne-(used_type[5]-ligne_num)][column-(used_type[4]-column_num)] = Bloc(bloc_type = model.type,
-                                                                                                                                                        is_above_player = model.is_above_player,
+                                                                                                                                                        is_behind_player = model.is_behind_player,
                                                                                                                                                         is_in_group = model.is_in_group,
                                                                                                                                                         collisions = model.collisions,
                                                                                                                                                         libraryx = model.libraryx,
@@ -511,13 +511,13 @@ while running:
                                             #On récupère le type de bloc qu'il faut poser
                                             model = bloc_types_map[0][ligne2+img_y_offset][column2+img_x_offset]    
                                             mape[layer_number][ligne][column] = Bloc(bloc_type = model.type,
-                                                                                    is_above_player = model.is_above_player,
+                                                                                    is_behind_player = model.is_behind_player,
                                                                                     is_in_group = model.is_in_group,
                                                                                     collisions = model.collisions,
                                                                                     libraryx = model.libraryx,
                                                                                     libraryy = model.libraryy)
                                     else:
-                                        mape[layer_number][ligne][column] = Bloc(used_type[0], is_above_player=used_type[1], is_in_group=used_type[2], collisions=used_type[3], libraryx=used_type[4], libraryy=used_type[5])
+                                        mape[layer_number][ligne][column] = Bloc(used_type[0], is_behind_player=used_type[1], is_in_group=used_type[2], collisions=used_type[3], libraryx=used_type[4], libraryy=used_type[5])
                                         
                                 except:
                                     writeMessage("Une erreur est survenue", 30, True)
@@ -590,9 +590,9 @@ while running:
                             if show_group2:
                                 bloc.draw_group()
                                 
-                            #Si le bloc est affiché devant le joueur
-                            if show_is_above2:
-                                bloc.draw_is_above()
+                            #Si le bloc est affiché derrière le joueur
+                            if show_is_behind2:
+                                bloc.draw_is_behind()
                             
                             #Si le bloc mène à un bloc
                             if show_map_path2:
@@ -601,7 +601,7 @@ while running:
                             #On affiche le bloc
                             bloc_types_surface.blit(bloc.image, bloc.rect.topleft+offset2)
                             
-                            if show_group2 or show_is_above2 or show_collisions2 or show_map_path2:
+                            if show_group2 or show_is_behind2 or show_collisions2 or show_map_path2:
                                 bloc_types_surface.blit(bloc.info_surface, bloc.rect.topleft+offset2)
             
             #On effectue le zoom et on affiche l'écran
@@ -740,7 +740,7 @@ while running:
                             zoom_scale2 = 1
                             last_zoom_scale2 = 10
                             show_collisions2 = False
-                            show_is_above2 = False
+                            show_is_behind2 = False
                             show_group2 = False
                             show_map_path2 = False
                                 
@@ -811,7 +811,7 @@ while running:
                                 zoom_scale2 = 1
                                 last_zoom_scale2 = 10
                                 show_collisions2 = False
-                                show_is_above2 = False
+                                show_is_behind2 = False
                                 show_group2 = False
                                 show_map_path2 = False
                             
@@ -879,7 +879,7 @@ while running:
                     camera_direction = pygame.Vector2()
                 
                 #Afficher/faire disparaitre les colisions des blocs
-                if event.key == pygame.K_c and not (show_group or show_is_above or show_map_path):
+                if event.key == pygame.K_c and not (show_group or show_is_behind or show_map_path):
                     if show_collisions:
                         for layer in mape:
                             for ligne in layer:
@@ -889,7 +889,7 @@ while running:
                     show_collisions = not show_collisions
                 
                 #Afficher/faire disparaitre les groupes de bloc
-                if event.key == pygame.K_g and not (show_collisions or show_is_above or show_map_path):
+                if event.key == pygame.K_g and not (show_collisions or show_is_behind or show_map_path):
                     if show_group:
                         for layer in mape:
                             for ligne in layer:
@@ -898,18 +898,18 @@ while running:
                                         bloc.set_image()
                     show_group = not show_group
                 
-                #Afficher/faire disparaitre les blocs affichés devant le joueur
+                #Afficher/faire disparaitre les blocs affichés derrière le joueur
                 if event.key == pygame.K_r and not (show_collisions or show_group or show_map_path):
-                    if show_is_above:
+                    if show_is_behind:
                         for layer in mape:
                             for ligne in layer:
                                 for bloc in ligne:
                                     if bloc != 0:
                                         bloc.set_image()
-                    show_is_above = not show_is_above
+                    show_is_behind = not show_is_behind
                 
                 #Afficher/faire disparaitre les liens des blocs
-                if event.key == pygame.K_p and not (show_collisions or show_group or show_is_above):
+                if event.key == pygame.K_p and not (show_collisions or show_group or show_is_behind):
                     if show_map_path:
                         for layer in mape:
                             for ligne in layer:
@@ -1043,7 +1043,7 @@ while running:
                 #Si on est en train de créer / éditer une autre map que la bobliothèque
                 else:
                     #Afficher/faire disparaître les colisisons des blocs
-                    if event.key == pygame.K_c and not (show_group or show_is_above or show_map_path):
+                    if event.key == pygame.K_c and not (show_group or show_is_behind or show_map_path):
                         if show_collisions:
                             for layer in bloc_types_map:
                                 for ligne in layer:
@@ -1053,7 +1053,7 @@ while running:
                         show_collisions2 = not show_collisions2
                     
                     #Afficher/faire disparaître les groupes de bloc
-                    if event.key == pygame.K_g and not (show_collisions or show_is_above or show_map_path):
+                    if event.key == pygame.K_g and not (show_collisions or show_is_behind or show_map_path):
                         if show_group:
                             for layer in bloc_types_map:
                                 for ligne in layer:
@@ -1062,18 +1062,18 @@ while running:
                                             bloc.set_image()
                         show_group2 = not show_group2
                     
-                    #Afficher/faire disparaître les blocs devant le joueur
+                    #Afficher/faire disparaître les blocs derrière le joueur
                     if event.key == pygame.K_r and not (show_collisions or show_group or show_map_path):
-                        if show_is_above:
+                        if show_is_behind:
                             for layer in bloc_types_map:
                                 for ligne in layer:
                                     for bloc in ligne:
                                         if bloc != 0:
                                             bloc.set_image()
-                        show_is_above2 = not show_is_above2
+                        show_is_behind2 = not show_is_behind2
                     
                     #Afficher/faire disparaître les liens des blocs
-                    if event.key == pygame.K_p and not (show_collisions or show_group or show_is_above):
+                    if event.key == pygame.K_p and not (show_collisions or show_group or show_is_behind):
                         if show_map_path:
                             for layer in bloc_types_map:
                                 for ligne in layer:
@@ -1128,7 +1128,7 @@ while running:
                             used_type = mape[layer_number][ligne][column].type
                         else:
                             bloc = mape[layer_number][ligne][column]
-                            used_type = [bloc.type, bloc.is_above_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
+                            used_type = [bloc.type, bloc.is_behind_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
                     except:
                         #On écrit un message d'erreur car aucun bloc n'a été cliqué
                         writeMessage("Veuillez cliquer sur un bloc", 60, True)
@@ -1246,7 +1246,7 @@ while running:
                         #On récupère le type et les collisions du bloc cliqué
                         try:
                             bloc = bloc_types_map[0][ligne2][column2]
-                            used_type = [bloc.type, bloc.is_above_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
+                            used_type = [bloc.type, bloc.is_behind_player, bloc.is_in_group, bloc.collisions, bloc.libraryx, bloc.libraryy]
                             is_choosing = False
                             is_creating = True
                             show_collisions2 = False
