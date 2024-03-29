@@ -59,11 +59,14 @@ class Game():
     def update(self):
         if not self.generic_debut.finish: #On affiche le générique de début s'il n'est pas terminé
             self.generic_debut.update()
-        elif self.generic_fin.finish:
+            
+        elif self.generic_fin.finish: #Si le générique de fin est terminé, on ferme le jeu
             pygame.quit()
             sys.exit()
-        elif self.current_step == 27:
+            
+        elif self.current_step == 27: #Si on est à l'étape finale, on actualise le générique de fin
             self.generic_fin.update()
+            
         else:
             #On actualise les différent groupes de sprites actuellement utilisés
             for group in self.maps.get(self.current_map_name).get("group_list"):

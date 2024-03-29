@@ -59,20 +59,21 @@ running = True
 while running:
     
     #On joue la musique
-    #current_channel.play(current_music, loops=-1, fade_ms=250)
+    current_channel.play(current_music, loops=-1, fade_ms=250)
     
     #Si on est en train de jouer
     if game.is_playing:
         #On actualise la partie
         game.update()
-        if not game.is_speeking and game.generic.finish:
-            hint_button.draw()
-        hint_button.draw()
-        help_button2.draw()
+        if game.generic_debut.finish:
+            help_button2.draw()
+            if not game.is_speeking:
+                hint_button.draw()
+                
         current_music = start_music
         current_channel = start_channel
         
-    #Si on est dans l'aide
+    #Si on est dans le menu d'aide
     elif game.is_helping:
         screen.fill((185,122,87))
         exit_button2.draw()
@@ -144,6 +145,7 @@ while running:
                     game.helping()
                 #Quitter l'aide
                 elif exit_button2.rect.collidepoint(event.pos):
+                    game.start()
                     game.stop_helping()
             #Si c'est le clic gauche
             elif event.button == 1:
@@ -152,8 +154,8 @@ while running:
                     game.is_thinking = not game.is_thinking
                 #Si on clique sur le bouton pour demander de l'aide
                 elif help_button2.rect.collidepoint(event.pos):
-                    game.helping()
                     game.stop()
+                    game.helping()
                 #Sinon on vérifie si on intéragie avce un indice
                 else:
                     game.player.check_document_interact(event.pos)
