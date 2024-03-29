@@ -10,6 +10,7 @@ Remixeur : 01001010 00100111 01100001 01101001 00100000 01110000 01101111 011101
 Remixeur : Bip-bip-bip. F-f-fin du fichier. Lecture terminée]
 add_step : 1
 add_hint : Remixeur
+add_hint : message-remixeur
 }
 
 place : atelier, step : 16 {
