@@ -5,7 +5,7 @@ FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #Une classe pour gérer les génériques
 class Generic():
-    def __init__(self, screen, text:list, size:int, txtcolor=(0,0,0), bgcolor=(255,255,255), speed = 2.5, bgimg=None, is_centered=False):
+    def __init__(self, screen, text:list, size:int, txtcolor=(0,0,0), bgcolor=(255,255,255), speed = 1, bgimg=None, is_centered=False):
         self.screen = screen                                                                #L'écran sur lequel on affiche le générique
         self.size = size                                                                    #La taille de police
         self.font = pygame.font.SysFont(None, size=size)                                    #La police d'écriture
