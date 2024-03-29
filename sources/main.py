@@ -27,6 +27,20 @@ exit_button = button.Button(screen, 'exit', -20, -10, 10)
 help_button = button.Button(screen, 'help', -10, 10, 10)
 hint_button = button.Button(screen, 'hint', -2, -2, 5)
 
+#On crée les boutons / texte du menu help
+help_button2 = button.Button(screen, 'help', -5, 5, 10)
+exit_button2 = button.Button(screen, "exit2", -0.5, 0.5, 5)
+font = pygame.font.SysFont(None, 50)
+help_text = [font.render(text, True, (0,0,0)) for text in ["Vous êtes un détective envoyé à Coincoinville pour",
+                                                           "résoudre un mystère. Intéragissez avec les personnages",
+                                                           "pour en apprendre plus ! Collectez les indices dans",
+                                                           "votre tableau d'enquête disponibles en bas à droite !",
+                                                           "Commencez par parler avec le maire qui se situe juste",
+                                                           "à côté de vous au démarrage. Si vous êtes perdus,",
+                                                           "cherchez Hélolo, la fille mystérieuse !", "",
+                                                           "Contôles utiles :", "q/z/d/s = Se déplacer",
+                                                           "échap = écran de démarrage / quitter le jeu", "e = intéraction personnage ou entrée / sortie des batiments"]]
+
 #On crée notre partie
 game = Game(screen)
 
@@ -53,10 +67,21 @@ while running:
         game.update()
         if not game.is_speeking and game.generic.finish:
             hint_button.draw()
+        hint_button.draw()
+        help_button2.draw()
         current_music = start_music
         current_channel = start_channel
         
-    #Sinon on affiche l'écran d'accueil    
+    #Si on est dans l'aide
+    elif game.is_helping:
+        screen.fill((185,122,87))
+        exit_button2.draw()
+        for i, text_ligne in enumerate(help_text):
+            screen.blit(text_ligne, text_ligne.get_rect(topleft=(30, 30+i*50)))
+        current_music = game_music
+        current_channel = game_channel
+        
+    #Sinon on affiche l'écran d'accueil 
     else:
         screen.blit(start_screen, start_screen.get_rect())
         start_button.draw()
@@ -85,6 +110,8 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 if game.is_playing:
                     game.stop()
+                elif game.is_helping:
+                    game.stop_helping()
                 else:
                     running = False
                     pygame.quit()
@@ -114,12 +141,19 @@ while running:
                     sys.exit()
                 #Demander de l'aide
                 elif help_button.rect.collidepoint(event.pos):
-                    print('OSCOUR')
+                    game.helping()
+                #Quitter l'aide
+                elif exit_button2.rect.collidepoint(event.pos):
+                    game.stop_helping()
             #Si c'est le clic gauche
             elif event.button == 1:
                 #Si on clique sur le bouton pour accéder au tableau d'indices
                 if hint_button.rect.collidepoint(event.pos) and not game.is_speeking:
                     game.is_thinking = not game.is_thinking
+                #Si on clique sur le bouton pour demander de l'aide
+                elif help_button2.rect.collidepoint(event.pos):
+                    game.helping()
+                    game.stop()
                 #Sinon on vérifie si on intéragie avce un indice
                 else:
                     game.player.check_document_interact(event.pos)

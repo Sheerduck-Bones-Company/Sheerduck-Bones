@@ -3,6 +3,7 @@ step : 0 {
 Matcha : J'espère que vous réussierez à résoudre ce dont je vous ait parlé par téléphone.
 Matcha : Je vous souhaite bonne chance Mr Bones.]
 add_step : 1
+add_hint : Mystère
 }
 
 place : mairie, step : 6 {
@@ -15,7 +16,10 @@ Matcha : Quand elle est revenue elle était très faible, j'ai du rester à son 
 Matcha : Cette période était très éprouvante, et c'est à ce moment là que j'ai recontré Thifraude qui m'a beaucoup aidé... Quand ma femme nous a quitté RIP lol, elle m'a aidée à supporter cela.
 Matcha : Elle m'a même donné une adorable fille...
 Matcha : Détective !! Vous devez absolument retrouver le meurtrier !]
-add_step : 1}
+add_step : 1
+add_hint : Portrait-Oscour
+add_hint : Anphalafelle-disparition
+}
 
 step : 6 {
 [Matcha :: Matcha : Venez me voir dans la mairie]

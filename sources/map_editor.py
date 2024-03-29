@@ -147,7 +147,7 @@ message_rect = message_text.get_rect()
 message_counter = 0
 confirm_text = font.render(f"Attention : \"{written_text}\" existe déjà, voulez-vous le remplacer ?", True, (255,0,0))
 confirm_rect = confirm_text.get_rect()
-info_text = [font.render(text, True, (0,0,0)) for text in ["Contôles utiles :", "", "q/z/d/s = Se déplacer", "LCTRL + Flèche = Ajouter des lignes/colonnes", "LSHIFT + Flèche = Retirer des lignes", "LCTRL + PLUS ou MOINS = Zoom/Dézoom", "LCTRL + z = Annulation de la dernière action", "LCTRL + s = Sauvegarder", "c = Afficher les collisions", "e = Afficher la bibliothèque", "i = Afficher le menu info", "Flèche HAUT ou BAS = Changer de couche"]]
+info_text = [font.render(text, True, (0,0,0)) for text in ["Contôles utiles :", "", "q/z/d/s = Se déplacer", "LCTRL + Flèche = Ajouter des lignes/colonnes", "LSHIFT + Flèche = Retirer des lignes", "LCTRL + PLUS ou MOINS = Zoom/Dézoom", "LCTRL + z = Annulation de la dernière action", "LCTRL + s = Sauvegarder", "c = Afficher les collisions", "e = Afficher la bibliothèque", "i = Afficher le menu info", "Flèche HAUT ou BAS = Changer de couche", "g = Afficher les groupes", "p = afficher les liens de cartes"]]
 
 #On défini quelques autres variables
 page_number = 1
@@ -922,12 +922,12 @@ while running:
                 if event.key == pygame.K_i:
                     is_searching_for_info = True
                 
-                #Actver / Désactiver la transparence des couches
+                #Activer / Désactiver la transparence des couches
                 if event.key == pygame.K_l:
                     show_transparent_layer = not show_transparent_layer
                     
                     
-                #Passer à la couche suppérieur et en créer une s'il le faut
+                #Passer à la couche supérieure et en créer une s'il le faut
                 if pressed.get(pygame.K_UP) and not (pressed.get(pygame.K_LCTRL) or pressed.get(pygame.K_LSHIFT)):
                     addBackup(delete_layer=True)
                     layer_number += 1

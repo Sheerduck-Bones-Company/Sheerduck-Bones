@@ -7,6 +7,7 @@ place : antiquaire, step : 3 {
 [Bakugan :: Bakugan : Rrrrrrroooon pshhhhhhhhh ...? Bonjour, mon enfant, j'avais vu votre arrivée dans les feuilles de thé.
 Bakugan : Je connais la raison de votre venue. Je vois ... des cris d'horreur...la trahison ... le secret ... de l'eau, beaucoup d'eau...]
 add_step : 1
+add_hint : Bakugan
 }
 
 place : antiquaire, step : 4 {
@@ -14,7 +15,7 @@ place : antiquaire, step : 4 {
 }
 
 place : antiquaire, step : 1-100 {
-[Bakugan :: Bakugan - Bonjour, mon enfant
+[Bakugan :: Bakugan : Bonjour, mon enfant
 Bakugan : Toi aussi tu t’intéresses aux artefacts ?
 Bakugan : Par exemple, cette plume de chagrin peut réaliser tes désirs]
 

@@ -7,14 +7,19 @@ step : 4 {
 [Dandy :: Dandy : Bonjour détective ! Avec Peaudevigne on s'est dit qu'on se devait de vous inviter chez nous !
 Dandy : Venez quand vous voulez, on habite dans la maison au nord-ouest de la ville.]
 add_step : 1
+add_hint : Peaudevigne-Dandy
 }
 
-place : peaudevigne0, step : 1-3{
+place : peaudevigne0, step : 1-4{
 [Dandy :: Dandy : Un intrus !]
 }
 
-place : peaudevigne0, step : 5 {
+place : peaudevigne0, step : 5-100 {
 [Dandy :: Dandy : Ça te plait ?]
+}
+
+place : peaudevigne1, step : 1-4{
+[Dandy :: Dandy : Un intrus ! Que faites vous dans mo grenier ? Malotru !]
 }
 
 place : peaudevigne1,  step : 5{
@@ -24,6 +29,11 @@ Dandy :: Dandy : On était un peu violents à cette époque ! héhéhé
 Peaudevigne :: Peaudevigne : Mais cette époque est révolue, maintenant on passe nos vieux jours du côté de la rivière :)
 Peaudevigne : C'est super paisible là bas ! Tu pourras aller voir !]
 add_step : 1
+add_hint : batte-ensanglantee
+}
+
+place : peaudevigne1, step : 6-100 {
+[Dandy :: Dandy : J'aime beaucoup notre grenier, ça me rappelle de vieux souvenirs :)]
 }
 
 step : 1-100 {
