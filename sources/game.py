@@ -30,7 +30,8 @@ class Game():
                                             'Dialogues', 'Thibault HOUPLAIN', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', '',
                                             'Jeux de mots et humour', 'Sarah CAILLAT--ROSEVEGUE', 'Thibault HOUPLAIN', '',
                                             'Lieux du jeu (programme et réalisation)', 'Antoine GUILMOT', 'Sarah CAILLAT--ROSEVEGUE', '',
-                                            'Remerciements :', 'Toute la Sheerduck Bones Company se félicite personnellement', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', 'Antoine GUILMOT', 'Thibault HOUPLAIN', 'et Lianah LOMBARD', 'Logan, invité pour la musique'],
+                                            'Remerciements :', 'Toute la Sheerduck Bones Company se',
+                                            'félicite personnellement', 'Sarah CAILLAT--ROSEVEGUE', 'Chlothilde DINH', 'Antoine GUILMOT', 'Thibault HOUPLAIN', 'et Lianah LOMBARD', 'Logan, invité pour la musique'],
                                             60, bgimg='end-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique de fin
 
     #Lancer la partie    
