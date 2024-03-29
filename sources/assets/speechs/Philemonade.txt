@@ -16,8 +16,7 @@ Tartatin :: Tartatin : Veni, vidi, vici !
 Philemonade :: Philemonade : Qu'est-ce qu'il raconte encore celui là ?
 Philemonade : Ah et d'ailleurs, n'hésitez pas à checker votre tableau d'indices]
 add_step : 1
-add_hint : CodeCésar
-add_hint : code-cesar
+add_hint : CodePhilemonade
 }
 
 place : atelier, step : 1-100 {
