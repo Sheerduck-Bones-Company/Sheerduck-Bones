@@ -11,11 +11,11 @@ class Game():
         self.is_helping = False
         self.screen = screen                            #On récupère l'écran
         self.pressed = {}                               #On crée une liste pour les touches pressées
-        self.player = player.Player(self, (2402,1200))  #On crée un joueur
+        self.player = player.Player(self, (2402,1250))  #On crée un joueur
         self.maps = loadMap(self.player, self)          #On récupère les cartes du jeu
         self.current_map_name = "ville.txt"             #On définie la carte actuelle comme étant celle de la ville
         self.camera_group = camera.Camera(self)         #On crée une caméra
-        self.current_step = 25                           #On définie l'étape actuelle comme étant la première
+        self.current_step = 0                           #On définie l'étape actuelle comme étant la première
         self.generic_debut = Generic(screen, ['Bonjour Mister Sheerduck', 'Vous êtes un détective', 'Vous devez investiguer sur', 'le mystère de Coincoinville','A vous de découvrir votre tâche', 'et de rassembler des preuves','Gagnez la confiance des villageois','afin de résoudre le problème','Nous vous souhaitons bonne chance !'],
                                      60, bgimg='start-screen.png', txtcolor=(255,255,255), bgcolor=(0,0,0), is_centered=True) #On crée un générique
         self.generic_fin = Generic(screen, ['Bravo !!', 'Vous avez réussi à résoudre le mystère :)',

@@ -7,7 +7,7 @@ FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 #On initialise la fenêtre
 pygame.init()
-pygame.display.set_caption('Sheerduck-Bones')
+pygame.display.set_caption('Sheerduck Bones')
 pygame.display.set_icon(pygame.image.load(f'{FILE_PATH}/assets/graphics/icons/game.ico'))
 
 #On crée notre écran
