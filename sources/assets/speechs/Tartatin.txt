@@ -10,6 +10,7 @@ Tartatin : Vous êtes détective non ? Si par hasard vous trouvez qui a fait ça
 Tartatin : Non je n'irais pas moi même, vous comprenez...
 Tartatin : Remixeur !! Qu'est-ce qu'il se passe ?]
 add_step : 1
+add_hint : Remixeur
 }
 
 place : atelier, step : 15-16 {
