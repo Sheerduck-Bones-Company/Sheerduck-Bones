@@ -39,7 +39,9 @@ help_text = [font.render(text, True, (0,0,0)) for text in ["Vous êtes un détec
                                                            "à côté de vous au démarrage. Si vous êtes perdus,",
                                                            "cherchez Hélolo, la fille mystérieuse !", "",
                                                            "Contôles utiles :", "q/z/d/s = Se déplacer",
-                                                           "échap = écran de démarrage / quitter le jeu", "e = intéraction personnage ou entrée / sortie des batiments"]]
+                                                           "échap = écran de démarrage / quitter le jeu",
+                                                           "e = intéraction personnage ou entrée / sortie des batiments",
+                                                           "f11 = plein écran"]]
 
 #On crée notre partie
 game = Game(screen)
